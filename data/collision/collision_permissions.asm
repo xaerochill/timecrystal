@@ -185,14 +185,14 @@ TileCollisionTable::
 	db LAND_TILE         ; COLL_DOWN_LEFT_WALL
 	db LAND_TILE         ; COLL_UP_RIGHT_WALL
 	db LAND_TILE         ; COLL_UP_LEFT_WALL
-	db LAND_TILE         ; b8
-	db LAND_TILE         ; b9
-	db LAND_TILE         ; ba
-	db LAND_TILE         ; bb
-	db LAND_TILE         ; bc
-	db LAND_TILE         ; bd
-	db LAND_TILE         ; be
-	db LAND_TILE         ; bf
+	db LAND_TILE         ; COLL_BOTTOM_RIGHT_WALL
+	db LAND_TILE         ; COLL_BOTTOM_LEFT_WALL
+	db LAND_TILE         ; COLL_TOP_RIGHT_WALL
+	db LAND_TILE         ; COLL_TOP_LEFT_WALL
+	db LAND_TILE         ; COLL_STAIRS_RIGHT_DOWN
+	db LAND_TILE         ; COLL_STAIRS_LEFT_DOWN
+	db LAND_TILE         ; COLL_STAIRS_RIGHT_UP
+	db LAND_TILE         ; COLL_STAIRS_LEFT_UP
 	db WATER_TILE        ; COLL_RIGHT_BUOY
 	db WATER_TILE        ; COLL_LEFT_BUOY
 	db WATER_TILE        ; COLL_UP_BUOY
