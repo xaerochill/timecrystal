@@ -39,6 +39,8 @@ CeladonPrizeRoom_tmcounterloop:
 	sjump CeladonPrizeRoom_CancelPurchaseScript
 
 .DoubleTeam:
+	checkitem TM_DOUBLE_TEAM
+	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM32_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	getitemname STRING_BUFFER_3, TM_DOUBLE_TEAM
@@ -50,6 +52,8 @@ CeladonPrizeRoom_tmcounterloop:
 	sjump CeladonPrizeRoom_purchased
 
 .Psychic:
+	checkitem TM_PSYCHIC_M
+	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM29_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	getitemname STRING_BUFFER_3, TM_PSYCHIC_M
@@ -61,6 +65,8 @@ CeladonPrizeRoom_tmcounterloop:
 	sjump CeladonPrizeRoom_purchased
 
 .HyperBeam:
+	checkitem TM_HYPER_BEAM
+	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM15_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	getitemname STRING_BUFFER_3, TM_HYPER_BEAM
@@ -80,6 +86,11 @@ CeladonPrizeRoom_purchased:
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext CeladonPrizeRoom_HereYouGoText
+	waitbutton
+	sjump CeladonPrizeRoom_tmcounterloop
+
+CeladonPrizeRoom_alreadyhavetm:
+	writetext CeladonPrizeRoom_AlreadyHaveTMText
 	waitbutton
 	sjump CeladonPrizeRoom_tmcounterloop
 
@@ -254,6 +265,11 @@ CeladonPrizeRoom_HereYouGoText:
 	text "Here you go!"
 	done
 
+CeladonPrizeRoom_AlreadyHaveTMText:
+	text "You already have"
+	line "that TM."
+	done
+
 CeladonPrizeRoom_NotEnoughCoinsText:
 	text "You don't have"
 	line "enough coins."
@@ -278,15 +294,15 @@ CeladonGameCornerPrizeRoom_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  5, CELADON_CITY, 7
-	warp_event  3,  5, CELADON_CITY, 7
+	warp_event  4,  7, CELADON_CITY, 7
+	warp_event  5,  7, CELADON_CITY, 7
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  2,  1, BGEVENT_READ, CeladonGameCornerPrizeRoomTMVendor
-	bg_event  4,  1, BGEVENT_READ, CeladonGameCornerPrizeRoomPokemonVendor
+	bg_event  2,  3, BGEVENT_READ, CeladonGameCornerPrizeRoomTMVendor
+	bg_event  6,  3, BGEVENT_READ, CeladonGameCornerPrizeRoomPokemonVendor
 
 	def_object_events
-	object_event  0,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomGentlemanScript, -1
-	object_event  4,  4, SPRITE_PHARMACIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomPharmacistScript, -1
+	object_event  0,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomGentlemanScript, -1
+	object_event  8,  5, SPRITE_PHARMACIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPrizeRoomPharmacistScript, -1

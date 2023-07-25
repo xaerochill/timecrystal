@@ -105,9 +105,6 @@ CeladonGameCornerGrampsScript:
 CeladonGameCornerPoster1Script:
 	jumptext CeladonGameCornerPoster1Text
 
-CeladonGameCornerPoster2Script:
-	jumptext CeladonGameCornerPoster2Text
-
 CeladonGameCornerLuckySlotMachineScript:
 	random 6
 	ifequal 0, CeladonGameCornerSlotMachineScript
@@ -140,11 +137,6 @@ CeladonGameCornerSodaCanScript:
 	special CardFlip
 	closetext
 	end
-
-CeladonGameCornerUnusedMovementData: ; unreferenced
-	step RIGHT
-	turn_head LEFT
-	step_end
 
 CeladonGameCornerReceptionistText:
 	text "Welcome!"
@@ -297,15 +289,6 @@ CeladonGameCornerPoster1Text:
 	para "There's nothing!"
 	done
 
-CeladonGameCornerPoster2Text:
-	text "Hey!"
-
-	para "Underneath this"
-	line "poster…"
-
-	para "There's nothing!"
-	done
-
 CeladonGameCornerLighterText:
 	text "There's a lighter"
 	line "here."
@@ -326,6 +309,7 @@ CeladonGameCorner_MapEvents:
 	def_warp_events
 	warp_event 14, 13, CELADON_CITY, 6
 	warp_event 15, 13, CELADON_CITY, 6
+	warp_event 17,  0, ROCKET_HIDEOUT_B1F, 2
 
 	def_coord_events
 
@@ -366,14 +350,13 @@ CeladonGameCorner_MapEvents:
 	bg_event 18,  9, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 10, BGEVENT_READ, CeladonGameCornerLuckySlotMachineScript
 	bg_event 18, 11, BGEVENT_RIGHT, CeladonGameCornerLuckySlotMachineScript
-	bg_event 15,  0, BGEVENT_READ, CeladonGameCornerPoster1Script
-	bg_event  9,  0, BGEVENT_READ, CeladonGameCornerPoster2Script
+	bg_event 9,  0, BGEVENT_READ, CeladonGameCornerPoster1Script
 
 	def_object_events
 	object_event  5,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerClerkScript, -1
 	object_event  3,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerReceptionistScript, -1
 	object_event 14, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerPokefanMScript, -1
-	object_event 17,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerTeacherScript, -1
+	object_event 17,  7, SPRITE_TEACHER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerTeacherScript, -1
 	object_event 11,  7, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerFishingGuruScript, -1
 	object_event  8, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerFisherScript, -1
 	object_event  8, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, NITE, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonGameCornerFisherScript, -1

@@ -43,18 +43,6 @@ ElmsSonText:
 	cont "professor!"
 	done
 
-ElmsHouseLabFoodText: ; unreferenced
-	text "There's some food"
-	line "here. It must be"
-	cont "for the LAB."
-	done
-
-ElmsHousePokemonFoodText: ; unreferenced
-	text "There's some food"
-	line "here. This must be"
-	cont "for #MON."
-	done
-
 ElmsHousePCText:
 	text "#MON. Where do"
 	line "they come from? "
@@ -94,5 +82,5 @@ ElmsHouse_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, ElmsHouseBookshelf
 
 	def_object_events
-	object_event  1,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ElmsWife, -1
+	object_event  1,  5, SPRITE_TEACHER_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ElmsWife, -1
 	object_event  5,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ElmsSon, -1

@@ -319,13 +319,6 @@ wTilemapEnd::
 ; This union spans 480 bytes.
 SECTION UNION "Miscellaneous", WRAM0
 
-; surrounding tiles
-; This buffer determines the size for the rest of the union;
-; it uses exactly 480 bytes.
-wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
-
-
-SECTION UNION "Miscellaneous", WRAM0
 
 ; box save buffer
 ; SaveBoxAddress uses this buffer in three steps because it
@@ -2385,8 +2378,6 @@ wCurPartyLevel:: db
 
 wScrollingMenuListSize:: db
 
-	ds 1
-
 ; used when following a map warp
 wNextWarp:: db
 wNextMapGroup:: db
@@ -2403,6 +2394,8 @@ wPlayerStepVectorX:: db
 wPlayerStepVectorY:: db
 wPlayerStepFlags:: db
 wPlayerStepDirection:: db
+
+wSpinning:: db
 
 wBGMapAnchor:: dw
 
@@ -2452,9 +2445,9 @@ wTilesetBlocksBank:: db
 wTilesetBlocksAddress:: dw
 wTilesetCollisionBank:: db
 wTilesetCollisionAddress:: dw
+wTilesetAttributesBank:: db
+wTilesetAttributesAddress:: dw
 wTilesetAnim:: dw ; bank 3f
-	ds 2 ; unused
-wTilesetPalettes:: dw ; bank 3f
 wTilesetEnd::
 	assert wTilesetEnd - wTileset == TILESET_LENGTH
 
@@ -2700,7 +2693,7 @@ wCurBaseDataEnd::
 
 wCurDamage:: dw
 
-	ds 2
+wTilesetDataAddress:: dw
 
 wMornEncounterRate::  db
 wDayEncounterRate::   db
@@ -2937,9 +2930,9 @@ for n, 1, NUM_OBJECT_STRUCTS
 wObject{d:n}Struct:: object_struct wObject{d:n}
 endr
 
-wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE
+wStoneTableAddress:: dw
 
-	ds 40
+	ds 62
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
@@ -3373,8 +3366,8 @@ wEggMon:: box_struct wEggMon
 wBugContestSecondPartySpecies:: db
 wContestMon:: party_struct wContestMon
 
-wDunsparceMapGroup:: db
-wDunsparceMapNumber:: db
+wSwarmMapGroup:: db
+wSwarmMapNumber:: db
 wFishingSwarmFlag:: db
 
 wRoamMon1:: roam_struct wRoamMon1
@@ -3507,6 +3500,12 @@ ENDU
 SECTION "News Script RAM", WRAMX
 
 w4_d000:: ds $1000
+
+
+SECTION "Surrounding Data", WRAMX
+
+wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
+wSurroundingAttributes:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
 
 
 SECTION "GBC Video", WRAMX, ALIGN[8]

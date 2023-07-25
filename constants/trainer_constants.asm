@@ -70,7 +70,8 @@ DEF KRIS EQU __trainer_class__
 	const RIVAL1_5_TOTODILE
 
 	trainerclass POKEMON_PROF ; a
-
+	const OAK1
+	
 	trainerclass WILL ; b
 	const WILL1
 
@@ -320,7 +321,7 @@ DEF KRIS EQU __trainer_class__
 	const ROXANNE
 	const CLARISSA
 
-	trainerclass TEACHER ; 22
+	trainerclass TEACHERF ; 22
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
@@ -702,5 +703,31 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
+
+	trainerclass AGATHA ; 44
+	const AGATHA1
+
+	trainerclass ENGINEER ; 45
+
+	trainerclass GIOVANNI ; 46
+	const GIOVANNI1
+
+	trainerclass KURT ; 47
+	const KURT1
+
+	trainerclass LORELEI ; 48
+	const LORELEI1
+
+	trainerclass SOLDIER ; 49
+
+	trainerclass SPORTSMAN ; 4a
+
+	trainerclass TEACHERM ; 4b
+	
+	trainerclass GREEN ; 4c
+	const GREEN1
+	
+	trainerclass YELLOW ; 4d
+	const YELLOW1
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

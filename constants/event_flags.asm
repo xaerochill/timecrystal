@@ -65,8 +65,8 @@
 	const EVENT_LAKE_OF_RAGE_EXPLAINED_WEIRD_MAGIKARP
 	const EVENT_LAKE_OF_RAGE_ASKED_FOR_MAGIKARP
 	const EVENT_LAKE_OF_RAGE_ELIXIR_ON_STANDBY
-	const_skip ; unused
-	const_skip ; unused
+	const EVENT_CERULEAN_CAVE_MEWTWO ; previously unused
+	const EVENT_FOUGHT_MEWTWO ; previously unused
 	const EVENT_HEALED_MOOMOO
 	const EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM
 	const EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
@@ -136,9 +136,9 @@
 	const EVENT_TIN_TOWER_5F_HIDDEN_FULL_RESTORE
 	const EVENT_TIN_TOWER_5F_HIDDEN_CARBOS
 	const EVENT_BURNED_TOWER_1F_HIDDEN_ETHER
-	const_skip ; unused in Crystal
-	const_skip ; unused in Crystal
-	const_skip ; unused in Crystal
+	const EVENT_VERMILION_PORT_MEW ; previously unused
+	const EVENT_FOUGHT_MEW ; previously unused
+	const EVENT_BEAT_OAK ; previously unused
 	const EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
 	const EVENT_OLIVINE_LIGHTHOUSE_5F_HIDDEN_HYPER_POTION
 	const EVENT_TEAM_ROCKET_BASE_B1F_HIDDEN_REVIVE
@@ -202,7 +202,12 @@
 	const EVENT_GAVE_GS_BALL_TO_KURT
 	const EVENT_FOREST_IS_RESTLESS
 	const EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
-; Unused: next 6 events
+	const EVENT_SEAFOAM_ISLANDS_ARTICUNO ; previously unused
+	const EVENT_FOUGHT_ARTICUNO ; previously unused
+	const EVENT_POWER_PLANT_ZAPDOS ; previously unused
+	const EVENT_FOUGHT_ZAPDOS ; previously unused
+	const EVENT_VICTORY_ROAD_MOLTRES ; previously unused
+	const EVENT_FOUGHT_MOLTRES ; previously unused
 
 	const_next 200
 ; Kanto story events
@@ -281,11 +286,11 @@
 	const EVENT_GAVE_KURT_PNK_APRICORN
 ; Phone events
 	const EVENT_JACK_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BEAT_AGATHA ; previously unused
 	const EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BEAT_GIOVANNI ; previously unused
 	const EVENT_HUEY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BEAT_KURT ; previously unused
 	const EVENT_GOT_PROTEIN_FROM_HUEY
 	const EVENT_GOT_HP_UP_FROM_JOEY
 	const EVENT_GOT_CARBOS_FROM_VANCE
@@ -293,17 +298,17 @@
 	const EVENT_GOT_CALCIUM_FROM_ERIN
 	const EVENT_KENJI_ON_BREAK
 	const EVENT_GAVEN_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BEAT_LORELEI ; previously unused
 	const EVENT_BETH_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BEAT_GREEN ; previously unused
 	const EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BEAT_YELLOW ; previously unused
 	const EVENT_REENA_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const_skip ; unused
 	const EVENT_JOEY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const_skip ; unused
 	const EVENT_WADE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const_skip ; unused
 	const EVENT_RALPH_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
 	const EVENT_LIZ_ASKED_FOR_PHONE_NUMBER
@@ -319,9 +324,9 @@
 	const EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
 	const EVENT_ALAN_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
-	const_skip ; unused
-	const_skip ; unused
+	const EVENT_GAVE_SCIENTIST_OLD_AMBER ; previously unused
+	const EVENT_GAVE_SCIENTIST_DOME_FOSSIL ; previously unused
+	const EVENT_GAVE_SCIENTIST_HELIX_FOSSIL ; previously unused
 	const EVENT_DANA_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
 	const EVENT_CHAD_ASKED_FOR_PHONE_NUMBER

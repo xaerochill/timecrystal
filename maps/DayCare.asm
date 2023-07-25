@@ -25,17 +25,13 @@ DayCareManScript_Inside:
 	opentext
 	checkevent EVENT_GOT_ODD_EGG
 	iftrue .AlreadyHaveOddEgg
-	writetext DayCareManText_GiveOddEgg
+	setval EGG_TICKET
+	special UnusedFindItemInPCOrBag
+	iftrue .AlreadyHaveOddEgg
+	writetext Text_DayCareManTalksAboutEggTicket ; 7E2A
 	promptbutton
-	closetext
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .PartyFull
-	special GiveOddEgg
-	opentext
-	writetext DayCareText_GotOddEgg
-	playsound SFX_KEY_ITEM
-	waitsfx
-	writetext DayCareText_DescribeOddEgg
+	verbosegiveitem EGG_TICKET
+	writetext DayCareText_ComeAgain ; 7EA3
 	waitbutton
 	closetext
 	setevent EVENT_GOT_ODD_EGG
@@ -78,7 +74,7 @@ Text_GrampsLookingForYou:
 	line "for you."
 	done
 
-Text_DayCareManTalksAboutEggTicket: ; unreferenced
+Text_DayCareManTalksAboutEggTicket:
 	text "I'm the DAY-CARE"
 	line "MAN."
 
@@ -125,7 +121,7 @@ DayCareManText_GiveOddEgg:
 	line "yours to keep!"
 	done
 
-DayCareText_ComeAgain: ; unreferenced
+DayCareText_ComeAgain:
 	text "Come again."
 	done
 

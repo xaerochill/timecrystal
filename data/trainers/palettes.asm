@@ -42,7 +42,7 @@ INCBIN "gfx/trainers/pokemaniac.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/gentleman.gbcpal", middle_colors
 INCBIN "gfx/trainers/skier.gbcpal", middle_colors
-INCBIN "gfx/trainers/teacher.gbcpal", middle_colors
+INCBIN "gfx/trainers/teacher_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/sabrina.gbcpal", middle_colors
 INCBIN "gfx/trainers/bug_catcher.gbcpal", middle_colors
 INCBIN "gfx/trainers/fisher.gbcpal", middle_colors
@@ -76,5 +76,15 @@ INCBIN "gfx/trainers/blue.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
+INCBIN "gfx/trainers/agatha.gbcpal", middle_colors
+INCBIN "gfx/trainers/engineer.gbcpal", middle_colors
+INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors
+INCBIN "gfx/trainers/kurt.gbcpal", middle_colors
+INCBIN "gfx/trainers/lorelei.gbcpal", middle_colors
+INCBIN "gfx/trainers/soldier.gbcpal", middle_colors
+INCBIN "gfx/trainers/sportsman.gbcpal", middle_colors
+INCBIN "gfx/trainers/teacher_m.gbcpal", middle_colors
+INCBIN "gfx/trainers/green.gbcpal", middle_colors
+INCBIN "gfx/trainers/yellow.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1

@@ -47,7 +47,7 @@ TrainerGuitaristClyde:
 
 .Script:
 	endifjustbattled
-	special Mobile_DummyReturnFalse
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
 	iftrue .mobile
 	opentext
 	writetext GuitaristClydeAfterBattleText
@@ -194,7 +194,7 @@ GuitaristClydeAfterBattleText:
 	text "Speaking of the"
 	line "RADIO STATION,"
 
-	para "what's this week's"
+	para "what's today's"
 	line "lucky number?"
 	done
 

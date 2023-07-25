@@ -25,7 +25,7 @@ ItemDescriptions:
 	dw FireStoneDesc
 	dw ThunderStoneDesc
 	dw WaterStoneDesc
-	dw TeruSama2Desc
+	dw PocketPCDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -135,9 +135,9 @@ ItemDescriptions:
 	dw StarPieceDesc
 	dw BasementKeyDesc
 	dw PassDesc
-	dw TeruSama9Desc
-	dw TeruSama10Desc
-	dw TeruSama11Desc
+	dw OldAmberDesc
+	dw DomeFossilDesc
+	dw HelixFossilDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
@@ -191,71 +191,73 @@ ItemDescriptions:
 	dw MusicMailDesc
 	dw MirageMailDesc
 	dw TeruSama25Desc
-	assert_table_length NUM_ITEMS
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
 	dw TeruSama26Desc
 	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
 	dw TeruSama28Desc
 	dw TeruSama29Desc
 	dw TeruSama30Desc
 	dw TeruSama31Desc
 	dw TeruSama32Desc
+	assert_table_length NUM_ITEMS
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	assert_table_length NUM_ITEMS + NUM_TMS
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	assert_table_length NUM_ITEMS + NUM_TMS + NUM_HMS
 	dw TeruSama33Desc
 	assert_table_length $ff
 
@@ -354,8 +356,9 @@ WaterStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-TeruSama2Desc:
-	db   "?@"
+PocketPCDesc:
+	db   "Access the PC"
+	next "right here!@"
 
 HPUpDesc:
 	db   "Raises the HP of"
@@ -781,14 +784,17 @@ PassDesc:
 	db   "A ticket for the"
 	next "MAGNET TRAIN.@"
 
-TeruSama9Desc:
-	db   "?@"
+OldAmberDesc:
+	db   "Prehistoric Fossi-"
+	next "lized tree resin.@"
 
-TeruSama10Desc:
-	db   "?@"
+DomeFossilDesc:
+	db   "#MON fossil of"
+	next "prehistoric times.@"
 
-TeruSama11Desc:
-	db   "?@"
+HelixFossilDesc:
+	db   "#MON fossil of"
+	next "prehistoric times.@"
 
 CharcoalDesc:
 	db   "Powers up fire-"

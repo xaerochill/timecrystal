@@ -4,6 +4,7 @@
 	const RUINSOFALPHOUTSIDE_FISHER
 	const RUINSOFALPHOUTSIDE_YOUNGSTER2
 	const RUINSOFALPHOUTSIDE_YOUNGSTER3
+	const RUINSOFALPHOUTSIDE_SPENCER
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
@@ -12,6 +13,7 @@ RuinsOfAlphOutside_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, RuinsOfAlphOutsideScientistCallback
+	callback MAPCALLBACK_TILES, RuinsOfAlphCallback
 
 RuinsOfAlphOutsideNoop1Scene:
 	end
@@ -39,6 +41,20 @@ RuinsOfAlphOutsideScientistCallback:
 .NoScientist:
 	disappear RUINSOFALPHOUTSIDE_SCIENTIST
 	setscene SCENE_RUINSOFALPHOUTSIDE_NOOP
+	endcallback
+
+RuinsOfAlphCallback:
+	readvar VAR_UNOWNCOUNT
+	ifequal NUM_UNOWN, .AllUnownCaught
+	disappear RUINSOFALPHOUTSIDE_SPENCER
+	changeblock  0,  0, $05 ; trees
+	changeblock  2,  0, $05 ; trees
+	changeblock  0,  2, $05 ; trees
+	changeblock  2,  2, $05 ; trees
+	changeblock  0,  4, $05 ; trees
+	changeblock  2,  4, $05 ; trees
+.AllUnownCaught:
+	appear RUINSOFALPHOUTSIDE_SPENCER
 	endcallback
 
 RuinsOfAlphOutsideScientistScene1:
@@ -117,6 +133,16 @@ TrainerSuperNerdStan: ; unreferenced
 	endifjustbattled
 	opentext
 	writetext SuperNerdStanAfterBattleText
+	waitbutton
+	closetext
+	end
+
+SpencerGiveTicketScript:
+	writetext SpencerGiveTicketText1
+	promptbutton
+	verbosegiveitem S_S_TICKET
+	setevent EVENT_GOT_SS_TICKET_FROM_ELM
+	writetext SpencerGiveTicketText2
 	waitbutton
 	closetext
 	end
@@ -278,6 +304,36 @@ RuinsOfAlphOutsideYoungster2Text:
 	line "message!"
 	done
 
+SpencerGiveTicketText1:
+	text "SPENCER: <PLAY_G>!"
+	line "Thanks for your help!"
+
+	para "I am grateful so"
+	line "have something for"
+	cont "you."
+
+	para "See? It's an"
+	line "S.S.TICKET."
+
+	para "Now you can catch"
+	line "#MON in KANTO."
+	done
+
+SpencerGiveTicketText2:
+	text "The ship departs"
+	line "from OLIVINE CITY."
+
+	para "But you knew that"
+	line "already, <PLAY_G>."
+
+	para "After all, you"
+	line "travel all over"
+	cont "with your #MON."
+
+	para "Give my regards to"
+	line "PROF.OAK in KANTO!"
+	done
+
 RuinsOfAlphOutside_MapEvents:
 	db 0, 0 ; filler
 
@@ -309,3 +365,4 @@ RuinsOfAlphOutside_MapEvents:
 	object_event 13, 17, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	object_event 14, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
+	object_event  1,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

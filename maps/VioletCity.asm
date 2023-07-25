@@ -13,9 +13,51 @@ VioletCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, VioletCityFlypointCallback
+	callback MAPCALLBACK_TILES, VioletCityCallback
 
 VioletCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_VIOLET
+	endcallback
+
+VioletCityCallback:
+	checkevent EVENT_BEAT_SAGE_LI
+	iftrue .TowerUnlocked
+	changeblock 10,  0, $05 ; trees
+	changeblock 13,  0, $05 ; trees
+	changeblock 14,  0, $05 ; trees
+	changeblock  9,  1, $05 ; trees
+	changeblock 10,  1, $05 ; trees
+	changeblock 13,  1, $05 ; trees
+	changeblock 14,  1, $05 ; trees
+	changeblock 15,  1, $05 ; trees
+	changeblock  8,  2, $05 ; trees
+	changeblock  9,  2, $05 ; trees
+	changeblock 10,  2, $05 ; trees
+	changeblock 13,  2, $05 ; trees
+	changeblock 14,  2, $05 ; trees
+	changeblock 15,  2, $05 ; trees
+	changeblock 16,  2, $05 ; trees
+	changeblock  8,  3, $05 ; trees
+	changeblock  9,  3, $05 ; trees
+	changeblock 10,  3, $05 ; trees
+	changeblock 13,  3, $05 ; trees
+	changeblock 14,  3, $05 ; trees
+	changeblock 15,  3, $05 ; trees
+	changeblock 16,  3, $05 ; trees
+	changeblock  7,  4, $05 ; trees
+	changeblock  8,  4, $05 ; trees
+	changeblock  9,  4, $05 ; trees
+	changeblock 10,  4, $05 ; trees
+	changeblock 13,  4, $05 ; trees
+	changeblock 14,  4, $05 ; trees
+	changeblock  9,  5, $05 ; trees
+	changeblock 10,  5, $05 ; trees
+	changeblock 17,  5, $05 ; trees
+	changeblock  6,  6, $05 ; trees
+	changeblock  9,  6, $05 ; trees
+	changeblock 10,  6, $05 ; trees
+	changeblock 17,  6, $05 ; trees
+.TowerUnlocked:
 	endcallback
 
 VioletCityEarlScript:

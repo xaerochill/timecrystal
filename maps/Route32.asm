@@ -22,6 +22,7 @@ Route32_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, Route32FriedaCallback
+	callback MAPCALLBACK_TILES, Route32Callback
 
 Route32Noop1Scene:
 	end
@@ -40,6 +41,26 @@ Route32FriedaCallback:
 
 .FriedaAppears:
 	appear ROUTE32_FRIEDA
+	endcallback
+
+Route32Callback:
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+	iftrue .UnownUnlocked
+	changeblock  3,  6, $05 ; trees
+	changeblock  3,  7, $05 ; trees
+	changeblock  4,  7, $05 ; trees
+	changeblock  2,  8, $05 ; trees
+	changeblock  3,  8, $05 ; trees
+	changeblock  4,  8, $05 ; trees
+	changeblock  0,  9, $05 ; trees
+	changeblock  1,  9, $05 ; trees
+	changeblock  2,  9, $05 ; trees
+	changeblock  3,  9, $05 ; trees
+	changeblock  4,  9, $05 ; trees
+	changeblock  1, 10, $05 ; trees
+	changeblock  2, 10, $05 ; trees
+	changeblock  1, 11, $05 ; trees
+.UnownUnlocked:
 	endcallback
 
 Route32CooltrainerMScript:
@@ -172,8 +193,6 @@ TrainerFisherRalph1:
 	opentext
 	checkflag ENGINE_RALPH_READY_FOR_REMATCH
 	iftrue .Rematch
-	checkflag ENGINE_QWILFISH_SWARM
-	iftrue .Swarm
 	checkcellnum PHONE_FISHER_RALPH
 	iftrue .NumberAccepted
 	checkevent EVENT_RALPH_ASKED_FOR_PHONE_NUMBER
@@ -252,12 +271,6 @@ TrainerFisherRalph1:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
-	end
-
-.Swarm:
-	writetext FisherRalphSwarmText
-	waitbutton
-	closetext
 	end
 
 .AskNumber1:
@@ -830,12 +843,6 @@ BirdKeeperPeterAfterText:
 	cont "in VIOLET CITY."
 	done
 
-Route32UnusedText: ; unreferenced
-	text "The fishermen"
-	line "yelled at me for"
-	cont "bugging them…"
-	done
-
 Text_RoarIntro:
 	text "WROOOOAR!"
 	line "PEOPLE RUN WHEN I"
@@ -947,12 +954,12 @@ Route32_MapEvents:
 	object_event  6, 48, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherHenry, -1
 	object_event 12, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterAlbert, -1
 	object_event  4, 63, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterGordon, -1
-	object_event  3, 45, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperRoland, -1
-	object_event 10, 30, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerLiz1, -1
+	object_event  3, 42, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperRoland, -1
+	object_event 13, 35, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerLiz1, -1
 	object_event 19,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32CooltrainerMScript, -1
 	object_event 11, 82, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperPeter, -1
 	object_event  7, 70, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeTailSalesmanScript, EVENT_SLOWPOKE_WELL_ROCKETS
 	object_event  6, 53, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
 	object_event 15, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1
 	object_event 12, 67, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
-	object_event  3, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL
+	object_event  7, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL

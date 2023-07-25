@@ -479,6 +479,11 @@ _MartHowManyText::
 	text "How many?"
 	done
 
+AlreadyHaveTMText::
+	text "You already have"
+	line "that TM."
+	done
+
 _MartFinalPriceText::
 	text_decimal wItemQuantityChange, 1, 2
 	text " @"
@@ -1523,4 +1528,9 @@ _MomLostGearBookletText::
 
 	para "Come back again in"
 	line "a while."
+	prompt
+
+_CantDepositText::
+	text "Can't deposit"
+	line "this item."
 	prompt

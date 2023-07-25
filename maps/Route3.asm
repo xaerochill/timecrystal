@@ -56,6 +56,9 @@ TrainerFirebreatherBurt:
 Route3MtMoonSquareSign:
 	jumptext Route3MtMoonSquareSignText
 
+Route3MineshaftSign:
+	jumptext Route3MineshaftSignText
+
 FirebreatherOtisSeenText:
 	text "Ah! The weather's"
 	line "as fine as ever."
@@ -130,16 +133,26 @@ Route3MtMoonSquareSignText:
 	line "stairs."
 	done
 
+Route3MineshaftSignText:
+	text "ATTENTION!"
+
+	para "Mine Shaft"
+	line "ahead. Watch"
+	cont "your step."
+	done
+
 Route3_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event 52,  1, MOUNT_MOON, 1
+	warp_event 12, 15, MINESHAFT_1F, 1
 
 	def_coord_events
 
 	def_bg_events
 	bg_event 49, 13, BGEVENT_READ, Route3MtMoonSquareSign
+	bg_event 11, 13, BGEVENT_READ, Route3MineshaftSign
 
 	def_object_events
 	object_event 26, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherOtis, -1

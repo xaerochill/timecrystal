@@ -432,6 +432,7 @@ Route25_MapEvents:
 
 	def_warp_events
 	warp_event 47,  5, BILLS_HOUSE, 1
+	warp_event 50,  4, BILLS_GARDEN, 1
 
 	def_coord_events
 	coord_event 42,  6, SCENE_ROUTE25_MISTYS_DATE, Route25MistyDate1Script

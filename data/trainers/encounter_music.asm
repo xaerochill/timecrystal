@@ -37,7 +37,7 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntm
 	db MUSIC_HIKER_ENCOUNTER       ; gentleman
 	db MUSIC_BEAUTY_ENCOUNTER      ; skier
-	db MUSIC_BEAUTY_ENCOUNTER      ; teacher
+	db MUSIC_BEAUTY_ENCOUNTER      ; teacherf
 	db MUSIC_BEAUTY_ENCOUNTER      ; sabrina
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; bug_catcher
 	db MUSIC_HIKER_ENCOUNTER       ; fisher
@@ -71,7 +71,14 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; officer
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntf
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
+	db MUSIC_SAGE_ENCOUNTER        ; agatha
+	db MUSIC_POKEMANIAC_ENCOUNTER  ; engineer
+	db MUSIC_ROCKET_ENCOUNTER      ; giovanni
+	db MUSIC_HIKER_ENCOUNTER       ; kurt
+	db MUSIC_BEAUTY_ENCOUNTER      ; lorelei
+	db MUSIC_ROCKET_ENCOUNTER      ; soldier
+	db MUSIC_HIKER_ENCOUNTER       ; sportsman
+	db MUSIC_HIKER_ENCOUNTER       ; teacherm
+	db MUSIC_BEAUTY_ENCOUNTER      ; green
+	db MUSIC_HIKER_ENCOUNTER       ; yellow
 	assert_table_length NUM_TRAINER_CLASSES + 1
-	db MUSIC_HIKER_ENCOUNTER       ; unused
-	db MUSIC_HIKER_ENCOUNTER       ; unused
-	db MUSIC_HIKER_ENCOUNTER       ; unused

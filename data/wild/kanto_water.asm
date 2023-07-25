@@ -121,6 +121,48 @@ KantoWaterWildMons:
 	db 40, POLIWHIRL
 	end_water_wildmons
 
+	def_water_wildmons SAFARI_ZONE_CENTER
+	db 6 percent ; encounter rate
+	db 15, PSYDUCK
+	db 15, POLIWAG
+	db 15, DRATINI
+	end_water_wildmons
+
+	def_water_wildmons SAFARI_ZONE_EAST
+	db 6 percent ; encounter rate
+	db 15, PSYDUCK
+	db 15, POLIWAG
+	db 15, DRATINI
+	end_water_wildmons
+
+	def_water_wildmons SAFARI_ZONE_NORTH
+	db 6 percent ; encounter rate
+	db 15, PSYDUCK
+	db 15, POLIWAG
+	db 15, DRATINI
+	end_water_wildmons
+
+	def_water_wildmons SAFARI_ZONE_BETA
+	db 6 percent ; encounter rate
+	db 15, PSYDUCK
+	db 15, POLIWAG
+	db 15, DRATINI
+	end_water_wildmons
+
+	def_water_wildmons CERULEAN_CAVE_1F
+	db 6 percent ; encounter rate
+	db 50, SLOWBRO
+	db 51, SEADRA
+	db 52, POLIWHIRL
+	end_water_wildmons
+
+	def_water_wildmons CERULEAN_CAVE_B1F
+	db 6 percent ; encounter rate
+	db 62, SEAKING
+	db 63, KINGLER
+	db 64, GYARADOS
+	end_water_wildmons
+
 	def_water_wildmons PALLET_TOWN
 	db 6 percent ; encounter rate
 	db 35, TENTACOOL
@@ -166,8 +208,50 @@ KantoWaterWildMons:
 	def_water_wildmons CINNABAR_ISLAND
 	db 6 percent ; encounter rate
 	db 35, TENTACOOL
-	db 30, TENTACOOL
+	db 35, TENTACOOL
 	db 35, TENTACRUEL
+	end_water_wildmons
+
+	def_water_wildmons SEAFOAM_ISLANDS_1F
+	db 6 percent ; encounter rate
+	db 30, TENTACOOL
+	db 30, HORSEA
+	db 35, TENTACRUEL
+	end_water_wildmons
+
+	def_water_wildmons SEAFOAM_ISLANDS_B1F
+	db 6 percent ; encounter rate
+	db 32, TENTACOOL
+	db 32, HORSEA
+	db 38, TENTACRUEL
+	end_water_wildmons
+
+	def_water_wildmons SEAFOAM_ISLANDS_B2F
+	db 6 percent ; encounter rate
+	db 35, TENTACOOL
+	db 35, HORSEA
+	db 38, TENTACRUEL
+	end_water_wildmons
+
+	def_water_wildmons SEAFOAM_ISLANDS_B3F
+	db 6 percent ; encounter rate
+	db 28, TENTACOOL
+	db 40, SEADRA
+	db 40, TENTACRUEL
+	end_water_wildmons
+
+	def_water_wildmons SEAFOAM_ISLANDS_B4F
+	db 6 percent ; encounter rate
+	db 40, TENTACOOL
+	db 40, SEADRA
+	db 40, TENTACRUEL
+	end_water_wildmons
+
+	def_water_wildmons BILLS_GARDEN
+	db 6 percent ; encounter rate
+	db 36, MARILL
+	db 46, DRATINI
+	db 52, VAPOREON
 	end_water_wildmons
 
 	db -1 ; end

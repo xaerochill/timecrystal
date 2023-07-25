@@ -75,7 +75,7 @@ LizGossip:
 	sjump LizGossipScript
 
 .Teacher:
-	gettrainerclassname STRING_BUFFER_4, TEACHER
+	gettrainerclassname STRING_BUFFER_4, TEACHERF
 	sjump LizGossipScript
 
 .SwimmerF:

@@ -94,6 +94,8 @@ ProfElmScript:
 	iftrue ElmCheckMasterBall
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue ElmGiveTicketScript
+	ld hl, wBadges
+	ifequal NUM_JOHTO_BADGES, ElmGiveTicketScript
 ElmCheckMasterBall:
 	checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
 	iftrue ElmCheckEverstone
@@ -132,7 +134,6 @@ ElmCheckTogepiEgg:
 	checkevent EVENT_TOGEPI_HATCHED
 	iftrue ElmEggHatchedScript
 ElmCheckGotEggAgain:
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE ; why are we checking it again?
 	iftrue ElmWaitingEggHatchScript
 	checkflag ENGINE_ZEPHYRBADGE
 	iftrue ElmAideHasEggScript
@@ -460,6 +461,7 @@ AideScript_WalkPotion1:
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksRight1
 	turnobject PLAYER, DOWN
 	scall AideScript_GivePotion
+	scall AideScript_GivePocketPC
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksLeft1
 	end
 
@@ -467,6 +469,7 @@ AideScript_WalkPotion2:
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksRight2
 	turnobject PLAYER, DOWN
 	scall AideScript_GivePotion
+	scall AideScript_GivePocketPC
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksLeft2
 	end
 
@@ -476,6 +479,16 @@ AideScript_GivePotion:
 	promptbutton
 	verbosegiveitem POTION
 	writetext AideText_AlwaysBusy
+	waitbutton
+	closetext
+	end
+
+AideScript_GivePocketPC:
+	opentext
+	writetext AideText_GetPocketPCText
+	promptbutton
+	giveitem POCKET_PC
+	writetext AideText_PocketPCInfoText
 	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
@@ -601,9 +614,6 @@ ElmsLabTrashcan:
 
 ElmsLabPC:
 	jumptext ElmsLabPCText
-
-ElmsLabTrashcan2: ; unreferenced
-	jumpstd TrashCanScript
 
 ElmsLabBookshelf:
 	jumpstd DifficultBookshelfScript
@@ -1366,6 +1376,18 @@ ElmsLabPCText:
 
 	para "…It says on the"
 	line "screen…"
+	done
+
+AideText_GetPocketPCText:
+	text "Oh, I have this"
+	line "for you too."
+
+	para "It's a Pocket PC!"
+	done
+	
+AideText_PocketPCInfoText:
+	text "Use this to manage"
+	line "your party."
 	done
 
 ElmsLab_MapEvents:

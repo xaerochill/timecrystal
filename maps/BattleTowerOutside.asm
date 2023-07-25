@@ -8,29 +8,63 @@ BattleTowerOutside_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, BattleTowerOutsideNoopCallback
+	callback MAPCALLBACK_TILES, BattleTowerOutsideDoorsCallback
 	callback MAPCALLBACK_OBJECTS, BattleTowerOutsideShowCiviliansCallback
 
-BattleTowerOutsideNoopCallback:
+BattleTowerOutsideDoorsCallback:
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+	iftrue .doorsopen;$7CE6
+	changeblock 8, 8, $2C
+	endcallback
+
+.doorsopen
+	changeblock 8, 8, $12
 	endcallback
 
 BattleTowerOutsideShowCiviliansCallback:
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+	iffalse .nomobile
 	clearevent EVENT_BATTLE_TOWER_OPEN_CIVILIANS
+
+.nomobile
 	endcallback
 
 BattleTowerOutsideYoungsterScript:
-	jumptextfaceplayer BattleTowerOutsideYoungsterText
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+	iftrue .mobile
+	jumptextfaceplayer BattleTowerOutsideYoungsterText_NotYetOpen
+
+.mobile
+	jumptextfaceplayer BattleTowerOutsideYoungsterText_Mobile
 
 BattleTowerOutsideBeautyScript:
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+	iftrue .mobile
+	jumptextfaceplayer BattleTowerOutsideBeautyText_NotYetOpen
+
+.mobile
 	jumptextfaceplayer BattleTowerOutsideBeautyText
 
 BattleTowerOutsideSailorScript:
-	jumptextfaceplayer BattleTowerOutsideSailorText
+	jumptextfaceplayer BattleTowerOutsideSailorText_Mobile
 
 BattleTowerOutsideSign:
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+	iftrue .mobile
+	jumptext BattleTowerOutsideSignText_NotYetOpen
+
+.mobile
 	jumptext BattleTowerOutsideSignText
 
-BattleTowerOutsideYoungsterText_NotYetOpen: ; unreferenced
+BattleTowerOutsideDoor:
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+	iftrue .mobile
+	jumptext BattleTowerOutsideText_DoorsClosed
+
+.mobile
+	jumptext BattleTowerOutsideText_DoorsOpen
+
+BattleTowerOutsideYoungsterText_NotYetOpen:
 	text "Wow, the BATTLE"
 	line "TOWER is huge! My"
 
@@ -38,7 +72,7 @@ BattleTowerOutsideYoungsterText_NotYetOpen: ; unreferenced
 	line "looking up at it."
 	done
 
-BattleTowerOutsideYoungsterText_Mobile: ; unreferenced
+BattleTowerOutsideYoungsterText_Mobile:
 	text "Wow, the BATTLE"
 	line "TOWER is huge!"
 
@@ -61,7 +95,7 @@ BattleTowerOutsideYoungsterText:
 	cont "in there!"
 	done
 
-BattleTowerOutsideBeautyText_NotYetOpen: ; unreferenced
+BattleTowerOutsideBeautyText_NotYetOpen:
 	text "What on earth do"
 	line "they do here?"
 
@@ -83,7 +117,7 @@ BattleTowerOutsideBeautyText:
 	line "battle…"
 	done
 
-BattleTowerOutsideSailorText_Mobile: ; unreferenced
+BattleTowerOutsideSailorText_Mobile:
 	text "Ehehehe…"
 	line "I sneaked out of"
 	cont "work to come here."
@@ -104,8 +138,7 @@ BattleTowerOutsideSailorText:
 	line "all. That I must!"
 	done
 
-BattleTowerOutsideSignText_NotYetOpen: ; unreferenced
-; originally shown when the Battle Tower was closed
+BattleTowerOutsideSignText_NotYetOpen:
 	text "BATTLE TOWER"
 	done
 
@@ -116,14 +149,12 @@ BattleTowerOutsideSignText:
 	line "Trainer Challenge!"
 	done
 
-BattleTowerOutsideText_DoorsClosed: ; unreferenced
-; originally shown when the Battle Tower was closed
+BattleTowerOutsideText_DoorsClosed:
 	text "The BATTLE TOWER's"
 	line "doors are closed…"
 	done
 
-BattleTowerOutsideText_DoorsOpen: ; unreferenced
-; originally shown after the Battle Tower opened
+BattleTowerOutsideText_DoorsOpen:
 	text "It's open!"
 	done
 
@@ -140,9 +171,11 @@ BattleTowerOutside_MapEvents:
 
 	def_bg_events
 	bg_event 10, 10, BGEVENT_READ, BattleTowerOutsideSign
+	bg_event  8,  9, BGEVENT_READ, BattleTowerOutsideDoor; 67e8f
+	bg_event  9,  9, BGEVENT_READ, BattleTowerOutsideDoor
 
 	def_object_events
-	object_event  6, 12, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideYoungsterScript, -1
 	object_event 13, 11, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideBeautyScript, -1
-	object_event 12, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OPEN_CIVILIANS
+	object_event  8, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OPEN_CIVILIANS
 	object_event 12, 24, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  6, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideYoungsterScript, -1

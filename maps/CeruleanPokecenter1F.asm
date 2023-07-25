@@ -12,7 +12,7 @@ CeruleanPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 CeruleanPokecenter1FSuperNerdScript:
-	special Mobile_DummyReturnFalse
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
 	iftrue .mobile
 	jumptextfaceplayer CeruleanPokecenter1FSuperNerdText
 

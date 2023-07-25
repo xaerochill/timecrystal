@@ -1,4 +1,5 @@
 	object_const_def
+	const VERMILION_PORT_MEW
 	const VERMILIONPORT_SAILOR1
 	const VERMILIONPORT_SAILOR2
 	const VERMILIONPORT_SUPER_NERD
@@ -10,6 +11,87 @@ VermilionPort_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, VermilionPortFlypointCallback
+	callback MAPCALLBACK_TILES, VermilionPortTruckCallback
+	callback MAPCALLBACK_OBJECTS, VermilionPortMewCallback
+
+VermilionPortMewCallback:
+	disappear VERMILION_PORT_MEW
+	endcallback
+
+VermilionPortTruckCallback:
+	checkevent EVENT_FOUGHT_MEW
+	iffalse .StayTruck
+	changeblock 32,  8, $23 ; truck right
+	changeblock 30,  8, $22 ; truck left
+.StayTruck:
+	endcallback
+
+VermilionPortMew:
+	checkevent EVENT_FOUGHT_MEW
+	iffalse .Track
+	opentext
+	writetext VermilionPortMewText
+	waitbutton
+	closetext
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
+	iffalse .Trick
+	special FadeOutMusic
+	showemote EMOTE_QUESTION, PLAYER, 15
+	refreshscreen
+	changeblock 32,  8, $23 ; truck right
+	changeblock 30,  8, $22 ; truck left
+	earthquake 30
+	reloadmappart
+	pause 15
+	appear VERMILION_PORT_MEW
+	faceplayer
+	opentext
+	writetext MewText
+	cry MEW
+	pause 15
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	loadwildmon MEW, 5
+	startbattle
+	disappear VERMILION_PORT_MEW
+	setevent EVENT_FOUGHT_MEW
+	reloadmapafterbattle
+	end
+	
+.Trick
+	opentext
+	writetext TrickText
+	closetext
+	end
+
+.Track
+	opentext
+	writetext TrackText
+	closetext
+	end
+
+VermilionPortMewText:
+	text "There is"
+	line "something"
+	cont "under the truck!"
+	done
+
+MewText:
+	text "Mew!"
+	done
+
+TrickText:
+	text "Oh... It must"
+	line "have been a"
+	cont "trick of light."
+	done
+
+TrackText:
+	text "There are tire"
+	line "tracks visible"
+	cont "on the ground."
+	done
+
 
 VermilionPortNoopScene:
 	end
@@ -300,16 +382,18 @@ VermilionPort_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9,  5, VERMILION_PORT_PASSAGE, 5
-	warp_event  7, 17, FAST_SHIP_1F, 1
+	warp_event 17,  5, VERMILION_PORT_PASSAGE, 5
+	warp_event 17, 15, FAST_SHIP_1F, 1
 
 	def_coord_events
-	coord_event  7, 11, SCENE_VERMILIONPORT_ASK_ENTER_SHIP, VermilionPortWalkUpToShipScript
+	coord_event 17,  9, SCENE_VERMILIONPORT_ASK_ENTER_SHIP, VermilionPortWalkUpToShipScript
 
 	def_bg_events
-	bg_event 16, 13, BGEVENT_ITEM, VermilionPortHiddenIron
+	bg_event 25, 14, BGEVENT_ITEM, VermilionPortHiddenIron
+	bg_event 33,  8, BGEVENT_LEFT, VermilionPortMew
 
 	def_object_events
-	object_event  7, 17, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSailorAtGangwayScript, EVENT_VERMILION_PORT_SAILOR_AT_GANGWAY
-	object_event  6, 11, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSailorScript, -1
-	object_event 11, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSuperNerdScript, -1
+	object_event 33,  8, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, VermilionPortMew, EVENT_VERMILION_PORT_MEW
+	object_event 17, 15, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSailorAtGangwayScript, EVENT_VERMILION_PORT_SAILOR_AT_GANGWAY
+	object_event 16,  9, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSailorScript, -1
+	object_event 34, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VermilionPortSuperNerdScript, -1

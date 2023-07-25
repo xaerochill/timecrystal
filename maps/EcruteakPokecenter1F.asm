@@ -59,7 +59,7 @@ EcruteakPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 EcruteakPokecenter1FPokefanMScript:
-	special Mobile_DummyReturnFalse
+	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
 	iftrue .mobile
 	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
 

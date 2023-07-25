@@ -10,6 +10,8 @@ WhirlIslandLugiaChamber_MapScripts:
 WhirlIslandLugiaChamberLugiaCallback:
 	checkevent EVENT_FOUGHT_LUGIA
 	iftrue .NoAppear
+	checkevent ENGINE_UNLOCKED_UNOWNS_L_TO_R
+	iftrue .NoAppear
 	checkitem SILVER_WING
 	iftrue .Appear
 	sjump .NoAppear

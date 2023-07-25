@@ -51,11 +51,16 @@ WardensGranddaughterText1:
 
 WardensGranddaughterText2:
 	text "Many people were"
-	line "disappointed that"
+	line "excited that a"
 
-	para "SAFARI ZONE closed"
-	line "down, but Grandpa"
-	cont "is so stubborn…"
+	para "new investor"
+	line "saved the SAFARI"
+	cont "ZONE but there"
+	cont "are rumours that"
+	
+	para "SILPH's manager"
+	cont "is hiding in the"
+	cont "SAFARI ZONE."
 	done
 
 WardenPhotoText:

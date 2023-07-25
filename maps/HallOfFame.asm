@@ -38,10 +38,26 @@ HallOfFameEnterScript:
 	clearevent EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
 	setmapscene SPROUT_TOWER_3F, SCENE_SPROUTTOWER3F_NOOP
 	special HealParty
-	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
-	iftrue .SkipPhoneCall
-	specialphonecall SPECIALCALL_SSTICKET
-.SkipPhoneCall:
+	readvar VAR_UNOWNCOUNT
+	ifless NUM_UNOWN, .SkipResets
+	clearevent EVENT_FOUGHT_ARTICUNO
+	clearevent EVENT_FOUGHT_ZAPDOS
+	clearevent EVENT_FOUGHT_MOLTRES
+	clearevent EVENT_FOUGHT_MEWTWO
+	clearevent EVENT_FOUGHT_MEW
+	clearevent EVENT_FOUGHT_LUGIA
+	clearevent EVENT_FOUGHT_HO_OH
+	clearevent EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
+	clearevent EVENT_GOT_MASTER_BALL_FROM_ELM
+	clearevent EVENT_GOT_ODD_EGG
+	clearevent EVENT_BEAT_OAK
+	clearevent EVENT_BEAT_AGATHA
+	clearevent EVENT_BEAT_GIOVANNI
+	clearevent EVENT_BEAT_KURT
+	clearevent EVENT_BEAT_LORELEI
+	clearevent EVENT_BEAT_GREEN
+	clearevent EVENT_BEAT_YELLOW
+.SkipResets:
 	halloffame
 	end
 

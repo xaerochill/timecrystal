@@ -34,7 +34,7 @@ BTTrainerClassSprites:
 	db SPRITE_ROCKET
 	db SPRITE_GENTLEMAN
 	db SPRITE_BEAUTY
-	db SPRITE_TEACHER
+	db SPRITE_TEACHER_F
 	db SPRITE_SABRINA
 	db SPRITE_BUG_CATCHER
 	db SPRITE_FISHER
@@ -67,4 +67,15 @@ BTTrainerClassSprites:
 	db SPRITE_BLUE
 	db SPRITE_OFFICER
 	db SPRITE_ROCKET_GIRL
-	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN
+	db SPRITE_SUPER_NERD ; Mythicalman
+	db SPRITE_GRANNY ; Agatha
+	db SPRITE_ROCKER ; Engineer
+	db SPRITE_GENTLEMAN ; Giovanni
+	db SPRITE_KURT
+	db SPRITE_BEAUTY ; Lorelei
+	db SPRITE_ROCKET ; Soldier
+	db SPRITE_CLERK ; Sportsman
+	db SPRITE_PHARMACIST ; TeacherM
+	db SPRITE_LASS ; Green
+	db SPRITE_BUG_CATCHER ; Yellow
+	assert_table_length NUM_TRAINER_CLASSES

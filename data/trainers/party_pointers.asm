@@ -70,4 +70,14 @@ TrainerGroups:
 	dw OfficerGroup
 	dw GruntFGroup
 	dw MysticalmanGroup
+	dw AgathaGroup
+	dw EngineerGroup
+	dw GiovanniGroup
+	dw KurtGroup
+	dw LoreleiGroup
+	dw SoldierGroup
+	dw SportsmanGroup
+	dw TeacherMGroup
+	dw GreenGroup
+	dw YellowGroup
 	assert_table_length NUM_TRAINER_CLASSES

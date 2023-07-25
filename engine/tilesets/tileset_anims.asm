@@ -78,6 +78,7 @@ TilesetForestAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetJohtoAnim:
+TilesetJohtoClassicAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -90,34 +91,6 @@ TilesetJohtoAnim:
 	dw WhirlpoolFrames4, AnimateWhirlpoolTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
-	dw NULL,  DoneTileAnimation
-
-UnusedTilesetAnim1: ; unreferenced
-; Scrolls tile $03 like cave water, but also has the standard $03 flower tile.
-	dw vTiles2 tile $03, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $03, WriteTileFromAnimBuffer
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  DoneTileAnimation
-
-UnusedTilesetAnim2: ; unreferenced
-; Scrolls tile $14 like cave water.
-	dw vTiles2 tile $14, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $14, WriteTileFromAnimBuffer
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
 TilesetPortAnim:
@@ -144,38 +117,6 @@ TilesetEliteFourRoomAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
-UnusedTilesetAnim3: ; unreferenced
-; Scrolls tile $53 like a waterfall; scrolls tile $03 like cave water.
-	dw vTiles2 tile $53, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $53, WriteTileFromAnimBuffer
-	dw vTiles2 tile $03, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $03, WriteTileFromAnimBuffer
-	dw vTiles2 tile $53, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $53, WriteTileFromAnimBuffer
-	dw NULL,  DoneTileAnimation
-
-UnusedTilesetAnim4: ; unreferenced
-; Scrolls tile $54 like a waterfall; scrolls tile $03 like cave water.
-	dw vTiles2 tile $54, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $54, WriteTileFromAnimBuffer
-	dw NULL,  WaitTileAnimation
-	dw vTiles2 tile $03, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $03, WriteTileFromAnimBuffer
-	dw NULL,  WaitTileAnimation
-	dw vTiles2 tile $54, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $54, WriteTileFromAnimBuffer
-	dw NULL,  DoneTileAnimation
-
 TilesetCaveAnim:
 TilesetDarkCaveAnim:
 	dw vTiles2 tile $14, ReadTileToAnimBuffer
@@ -186,7 +127,7 @@ TilesetDarkCaveAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $40, ReadTileToAnimBuffer
+	dw vTiles2 tile $01, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
@@ -194,7 +135,7 @@ TilesetDarkCaveAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $40, WriteTileFromAnimBuffer
+	dw vTiles2 tile $01, WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  DoneTileAnimation
 
@@ -207,7 +148,7 @@ TilesetIcePathAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $31, ReadTileToAnimBuffer
+	dw NULL,  ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
@@ -215,7 +156,7 @@ TilesetIcePathAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  FlickeringCaveEntrancePalette
-	dw vTiles2 tile $31, WriteTileFromAnimBuffer
+	dw NULL,  WriteTileFromAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  DoneTileAnimation
 
@@ -237,19 +178,6 @@ TilesetTowerAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
-UnusedTilesetAnim5: ; unreferenced
-; Scrolls tile $4f like cave water.
-	dw vTiles2 tile $4f, ReadTileToAnimBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $4f, WriteTileFromAnimBuffer
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  DoneTileAnimation
-
 TilesetBattleTowerOutsideAnim:
 TilesetHouseAnim:
 TilesetPlayersHouseAnim:
@@ -264,17 +192,11 @@ TilesetTraditionalHouseAnim:
 TilesetTrainStationAnim:
 TilesetChampionsRoomAnim:
 TilesetLighthouseAnim:
-TilesetPlayersRoomAnim:
 TilesetPokeComCenterAnim:
 TilesetBattleTowerInsideAnim:
 TilesetRuinsOfAlphAnim:
 TilesetRadioTowerAnim:
 TilesetUndergroundAnim:
-TilesetBetaWordRoomAnim:
-TilesetHoOhWordRoomAnim:
-TilesetKabutoWordRoomAnim:
-TilesetOmanyteWordRoomAnim:
-TilesetAerodactylWordRoomAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -639,26 +561,8 @@ ForestTreeRightAnimation2:
 
 GetForestTreeFrame:
 ; Return 0 if a is even, or 2 if odd.
-	and a
-	jr z, .even
-	cp 1
-	jr z, .odd
-	cp 2
-	jr z, .even
-	cp 3
-	jr z, .odd
-	cp 4
-	jr z, .even
-	cp 5
-	jr z, .odd
-	cp 6
-	jr z, .even
-.odd
-	ld a, 2
-	scf
-	ret
-.even
-	xor a
+	and 1
+	add a
 	ret
 
 AnimateFlowerTile:
@@ -1018,7 +922,7 @@ FlickeringCaveEntrancePalette:
 
 TowerPillarTilePointer1:  dw vTiles2 tile $2d, TowerPillarTile1
 TowerPillarTilePointer2:  dw vTiles2 tile $2f, TowerPillarTile2
-TowerPillarTilePointer3:  dw vTiles2 tile $3d, TowerPillarTile3
+TowerPillarTilePointer3:  dw vTiles2 tile $01, TowerPillarTile3
 TowerPillarTilePointer4:  dw vTiles2 tile $3f, TowerPillarTile4
 TowerPillarTilePointer5:  dw vTiles2 tile $3c, TowerPillarTile5
 TowerPillarTilePointer6:  dw vTiles2 tile $2c, TowerPillarTile6

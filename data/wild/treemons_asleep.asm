@@ -12,6 +12,8 @@ AsleepTreeMonsNite:
 	db EXEGGCUTE
 	db LEDYBA
 	db AIPOM
+	db TANGELA
+	db ARBOK
 	db -1 ; end
 
 AsleepTreeMonsDay:

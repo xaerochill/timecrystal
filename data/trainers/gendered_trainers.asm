@@ -26,6 +26,13 @@ MaleTrainers:
 	db SAGE
 	db BIKER
 	db SCIENTIST
+	db MYSTICALMAN
+	db ENGINEER
+	db GIOVANNI
+	db KURT
+	db SOLDIER
+	db SPORTSMAN
+	db TEACHERM
 .End
 
 FemaleTrainers:
@@ -33,10 +40,14 @@ FemaleTrainers:
 	db LASS
 	db BEAUTY
 	db SKIER
-	db TEACHER
+	db TEACHERF
 	db SWIMMERF
 	db PICNICKER
 	db KIMONO_GIRL
 	db POKEFANF
 	db COOLTRAINERF
+	db AGATHA
+	db LORELEI
+	db GREEN
+	db YELLOW
 .End

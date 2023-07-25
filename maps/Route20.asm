@@ -46,8 +46,11 @@ TrainerSwimmermCameron:
 	closetext
 	end
 
-CinnabarGymSign:
-	jumptext CinnabarGymSignText
+SeafoamIslandsSign:
+	jumptext SeafoamIslandsSignText
+
+KantoLighthouseSign:
+	jumptext KantoLighthouseSignText
 
 SwimmerfNicoleSeenText:
 	text "I feel so much"
@@ -102,24 +105,26 @@ SwimmermCameronAfterBattleText:
 	cont "ponds and rivers."
 	done
 
-CinnabarGymSignText:
-	text "What does this"
-	line "sign say?"
+SeafoamIslandsSignText:
+	text "SEAFOAM ISLANDS"
+	done
 
-	para "CINNABAR GYM"
-	line "LEADER: BLAINE"
+KantoLighthouseSignText:
+	text "KANTO LIGHTHOUSE"
 	done
 
 Route20_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 38,  7, SEAFOAM_GYM, 1
+	warp_event 30,  5, SEAFOAM_ISLANDS_1F, 1
+	warp_event 38,  9, SEAFOAM_ISLANDS_1F, 2
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 37, 11, BGEVENT_READ, CinnabarGymSign
+	bg_event 37, 11, BGEVENT_READ, SeafoamIslandsSign
+	bg_event 33, 07, BGEVENT_READ, KantoLighthouseSign
 
 	def_object_events
 	object_event 52,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
