@@ -63,7 +63,7 @@ NewGame:
 	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTilemapEtc
-	call AreYouABoyOrAreYouAGirl
+	call PlayerProfileSetup
 	call OakSpeech
 	call InitializeWorld
 
@@ -77,15 +77,14 @@ NewGame:
 	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
 
-AreYouABoyOrAreYouAGirl:
-	farcall Mobile_AlwaysReturnNotCarry ; mobile
+PlayerProfileSetup:
+	farcall CheckMobileAdapterStatus
 	jr c, .ok
 	farcall InitGender
 	ret
-
 .ok
 	ld c, 0
-	farcall InitMobileProfile ; mobile
+	farcall InitMobileProfile
 	ret
 
 if DEF(_DEBUG)
@@ -220,7 +219,7 @@ endc
 
 	farcall DeletePartyMonMail
 
-	farcall DeleteMobileEventIndex
+	farcall ClearGSBallFlag
 
 	call ResetGameTime
 	ret
@@ -401,12 +400,9 @@ PostCreditsSpawn:
 	ldh [hMapEntryMethod], a
 	ret
 
-Continue_MobileAdapterMenu:
-	farcall Mobile_AlwaysReturnNotCarry ; mobile check
+Continue_MobileAdapterMenu: ; unused
+	farcall CheckMobileAdapterStatus
 	ret nc
-
-; the rest of this stuff is never reached because
-; the previous function returns with carry not set
 	ld hl, wd479
 	bit 1, [hl]
 	ret nz
@@ -956,10 +952,10 @@ Intro_PlacePlayerSprite:
 .sprites
 	db 4
 	; y pxl, x pxl, tile offset
-	db  9 * 8 + 4,  9 * 8, 0
-	db  9 * 8 + 4, 10 * 8, 1
-	db 10 * 8 + 4,  9 * 8, 2
-	db 10 * 8 + 4, 10 * 8, 3
+	db  9 * TILE_WIDTH + 4,  9 * TILE_WIDTH, 0
+	db  9 * TILE_WIDTH + 4, 10 * TILE_WIDTH, 1
+	db 10 * TILE_WIDTH + 4,  9 * TILE_WIDTH, 2
+	db 10 * TILE_WIDTH + 4, 10 * TILE_WIDTH, 3
 
 
 	const_def

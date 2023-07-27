@@ -1,11 +1,6 @@
 	object_const_def
 	const GOLDENRODPOKECENTER1F_NURSE
-	const GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST
-	const GOLDENRODPOKECENTER1F_SUPER_NERD ; $04
-	const GOLDENRODPOKECENTER1F_LASS2 ; $05
-	const GOLDENRODPOKECENTER1F_YOUNGSTER
-	const GOLDENRODPOKECENTER1F_TEACHER ; $07
-	const GOLDENRODPOKECENTER1F_ROCKER ; $08
+	const GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST
 	const GOLDENRODPOKECENTER1F_GAMEBOY_KID
 	const GOLDENRODPOKECENTER1F_GRAMPS ; $0A
 	const GOLDENRODPOKECENTER1F_LASS
@@ -51,8 +46,22 @@ GoldenrodPokecenter1FNurseScript:
 	setevent EVENT_WELCOMED_TO_POKECOM_CENTER
 	jumpstd PokecenterNurseScript
 
-GoldenrodPokecenter1FTradeCornerAttendantScript:
-	special SetBitsForLinkTradeRequest
+GoldenrodPokecenter1F_GSBallSceneLeft:
+	setval BATTLETOWERACTION_GSBALL
+	special BattleTowerAction
+	ifequal GS_BALL_AVAILABLE, .gsball
+	end
+
+.gsball
+	checkevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
+	iftrue .cancel
+	playsound SFX_EXIT_BUILDING
+	moveobject GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7
+	disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST
+	appear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST
+	playmusic MUSIC_SHOW_ME_AROUND
+	applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement
+	turnobject PLAYER, UP
 	opentext
 	writetext GoldenrodPokecomCenterWelcomeToTradeCornerText ; $2d6a
 	buttonsound ; 54 in jp crystal?
@@ -82,20 +91,17 @@ GoldenrodPokecenter1FTradeCornerAttendantScript:
 	ifnotequal $00, CantTradeLastPokemon ; $E467
 	writetext GoldenrodPokecomCenterWhatMonDoYouWantText ; $9E6A
 	waitbutton
-	special Function11ac3e
-	ifequal $00, PlayerCancelled ; $D567
-	ifequal $02, .tradePokemonNeverSeen ; $BB67
-	writetext GoldenrodPokecomCenterWeWillTradeYourMonForMonText ; $B96A ; 567B5
-	sjump  .tradePokemon ; $BE67
-.tradePokemonNeverSeen
-	writetext GoldenrodPokecomCenterWeWillTradeYourMonForNewText ; $1E6B
-.tradePokemon
-	special TradeCornerHoldMon ; create data to send?
-	ifequal $0A, PlayerCancelled ; $D567
-	ifnotequal $00, MobileError ; $DB67
-	writetext GoldenrodPokecomCenterYourMonHasBeenReceivedText ; $A86B
+	verbosegiveitem GS_BALL
+	setevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
+	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
+	writetext GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText
 	waitbutton
 	closetext
+	applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement
+	special RestartMapMusic
+	disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST
+	playsound SFX_EXIT_BUILDING
+.cancel
 	end
 
 .onlyHaveOnePokemon
@@ -327,34 +333,35 @@ GoldenrodPokecenter1F_GSBallSceneLeft:
 	sjump GoldenrodPokecenter1F_GSBallSceneRight.gsball ; 6769
 
 GoldenrodPokecenter1F_GSBallSceneRight:
+	setval BATTLETOWERACTION_GSBALL
 	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iffalse .nogsball ; $9769
-	checkevent EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER ; 340
-	iftrue .nogsball ; $9769
-	moveobject GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST, 13, 11
+	iftrue .gsball
+	end
 
-.gsball ; 56769
-	disappear GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST
-	appear GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST
+.gsball
+	checkevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
+	iftrue .cancel
+	playsound SFX_EXIT_BUILDING
+	moveobject GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7
+	disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST
+	appear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST
 	playmusic MUSIC_SHOW_ME_AROUND
-	applymovement GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistApproachPlayerMovement ; $0F6A
+	applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistApproachPlayerAtRightDoorwayTileMovement
 	turnobject PLAYER, UP
 	opentext
 	writetext GoldenrodPokeCenter1FLinkReceptionistPleaseAcceptGSBallText
 	waitbutton
 	verbosegiveitem GS_BALL
-	setevent EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
+	setevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
 	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
 	writetext GoldenrodPokeCenter1FLinkReceptionistPleaseDoComeAgainText
 	waitbutton
 	closetext
-	applymovement GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistWalkBackMovement ; $196A
+	applymovement GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokeCenter1FLinkReceptionistWalkToStairsFromRightDoorwayTileMovement
 	special RestartMapMusic
-	moveobject GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST, 16,  8
-	disappear GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST
-	appear GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST
-
-.nogsball
+	disappear GOLDENRODPOKECENTER1F_PCC_TRADE_CORNER_RECEPTIONIST
+	playsound SFX_EXIT_BUILDING
+.cancel
 	end
 
 GoldenrodPokecenter1FSuperNerdScript:
