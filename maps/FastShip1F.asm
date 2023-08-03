@@ -29,7 +29,6 @@ FastShip1FEnterShipScript:
 	pause 30
 	playsound SFX_BOAT
 	earthquake 30
-	blackoutmod FAST_SHIP_CABINS_SW_SSW_NW
 	clearevent EVENT_FAST_SHIP_HAS_ARRIVED
 	checkevent EVENT_FAST_SHIP_FIRST_TIME
 	iftrue .SkipGrandpa
