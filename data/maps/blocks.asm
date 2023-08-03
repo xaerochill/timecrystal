@@ -823,8 +823,14 @@ RockTunnelB1F_Blocks:
 DiglettsCave_Blocks:
 	INCBIN "maps/DiglettsCave.ablk"
 
-MountMoon_Blocks:
-	INCBIN "maps/MountMoon.ablk"
+MountMoon1F_Blocks:
+	INCBIN "maps/MountMoon1F.ablk"
+
+MountMoonB1F_Blocks:
+	INCBIN "maps/MountMoonB1F.ablk"
+
+MountMoonB2F_Blocks:
+	INCBIN "maps/MountMoonB2F.ablk"
 
 SeafoamGym_Blocks:
 	INCBIN "maps/SeafoamGym.ablk"

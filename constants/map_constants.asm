@@ -147,7 +147,7 @@ ENDM
 	map_const DRAGON_SHRINE,                                5,  5 ; 82
 	map_const TOHJO_FALLS,                                 15,  9 ; 83
 	map_const DIGLETTS_CAVE,                               10, 18 ; 84
-	map_const MOUNT_MOON,                                  15,  9 ; 85
+	map_const MOUNT_MOON_1F,                               20, 18 ; 85
 	map_const UNDERGROUND_PATH,                             3, 14 ; 86
 	map_const ROCK_TUNNEL_1F,                              15, 18 ; 87
 	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 88
@@ -184,6 +184,8 @@ ENDM
 	map_const SEAFOAM_ISLANDS_B2F,                         15,  9 ; 119
 	map_const SEAFOAM_ISLANDS_B3F,                         15,  9 ; 120
 	map_const SEAFOAM_ISLANDS_B4F,                         15,  9 ; 121
+	map_const MOUNT_MOON_B1F,                              14, 14 ; 122
+	map_const MOUNT_MOON_B2F,                              20, 18 ; 123
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -547,7 +549,7 @@ ENDM
 	endgroup
 
 	newgroup CHERRYGROVE                                          ; 26
-	map_const ROUTE_30,                                    10, 27 ;  1
+	map_const ROUTE_30,                                    13, 27 ;  1
 	map_const ROUTE_31,                                    20,  9 ;  2
 	map_const CHERRYGROVE_CITY,                            20,  9 ;  3
 	map_const CHERRYGROVE_MART,                             6,  4 ;  4

@@ -5,24 +5,24 @@ KantoGrassWildMons:
 	def_grass_wildmons DIGLETTS_CAVE
 	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, DIGLETT
-	db 6, DIGLETT
-	db 12, DIGLETT
-	db 24, DIGLETT
-	db 24, DUGTRIO
-	db 24, DUGTRIO
-	db 24, DUGTRIO
-	; day
-	db 2, DIGLETT
-	db 4, DIGLETT
-	db 8, DIGLETT
+	db 14, ZUBAT
+	db 14, DIGLETT
 	db 16, DIGLETT
-	db 16, DUGTRIO
-	db 16, DUGTRIO
-	db 16, DUGTRIO
+	db 32, DIGLETT
+	db 32, DUGTRIO
+	db 32, DUGTRIO
+	db 32, DUGTRIO
+	; day
+	db 14, DIGLETT
+	db 14, DIGLETT
+	db 16, DIGLETT
+	db 32, DIGLETT
+	db 32, DUGTRIO
+	db 32, DUGTRIO
+	db 32, DUGTRIO
 	; nite
-	db 4, DIGLETT
-	db 8, DIGLETT
+	db 14, ZUBAT
+	db 14, DIGLETT
 	db 16, DIGLETT
 	db 32, DIGLETT
 	db 32, DUGTRIO
@@ -30,32 +30,88 @@ KantoGrassWildMons:
 	db 32, DUGTRIO
 	end_grass_wildmons
 
-	def_grass_wildmons MOUNT_MOON
+	def_grass_wildmons MOUNT_MOON_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 6, ZUBAT
-	db 8, GEODUDE
-	db 8, SANDSHREW
-	db 12, PARAS
-	db 10, GEODUDE
-	db 8, CLEFAIRY
-	db 8, CLEFAIRY
+	db 21, ZUBAT
+	db 21, GEODUDE
+	db 22, SANDSHREW
+	db 22, PARAS
+	db 23, GEODUDE
+	db 24, CLEFAIRY
+	db 24, CLEFAIRY
 	; day
-	db 6, ZUBAT
-	db 8, GEODUDE
-	db 8, SANDSHREW
-	db 12, PARAS
-	db 10, GEODUDE
-	db 8, CLEFAIRY
-	db 8, CLEFAIRY
+	db 21, ZUBAT
+	db 21, GEODUDE
+	db 22, SANDSHREW
+	db 22, PARAS
+	db 23, GEODUDE
+	db 24, CLEFAIRY
+	db 24, CLEFAIRY
 	; nite
-	db 6, ZUBAT
-	db 8, GEODUDE
-	db 8, CLEFAIRY
-	db 12, PARAS
-	db 10, GEODUDE
-	db 12, CLEFAIRY
-	db 12, CLEFAIRY
+	db 21, ZUBAT
+	db 24, CLEFAIRY
+	db 22, SANDSHREW
+	db 22, PARAS
+	db 23, GEODUDE
+	db 24, CLEFAIRY
+	db 26, SANDSLASH
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 21, ZUBAT
+	db 21, GEODUDE
+	db 22, SANDSHREW
+	db 22, PARAS
+	db 23, GEODUDE
+	db 24, CLEFAIRY
+	db 26, SANDSLASH
+	; day
+	db 21, ZUBAT
+	db 21, GEODUDE
+	db 22, SANDSHREW
+	db 22, PARAS
+	db 23, GEODUDE
+	db 24, CLEFAIRY
+	db 26, SANDSLASH
+	; nite
+	db 21, ZUBAT
+	db 24, CLEFAIRY
+	db 22, SANDSHREW
+	db 22, PARAS
+	db 23, GEODUDE
+	db 24, CLEFAIRY
+	db 26, SANDSLASH
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON_B2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 21, ZUBAT
+	db 21, GEODUDE
+	db 22, SANDSHREW
+	db 22, PARAS
+	db 23, GEODUDE
+	db 24, CLEFAIRY
+	db 26, SANDSLASH
+	; day
+	db 21, ZUBAT
+	db 21, GEODUDE
+	db 22, SANDSHREW
+	db 22, PARAS
+	db 23, GEODUDE
+	db 24, CLEFAIRY
+	db 26, SANDSLASH
+	; nite
+	db 21, ZUBAT
+	db 24, CLEFAIRY
+	db 22, SANDSHREW
+	db 22, PARAS
+	db 23, GEODUDE
+	db 24, CLEFAIRY
+	db 26, SANDSLASH
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_1F

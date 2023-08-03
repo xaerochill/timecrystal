@@ -1,25 +1,30 @@
 	object_const_def
 	const MOUNTMOON_RIVAL
 
-MountMoon_MapScripts:
+MountMoonB2F_MapScripts:
 	def_scene_scripts
-	scene_script MountMoonRivalEncounterScene, SCENE_MOUNTMOON_RIVAL_BATTLE
-	scene_script MountMoonNoopScene,           SCENE_MOUNTMOON_NOOP
+	scene_script MountMoonNoop1Scene, SCENE_MOUNTMOON_RIVAL_BATTLE
+	scene_script MountMoonNoop2Scene, SCENE_MOUNTMOON_NOOP
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, MountMoonRivalCallback
 
-MountMoonRivalEncounterScene:
-	sdefer MountMoonRivalBattleScript
+MountMoonRivalCallback:
+	disappear MOUNTMOON_RIVAL
+	endcallback
+
+MountMoonNoop1Scene:
 	end
 
-MountMoonNoopScene:
+MountMoonNoop2Scene:
 	end
 
-MountMoonRivalBattleScript:
-	turnobject PLAYER, RIGHT
+MountMoonRivalFight:
+	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
+	appear MOUNTMOON_RIVAL
 	applymovement MOUNTMOON_RIVAL, MountMoonRivalMovementBefore
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
@@ -71,18 +76,12 @@ MountMoonRivalBattleScript:
 
 MountMoonRivalMovementBefore:
 	step LEFT
-	step LEFT
-	step LEFT
+	step UP
 	step_end
 
 MountMoonRivalMovementAfter:
+	step DOWN
 	step RIGHT
-	step RIGHT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
 	step_end
 
 MountMoonRivalTextBefore:
@@ -158,22 +157,20 @@ MountMoonRivalTextLoss:
 	cont "greatest trainer."
 	done
 
-MountMoon_MapEvents:
+MountMoonB2F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  3, ROUTE_3, 1
-	warp_event 15, 15, ROUTE_4, 1
-	warp_event 13,  3, MOUNT_MOON, 7
-	warp_event 15, 11, MOUNT_MOON, 8
-	warp_event 25,  5, MOUNT_MOON_SQUARE, 1
-	warp_event 25, 15, MOUNT_MOON_SQUARE, 2
-	warp_event 25,  3, MOUNT_MOON, 3
-	warp_event 25, 13, MOUNT_MOON, 4
+	warp_event 25,  9, MOUNT_MOON_B1F, 2
+	warp_event 25, 13, MOUNT_MOON_B1F, 5
+	warp_event 15, 27, MOUNT_MOON_B1F, 6
+	warp_event  5,  7, MOUNT_MOON_B1F, 7
+	warp_event 33, 13, MOUNT_MOON_B1F, 10
 
 	def_coord_events
+	coord_event  4,  5, SCENE_MOUNTMOON_RIVAL_BATTLE, MountMoonRivalFight
 
 	def_bg_events
 
 	def_object_events
-	object_event  7,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_RIVAL
+	object_event  5,  7, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_IN_MT_MOON
