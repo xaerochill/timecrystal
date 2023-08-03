@@ -11,7 +11,7 @@ PowerPlantB3FZapdosCallback:
 	checkevent EVENT_FOUGHT_ZAPDOS
 	iftrue .NoAppear
 	checkevent ENGINE_UNLOCKED_UNOWNS_A_TO_K
-	iftrue .NoAppear
+	iffalse .NoAppear
 
 .Appear:
 	appear POWER_PLANT_B3F_ZAPDOS

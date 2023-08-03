@@ -21,7 +21,7 @@ VictoryRoad2FMoltresCallback:
 	checkevent EVENT_FOUGHT_MOLTRES
 	iftrue .NoAppear
 	checkevent ENGINE_UNLOCKED_UNOWNS_A_TO_K
-	iftrue .NoAppear
+	iffalse .NoAppear
 
 .Appear:
 	appear VICTORY_ROAD_2F_MOLTRES

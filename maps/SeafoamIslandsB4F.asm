@@ -11,7 +11,7 @@ SeafoamIslandsB4F_MapScripts:
 	checkevent EVENT_FOUGHT_ARTICUNO
 	iftrue .NoAppear
 	checkevent ENGINE_UNLOCKED_UNOWNS_A_TO_K
-	iftrue .NoAppear
+	iffalse .NoAppear
 
 .Appear:
 	appear SEAFOAM_ISLANDS_B4F_ARTICUNO

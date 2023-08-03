@@ -11,7 +11,7 @@ CeruleanCaveB1FMewtwoCallback:
 	checkevent EVENT_FOUGHT_MEWTWO
 	iftrue .NoAppear
 	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iftrue .NoAppear
+	iffalse .NoAppear
 
 .Appear:
 	appear CERULEAN_CAVE_B1F_MEWTWO
