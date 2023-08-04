@@ -179,6 +179,8 @@ GetTextSpeed:
 	jr z, .slow
 	cp TEXT_DELAY_FAST
 	jr z, .fast
+	cp TEXT_DELAY_NONE
+	jr z, .none
 	; none of the above
 	ld c, OPT_TEXT_SPEED_MED
 	lb de, TEXT_DELAY_FAST, TEXT_DELAY_SLOW
