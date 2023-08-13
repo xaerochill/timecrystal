@@ -890,14 +890,8 @@ RetrieveBreedmon:
 	pop bc
 	ld hl, MON_EXP
 	add hl, bc
-	ld a, [hl]
-	and CAUGHT_TIME_MASK
-	push de
-	ld d, a
 	ldh a, [hMultiplicand]
 	ld [hli], a
-	or d
-	pop de
 	ldh a, [hMultiplicand + 1]
 	ld [hli], a
 	ldh a, [hMultiplicand + 2]

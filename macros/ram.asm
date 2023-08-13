@@ -9,7 +9,6 @@ MACRO box_struct
 \1Item::           db
 \1Moves::          ds NUM_MOVES
 \1ID::             dw
-\1CaughtTime::
 \1Exp::            ds 3
 \1StatExp::
 \1HPExp::          dw
@@ -22,6 +21,7 @@ MACRO box_struct
 \1Happiness::      db
 \1PokerusStatus::  db
 \1CaughtData::
+\1CaughtTime::
 \1CaughtLevel::    db
 \1CaughtGender::
 \1CaughtLocation:: db

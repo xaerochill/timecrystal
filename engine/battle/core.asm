@@ -7052,20 +7052,10 @@ GiveExperiencePoints:
 	ld [hl], a
 	jr nc, .no_exp_overflow
 	dec hl
-	push bc
-	push af
-	ld a, [hl]
-	and EXP_MASK
-	ld b, a
 	inc [hl]
-	pop af
-	ld a, b
-	pop bc
-	inc a
 	jr nz, .no_exp_overflow
-	ld a, EXP_MASK
-	ld [hli], a
 	ld a, $ff
+	ld [hli], a
 	ld [hli], a
 	ld [hl], a
 
@@ -7096,19 +7086,13 @@ GiveExperiencePoints:
 	ld a, [hld]
 	sbc c
 	ld a, [hl]
-	push af
-	and EXP_MASK
-	ld d, a
-	pop af
-	ld a, d
 	sbc b
 	jr c, .not_max_exp
 	ld a, b
 	ld [hli], a
 	ld a, c
 	ld [hli], a
-	ldh a, [hQuotient + 3]
-	ld d, a
+	ld a, d
 	ld [hld], a
 
 .not_max_exp
@@ -7419,22 +7403,13 @@ AnimateExpBar:
 	ld a, [hld]
 	sbc c
 	ld a, [hl]
-	push de
-	push af
-	and EXP_MASK
-	ld d, a
-	pop af
-	ld a, d
 	sbc b
-	pop de
 	jr c, .AlreadyAtMaxExp
 	ld a, b
 	ld [hli], a
 	ld a, c
 	ld [hli], a
-	ld a, [hl]
-	and CAUGHT_TIME_MASK
-	or d
+	ld a, d
 	ld [hld], a
 
 .AlreadyAtMaxExp:
@@ -7816,13 +7791,6 @@ CalcExpBar:
 	sbc b
 	ld [hld], a
 	ld a, [de]
-	push de
-	push af
-	and EXP_MASK
-	ld d, a
-	pop af
-	ld a, d
-	pop de
 	ld c, a
 	ldh a, [hMathBuffer]
 	sbc c
