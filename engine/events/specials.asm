@@ -433,3 +433,7 @@ TrainerHouse:
 	ld a, [sMysteryGiftTrainerHouseFlag]
 	ld [wScriptVar], a
 	jp CloseSRAM
+
+Tradeback:
+	farcall Trader
+	ret
