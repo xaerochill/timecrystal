@@ -1299,14 +1299,7 @@ RareCandyEffect:
 	ld a, MON_EXP
 	call GetPartyParamLocation
 
-	push de
-	ld a, [hl]
-	and CAUGHT_TIME_MASK
-	ld d, a
 	ldh a, [hMultiplicand + 0]
-	and EXP_MASK
-	or d
-	pop de
 	ld [hli], a
 	ldh a, [hMultiplicand + 1]
 	ld [hli], a
