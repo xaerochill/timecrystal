@@ -61,7 +61,7 @@ Beating the Elite 4 resets the following Events:
 ## Map Changes
 
 - [x] Cerulean Cave is fully restored and accessible
-- [x] Cinnabar Island is fully restored and the [Pokémon Lab](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Cinnabar_Pok%C3%A9mon_Lab) is revamped and accessible
+- [x] Cinnabar Island is fully restored and the [Pokémon Lab](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Cinnabar_Pok%C3%A9mon_Lab) revamped and accessible
 - [x] Rocket Hideout under Celadon Game Corner is accessible and features the Gen 1 spinner tiles, and the prize room was changed to reflect the [1997 Spaceworld Beta map](https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1997_Demo/Maps#Celadon_Game_Corner) more closely
 - [x] Route 3 contains a dungeon based on the [1997 Spaceworld Beta Mineshaft](https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1997_Demo/Maps#Mineshaft)
 - [x] Route 20 includes a Kanto Lighthouse on the Seafoam Islands as seen in [early designs of RBY](https://tcrf.net/Development:Pok%C3%A9mon_Red_and_Blue/Unused_Maps#Exteriors_2)
@@ -88,8 +88,6 @@ Beating the Elite 4 resets the following Events:
 - [ ] Make use of the [Unknown House](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Unknown_House)
 - [ ] Add the [Unknown Office](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Unknown_Office) to the Celadon Condominiums
 - [ ] Make use of [Olivine Gym 2F](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Olivine_Gym_2F)
-- [ ] Make use of [1997 Spaceworld Beta Slowpoke Well](https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1997_Demo/Maps#Slowpoke_Well)
-
 
 ## What was changed?
 
@@ -150,6 +148,6 @@ All of these were fixed as suggested in the [pokecrystal documentation](https://
 [x] Footprints are no longer split into top and bottom halves
 [x] Music IDs $64 and $80 or above now have regular behaviour
 [x] Changed Item order so that ITEM_C3 and ITEM_DC no longer break up the continuous sequence of TM items
-[x] Fixing Pokédex entry banks being derived from their species IDs
+[ ] Fixing Pokédex entry banks being derived from their species IDs
 [x] Simplified GetForestTreeFrame
 [x] The overworld scripting engine no longer assumes no more than 127 banks
