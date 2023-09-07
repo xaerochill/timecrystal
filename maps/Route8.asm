@@ -66,9 +66,6 @@ TrainerSupernerdTom:
 	closetext
 	end
 
-Route8LockedDoor:
-	jumptext Route8LockedDoorText
-
 Route8UndergroundPathSign:
 	jumptext Route8UndergroundPathSignText
 
@@ -162,10 +159,6 @@ SupernerdTomAfterBattleText:
 	line "unfair, right?"
 	done
 
-Route8LockedDoorText:
-	text "It's locked…"
-	done
-
 Route8UndergroundPathSignText:
 	text "The flyer's torn."
 
@@ -179,12 +172,12 @@ Route8_MapEvents:
 	def_warp_events
 	warp_event  4,  4, ROUTE_8_SAFFRON_GATE, 3
 	warp_event  4,  5, ROUTE_8_SAFFRON_GATE, 4
+	warp_event 10,  5, OLIVINE_PORT_PASSAGE, 7
 
 	def_coord_events
 
 	def_bg_events
 	bg_event 11,  7, BGEVENT_READ, Route8UndergroundPathSign
-	bg_event 10,  5, BGEVENT_READ, Route8LockedDoor
 
 	def_object_events
 	object_event 10,  8, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerBikerDwayne, -1

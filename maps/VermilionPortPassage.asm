@@ -25,6 +25,9 @@ VermilionPortPassage_MapEvents:
 	warp_event 15,  4, VERMILION_PORT_PASSAGE, 4
 	warp_event  3,  2, VERMILION_PORT_PASSAGE, 3
 	warp_event  3, 14, VERMILION_PORT, 1
+	warp_event 15, 14, ROCKET_HIDEOUT_B2F, 6
+	warp_event 16, 16, ROUTE_7, 3
+	warp_event 17, 16, ROUTE_7, 3
 
 	def_coord_events
 

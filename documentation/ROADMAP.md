@@ -73,6 +73,7 @@ Beating the Elite 4 resets the following Events:
 - [x] Safari Zone is available via the [unused gate](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Safari_Zone_Gate) and contains the [Safari Zone Beta Map](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Safari_Zone). As referenced in [unused Red & Blue text](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue/Unused_Text#Safari_Zone), a Silph Manager might be hiding here! The hideout uses the scrapped [Haunted House Map](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Haunted_House)
 - [x] Victory Road uses the Gen 1 Layout and has Moltres back in it
 - [x] Mount Mooon uses the Gen 1 layout again
+- [x] Kanto Underground has been reworked and features Red & Blue's unused [neon lights](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue/Unseen_Graphics#Tileset_12)
 - [ ] Entei is available as a static encounter in [Burned Tower B2F](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Burned_Tower) after beating the E4
 - [ ] Raikou is available as a static encounter in the [scrapped Seafoam Islands map](https://tcrf.net/Development:Pok%C3%A9mon_Red_and_Blue/Unused_Maps#Seafoam_Islands) after beating the E4
 - [ ] Suicune is available as a static encounter in [Bill's Garden](https://tcrf.net/Development:Pok%C3%A9mon_Red_and_Blue/Unused_Maps#Garden) after beating the E4
@@ -80,7 +81,6 @@ Beating the Elite 4 resets the following Events:
 - [ ] Make use of rubble sitting on water https://tcrf.net/Pok%C3%A9mon_Red_and_Blue/Unseen_Graphics#Tileset_0A
 - [ ] S.S. Anne sunk, Truck and unused [bollards from RB](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue/Unseen_Graphics#Tileset_04) in [Vermilion City Harbour](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue/Unseen_Graphics#Vermilion_City_Harbor)
 - [ ] Restore Vermilion City Gym
-- [ ] Rework [Underground](https://tcrf.net/Development:Pok%C3%A9mon_Red_and_Blue/Unused_Maps#Interiors_2) and add unused [neon lights](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue/Unseen_Graphics#Tileset_12)
 - [ ] Fix Map Boundary Vermilion City/Route 11 with the small bit of land to the right of the pier
 - [ ] Fix Map Boundary Route 16/17 going from tree blocks to water blocks
 - [ ] Restore the [unused Olivine City house](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Olivine_House)

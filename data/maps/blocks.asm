@@ -851,6 +851,9 @@ FuchsiaGym_Blocks:
 UndergroundPath_Blocks:
 	INCBIN "maps/UndergroundPath.ablk"
 
+UndergroundNorth_Blocks:
+	INCBIN "maps/UndergroundNorth.ablk"
+
 Route39Barn_Blocks:
 	INCBIN "maps/Route39Barn.ablk"
 

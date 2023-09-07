@@ -482,7 +482,10 @@ ENDM
 	map_attributes MountMoon1F, MOUNT_MOON_1F, $09, 0
 	map_attributes MountMoonB1F, MOUNT_MOON_B1F, $09, 0
 	map_attributes MountMoonB2F, MOUNT_MOON_B2F, $1D, 0
-	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, 0
+
+	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, NORTH
+	connection north, UndergroundNorth, UNDERGROUND_NORTH, -2
+
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $09, 0
 	map_attributes SafariZoneFuchsiaGate, SAFARI_ZONE_FUCHSIA_GATE, $00, 0
@@ -526,8 +529,13 @@ ENDM
 	map_attributes CeruleanCave2F, CERULEAN_CAVE_2F, $09, 0
 	map_attributes CeruleanCaveB1F, CERULEAN_CAVE_B1F, $09, 0
 	map_attributes RocketHideoutB1F, ROCKET_HIDEOUT_B1F, $00, 0
-	map_attributes RocketHideoutB2F, ROCKET_HIDEOUT_B2F, $00, 0
-	map_attributes RocketHideoutB3F, ROCKET_HIDEOUT_B3F, $00, 0
+
+	map_attributes RocketHideoutB2F, ROCKET_HIDEOUT_B2F, $00, EAST
+	connection east, UndergroundNorth, UNDERGROUND_NORTH, -15
+
+	map_attributes RocketHideoutB3F, ROCKET_HIDEOUT_B3F, $00, WEST
+	connection west, UndergroundNorth, UNDERGROUND_NORTH, -15
+
 	map_attributes RocketHideoutB4F, ROCKET_HIDEOUT_B4F, $00, 0
 	map_attributes RocketHideoutElevator, ROCKET_HIDEOUT_ELEVATOR, $00, 0
 	map_attributes Mineshaft1F, MINESHAFT_1F, $1D, 0
@@ -776,3 +784,8 @@ ENDM
 	map_attributes PokemonTower6F, POKEMON_TOWER_6F, $00, 0
 	map_attributes PokemonTower7F, POKEMON_TOWER_7F, $00, 0
 	map_attributes BillsGarden, BILLS_GARDEN, $00, 0
+
+	map_attributes UndergroundNorth, UNDERGROUND_NORTH, $00, SOUTH | WEST | EAST
+	connection south, UndergroundPath, UNDERGROUND_PATH, 2
+	connection west, RocketHideoutB2F, ROCKET_HIDEOUT_B2F, 15
+	connection east, RocketHideoutB3F, ROCKET_HIDEOUT_B3F, 15

@@ -148,7 +148,7 @@ ENDM
 	map_const TOHJO_FALLS,                                 15,  9 ; 83
 	map_const DIGLETTS_CAVE,                               10, 18 ; 84
 	map_const MOUNT_MOON_1F,                               20, 18 ; 85
-	map_const UNDERGROUND_PATH,                             3, 14 ; 86
+	map_const UNDERGROUND_PATH,                             3, 13 ; 86
 	map_const ROCK_TUNNEL_1F,                              15, 18 ; 87
 	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 88
 	map_const VICTORY_ROAD_1F,                             12, 11 ; 89
@@ -169,8 +169,8 @@ ENDM
 	map_const CERULEAN_CAVE_2F,                            17, 11 ; 104
 	map_const CERULEAN_CAVE_B1F,                           17, 11 ; 105
 	map_const ROCKET_HIDEOUT_B1F,                          15, 14 ; 106
-	map_const ROCKET_HIDEOUT_B2F,                          15, 14 ; 107
-	map_const ROCKET_HIDEOUT_B3F,                          15, 14 ; 108
+	map_const ROCKET_HIDEOUT_B2F,                          15, 16 ; 107
+	map_const ROCKET_HIDEOUT_B3F,                          15, 17 ; 108
 	map_const ROCKET_HIDEOUT_B4F,                          15, 14 ; 109
 	map_const ROCKET_HIDEOUT_ELEVATOR,                      4,  3 ; 110
 	map_const MINESHAFT_1F,                                16, 10 ; 111
@@ -186,6 +186,7 @@ ENDM
 	map_const SEAFOAM_ISLANDS_B4F,                         15,  9 ; 121
 	map_const MOUNT_MOON_B1F,                              14, 14 ; 122
 	map_const MOUNT_MOON_B2F,                              20, 18 ; 123
+	map_const UNDERGROUND_NORTH,                            7, 20 ; 124
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
