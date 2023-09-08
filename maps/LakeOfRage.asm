@@ -499,7 +499,7 @@ LakeOfRage_MapEvents:
 	warp_event 35, 29, LAKE_OF_RAGE_MAGIKARP_HOUSE, 1
 	warp_event 10,  5, LAKE_OF_RAGE_GYM, 1
 	warp_event  3,  9, LAKE_OF_RAGE_MART, 1
-
+	warp_event  5, 19, LAKE_OF_RAGE_POKECENTER_1F, 1
 
 	def_coord_events
 

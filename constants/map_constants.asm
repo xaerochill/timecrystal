@@ -268,6 +268,7 @@ ENDM
 	map_const LAKE_OF_RAGE,                                20, 18 ;  6
 	map_const LAKE_OF_RAGE_GYM,                             5,  9 ;  7
 	map_const LAKE_OF_RAGE_MART,                            6,  4 ;  8
+	map_const LAKE_OF_RAGE_POKECENTER_1F,                   5,  4 ;  9
 	endgroup
 
 	newgroup VIOLET                                               ; 10

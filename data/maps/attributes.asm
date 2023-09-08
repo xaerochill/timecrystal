@@ -591,6 +591,7 @@ ENDM
 	map_attributes LakeOfRageMagikarpHouse, LAKE_OF_RAGE_MAGIKARP_HOUSE, $00, 0
 	map_attributes LakeOfRageGym, LAKE_OF_RAGE_GYM, $00, 0
 	map_attributes LakeOfRageMart, LAKE_OF_RAGE_MART, $00, 0
+	map_attributes LakeOfRagePokecenter1F, LAKE_OF_RAGE_POKECENTER_1F, $00, 0
 	map_attributes Route43MahoganyGate, ROUTE_43_MAHOGANY_GATE, $00, 0
 	map_attributes Route43Gate, ROUTE_43_GATE, $00, 0
 	map_attributes VioletMart, VIOLET_MART, $00, 0
