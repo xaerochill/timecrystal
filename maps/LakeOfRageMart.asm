@@ -22,8 +22,9 @@ LakeOfRageMartFisherText:
 
 	para "It was when I"
 	line "travelled to"
-	line "CINNABAR ISLAND"
-	cont "to go fishing."
+	
+	para "CINNABAR ISLAND"
+	line "to go fishing."
 	done
 
 LakeOfRageMart_MapEvents:
