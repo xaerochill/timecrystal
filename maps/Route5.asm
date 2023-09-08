@@ -53,4 +53,4 @@ Route5_MapEvents:
 	bg_event 10, 11, BGEVENT_READ, HouseForSaleSign
 
 	def_object_events
-	object_event 16, 17, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, -1
+	object_event 16, 17, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 2, Route5PokefanMScript, -1
