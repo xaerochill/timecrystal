@@ -116,3 +116,17 @@
 	tilecoll WALL, LADDER, WALL, WALL ; 73
 	tilecoll FLOOR, WALL, WALL, WALL ; 74
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 75
+	tilecoll FLOOR, PIT, FLOOR, PIT ; 76
+	tilecoll PIT, FLOOR, PIT, FLOOR ; 77
+	tilecoll PIT, PIT, FLOOR, FLOOR ; 78
+	tilecoll PIT, PIT, FLOOR, PIT ; 79
+	tilecoll PIT, PIT, PIT, FLOOR ; 7a
+	tilecoll WALL, PIT, FLOOR, PIT ; 7b
+	tilecoll PIT, WALL, PIT, FLOOR ; 7c
+	tilecoll FLOOR, FLOOR, PIT, FLOOR ; 7d
+	tilecoll FLOOR, PIT, PIT, PIT ; 7e
+	tilecoll PIT, FLOOR, PIT, PIT ; 7f
+	tilecoll PIT, PIT, FLOOR, FLOOR ; 80
+	tilecoll FLOOR, PIT, FLOOR, PIT ; 81
+	tilecoll FLOOR, PIT, FLOOR, PIT ; 82
+	tilecoll PIT, PIT, PIT, PIT ; 83

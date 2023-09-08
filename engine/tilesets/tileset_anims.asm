@@ -922,7 +922,7 @@ FlickeringCaveEntrancePalette:
 
 TowerPillarTilePointer1:  dw vTiles2 tile $2d, TowerPillarTile1
 TowerPillarTilePointer2:  dw vTiles2 tile $2f, TowerPillarTile2
-TowerPillarTilePointer3:  dw vTiles2 tile $01, TowerPillarTile3
+TowerPillarTilePointer3:  dw vTiles2 tile $3d, TowerPillarTile3
 TowerPillarTilePointer4:  dw vTiles2 tile $3f, TowerPillarTile4
 TowerPillarTilePointer5:  dw vTiles2 tile $3c, TowerPillarTile5
 TowerPillarTilePointer6:  dw vTiles2 tile $2c, TowerPillarTile6

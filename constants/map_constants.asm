@@ -265,6 +265,7 @@ ENDM
 	map_const ROUTE_43_GATE,                                5,  4 ;  4
 	map_const ROUTE_43,                                    10, 27 ;  5
 	map_const LAKE_OF_RAGE,                                20, 18 ;  6
+	map_const LAKE_OF_RAGE_GYM,                             5,  9 ;  7
 	endgroup
 
 	newgroup VIOLET                                               ; 10
