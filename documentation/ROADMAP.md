@@ -103,6 +103,7 @@ All of the changes are taken from the [pokecrystal wiki](https://github.com/pret
 - Pocket PC from Elm's aide at the start
 - Smashing rocks has a chance to contain items
 - Fixed the 6-bit Caught Level to record Pokemon > Level 63 by [vulcandth](https://github.com/thegsproj/pokegscrystal/pull/8/commits)
+- Evolution Stones can be bought at the Marts of Cinnabar Island and Lake of Rage
 - Improved the Swarm System and adding HG/SS Swarms. OAK'S AIDE triggers a random daily swarm:
   -- Marill: Mt. Mortar
   -- Yanma: Route 35

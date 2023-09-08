@@ -290,6 +290,8 @@ LavenderMart_Blocks:
 ViridianMart_Blocks:
 SaffronMart_Blocks:
 CherrygroveMart_Blocks:
+LakeOfRageMart_Blocks:
+CinnabarMart_Blocks:
 	INCBIN "maps/Mart.ablk"
 
 Route10North_Blocks:

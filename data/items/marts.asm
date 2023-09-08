@@ -13,6 +13,7 @@ Marts:
 	dw MartGoldenrod5F
 	dw MartOlivine
 	dw MartEcruteak
+	dw MartLakeOfRage
 	dw MartMahogany1
 	dw MartMahogany2
 	dw MartBlackthorn
@@ -28,6 +29,7 @@ Marts:
 	dw MartCeladon5F1
 	dw MartCeladon5F2
 	dw MartFuchsia
+	dw MartCinnabar
 	dw MartSaffron
 	dw MartMtMoon
 	dw MartIndigoPlateau
@@ -162,6 +164,16 @@ MartEcruteak:
 	db BURN_HEAL
 	db ICE_HEAL
 	db REVIVE
+	db -1 ; end
+
+MartLakeOfRage:
+	db 6 ; # items
+	db FIRE_STONE
+	db THUNDERSTONE
+	db WATER_STONE
+	db LEAF_STONE
+	db MOON_STONE
+	db SUN_STONE
 	db -1 ; end
 
 MartMahogany1:
@@ -329,6 +341,16 @@ MartFuchsia:
 	db FULL_HEAL
 	db MAX_REPEL
 	db FLOWER_MAIL
+	db -1 ; end
+
+MartCinnabar:
+	db 6 ; # items
+	db FIRE_STONE
+	db THUNDERSTONE
+	db WATER_STONE
+	db LEAF_STONE
+	db MOON_STONE
+	db SUN_STONE
 	db -1 ; end
 
 MartSaffron:

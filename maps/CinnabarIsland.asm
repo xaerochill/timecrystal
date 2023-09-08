@@ -142,6 +142,7 @@ CinnabarIsland_MapEvents:
 	warp_event  7,  3, POKEMON_MANSION_1F, 3
 	warp_event  5,  9, CINNABAR_LAB, 1
 	warp_event 16,  5, SEAFOAM_GYM, 1
+	warp_event 17, 11, CINNABAR_MART, 1
 
 	def_coord_events
 

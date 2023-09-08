@@ -5,6 +5,7 @@
 	const MARTTYPE_BARGAIN
 	const MARTTYPE_PHARMACY
 	const MARTTYPE_ROOFTOP
+	const MARTTYPE_SHADY
 
 ; Marts indexes (see data/items/marts.asm)
 	const_def
@@ -20,6 +21,7 @@
 	const MART_GOLDENROD_5F
 	const MART_OLIVINE
 	const MART_ECRUTEAK
+	const MART_LAKE_OF_RAGE
 	const MART_MAHOGANY_1
 	const MART_MAHOGANY_2
 	const MART_BLACKTHORN
@@ -35,6 +37,7 @@
 	const MART_CELADON_5F_1
 	const MART_CELADON_5F_2
 	const MART_FUCHSIA
+	const MART_CINNABAR
 	const MART_SAFFRON
 	const MART_MT_MOON
 	const MART_INDIGO_PLATEAU

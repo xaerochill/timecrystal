@@ -570,6 +570,7 @@ ENDM
 	map_attributes CinnabarLabConferenceRoom, CINNABAR_LAB_CONFERENCE_ROOM, $00, 0
 	map_attributes CinnabarLabResearchRoom, CINNABAR_LAB_RESEARCH_ROOM, $00, 0
 	map_attributes CinnabarLabFossilRoom, CINNABAR_LAB_FOSSIL_ROOM, $00, 0
+	map_attributes CinnabarMart, CINNABAR_MART, $00, 0
 	map_attributes Route19FuchsiaGate, ROUTE_19_FUCHSIA_GATE, $00, 0
 	map_attributes SeafoamGym, SEAFOAM_GYM, $09, 0
 	map_attributes CeruleanGymBadgeSpeechHouse, CERULEAN_GYM_BADGE_SPEECH_HOUSE, $00, 0
@@ -589,6 +590,7 @@ ENDM
 	map_attributes LakeOfRageHiddenPowerHouse, LAKE_OF_RAGE_HIDDEN_POWER_HOUSE, $00, 0
 	map_attributes LakeOfRageMagikarpHouse, LAKE_OF_RAGE_MAGIKARP_HOUSE, $00, 0
 	map_attributes LakeOfRageGym, LAKE_OF_RAGE_GYM, $00, 0
+	map_attributes LakeOfRageMart, LAKE_OF_RAGE_MART, $00, 0
 	map_attributes Route43MahoganyGate, ROUTE_43_MAHOGANY_GATE, $00, 0
 	map_attributes Route43Gate, ROUTE_43_GATE, $00, 0
 	map_attributes VioletMart, VIOLET_MART, $00, 0

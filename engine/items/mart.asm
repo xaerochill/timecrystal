@@ -22,6 +22,7 @@ OpenMartDialog::
 	dw BargainShop
 	dw Pharmacist
 	dw RooftopSale
+	dw ShadyShop
 
 MartDialog:
 	ld a, MARTTYPE_STANDARD
@@ -93,6 +94,15 @@ RooftopSale:
 	ret
 
 INCLUDE "data/items/rooftop_sale.asm"
+
+ShadyShop:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_ShadyShop_Intro
+	call MartTextbox
+	call BuyMenu
+	ld hl, Text_ShadyShop_ComeAgain
+	jp MartTextbox
 
 LoadMartPointer:
 	ld a, b
@@ -435,6 +445,7 @@ GetMartDialogGroup:
 	dwb .BargainShopPointers, 1
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
+	dwb .ShadyPointers, 0
 
 .StandardMartPointers:
 	dw MartHowManyText
@@ -466,6 +477,14 @@ GetMartDialogGroup:
 	dw PharmacyNoMoneyText
 	dw PharmacyPackFullText
 	dw PharmacyThanksText
+	dw BuyMenuLoop
+
+.ShadyPointers:
+	dw Text_ShadyShop_HowMany
+	dw Text_ShadyShop_CostsThisMuch
+	dw Text_ShadyShop_InsufficientFunds
+	dw Text_ShadyShop_BagFull
+	dw Text_ShadyShop_HereYouGo
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -748,6 +767,34 @@ PharmacyComeAgainText:
 	text_far _PharmacyComeAgainText
 	text_end
 
+Text_ShadyShop_Intro:
+	text_far ShadyShop_IntroText
+	text_end
+
+Text_ShadyShop_ComeAgain:
+	text_far ShadyShop_ComeAgainText
+	text_end
+
+Text_ShadyShop_HowMany:
+	text_far ShadyShop_HowManyText
+	text_end
+
+Text_ShadyShop_CostsThisMuch:
+	text_far ShadyShop_CostsThisMuchText
+	text_end
+
+Text_ShadyShop_InsufficientFunds:
+	text_far ShadyShop_InsufficientFundsText
+	text_end
+
+Text_ShadyShop_BagFull:
+	text_far ShadyShop_BagFullText
+	text_end
+
+Text_ShadyShop_HereYouGo:
+	text_far ShadyShop_HereYouGoText
+	text_end
+
 SellMenu:
 	call DisableSpriteUpdates
 	farcall DepositSellInitPackBuffers
@@ -761,12 +808,6 @@ SellMenu:
 
 .quit
 	call ReturnToMapWithSpeechTextbox
-	and a
-	ret
-
-.NothingToSell: ; unreferenced
-	ld hl, .NothingToSellText
-	call MenuTextboxBackup
 	and a
 	ret
 
@@ -845,9 +886,6 @@ MartSellHowManyText:
 MartSellPriceText:
 	text_far _MartSellPriceText
 	text_end
-
-UnusedDummyString: ; unreferenced
-	db "！ダミー！@" ; "!Dummy!"
 
 MartWelcomeText:
 	text_far _MartWelcomeText

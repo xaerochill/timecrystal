@@ -1528,3 +1528,43 @@ _CantDepositText::
 	text "Can't deposit"
 	line "this item."
 	prompt
+
+ShadyShop_IntroText::
+	text "Hello, kiddo!"
+
+	para "Wanna buy any of"
+	line "my goods?"
+
+	para "They fell off the"
+	line "back of a truck!"
+	cont "Hehehe…"
+	done
+
+ShadyShop_ComeAgainText::
+	text "See ya, kid!"
+	done
+
+ShadyShop_HowManyText::
+	text "How many you"
+	line "need?"
+	done
+
+ShadyShop_CostsThisMuchText::
+	text "That'll cost ya"
+	line "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text ". 'Kay?"
+	done
+
+ShadyShop_InsufficientFundsText::
+	text "That ain't enough!"
+	done
+
+ShadyShop_BagFullText::
+	text "Hehe, you can't"
+	line "carry it!"
+	done
+
+ShadyShop_HereYouGoText::
+	text "Cha-ching!"
+	done

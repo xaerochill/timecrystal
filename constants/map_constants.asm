@@ -227,6 +227,7 @@ ENDM
 	map_const CINNABAR_LAB_CONFERENCE_ROOM,                 9,  4 ; 10
 	map_const CINNABAR_LAB_RESEARCH_ROOM,                   9,  4 ; 11
 	map_const CINNABAR_LAB_FOSSIL_ROOM,                     9,  4 ; 12
+	map_const CINNABAR_MART,                                6,  4 ; 13
 	endgroup
 
 	newgroup CERULEAN                                             ;  7
@@ -266,6 +267,7 @@ ENDM
 	map_const ROUTE_43,                                    10, 27 ;  5
 	map_const LAKE_OF_RAGE,                                20, 18 ;  6
 	map_const LAKE_OF_RAGE_GYM,                             5,  9 ;  7
+	map_const LAKE_OF_RAGE_MART,                            6,  4 ;  8
 	endgroup
 
 	newgroup VIOLET                                               ; 10
