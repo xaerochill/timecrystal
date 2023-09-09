@@ -137,6 +137,10 @@ INCLUDE "audio/music/suicunebattle.asm"
 INCLUDE "audio/music/battletowerlobby.asm"
 INCLUDE "audio/music/mobilecenter.asm"
 
+SECTION "Custom Songs", ROMX
+
+INCLUDE "audio/music/cinnabar.asm"
+
 
 SECTION "Extra Songs 1", ROMX
 

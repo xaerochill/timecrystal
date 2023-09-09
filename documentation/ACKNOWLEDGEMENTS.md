@@ -14,3 +14,6 @@
 - Lou Lilie for the sprite of [Yellow](https://www.deviantart.com/loulilie/gallery/38635722/pokemon-sprites)
 - Kage for the sprite of [Green](https://www.pokecommunity.com/showthread.php?p=7050285)
 - Trainer Sprites for the added unused trainer classes from [TCRF](https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1999_Demo/Graphic_Differences#Trainer_Sprites)
+
+**Music**
+- [TriteHexagon](https://github.com/TriteHexagon/Trite_ASM_Repository): Cinnabar Island
