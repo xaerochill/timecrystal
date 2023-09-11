@@ -16,4 +16,5 @@
 - Trainer Sprites for the added unused trainer classes from [TCRF](https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1999_Demo/Graphic_Differences#Trainer_Sprites)
 
 **Music**
-- [TriteHexagon](https://github.com/TriteHexagon/Trite_ASM_Repository): Cinnabar Island, Dive, Lavender Town
+- [TriteHexagon](https://github.com/TriteHexagon/Trite_ASM_Repository): [Midi2ASM-Converter](https://github.com/TriteHexagon/Midi2ASM-Converter) Cinnabar Island, Dive, Lavender Town
+- [IronInvoker47](https://drive.google.com/drive/folders/1Fdu5bzncseEciv4_7t4Xoxl-ApOf4Ej6) [Unused Trade Song from RBY](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue#Unused_Song)

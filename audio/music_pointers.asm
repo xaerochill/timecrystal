@@ -110,4 +110,5 @@ Music:
 ; custom
 	dba Music_Cinnabar
 	dba Music_Dive
+	dba Music_Trade
 	assert_table_length NUM_MUSIC_SONGS
