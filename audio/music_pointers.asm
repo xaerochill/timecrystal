@@ -109,4 +109,5 @@ Music:
 	dba Music_MobileCenter
 ; custom
 	dba Music_Cinnabar
+	dba Music_Dive
 	assert_table_length NUM_MUSIC_SONGS

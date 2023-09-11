@@ -140,6 +140,7 @@ INCLUDE "audio/music/mobilecenter.asm"
 SECTION "Custom Songs", ROMX
 
 INCLUDE "audio/music/cinnabar.asm"
+INCLUDE "audio/music/dive.asm"
 
 
 SECTION "Extra Songs 1", ROMX

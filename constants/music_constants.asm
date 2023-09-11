@@ -107,6 +107,7 @@
 	const MUSIC_MOBILE_CENTER                ; 66
 ; custom
 	const MUSIC_CINNABAR                     ; 67
+	const MUSIC_DIVE                         ; 68                    
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
