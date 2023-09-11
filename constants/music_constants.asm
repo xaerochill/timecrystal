@@ -109,6 +109,7 @@
 	const MUSIC_CINNABAR                     ; 67
 	const MUSIC_DIVE                         ; 68 
 	const MUSIC_TRADE                        ; 69
+	const MUSIC_GIOVANNI                     ; 70
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

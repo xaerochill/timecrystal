@@ -111,4 +111,5 @@ Music:
 	dba Music_Cinnabar
 	dba Music_Dive
 	dba Music_Trade
+	dba Music_Giovanni
 	assert_table_length NUM_MUSIC_SONGS

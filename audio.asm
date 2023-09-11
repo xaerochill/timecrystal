@@ -142,6 +142,7 @@ SECTION "Custom Songs", ROMX
 INCLUDE "audio/music/cinnabar.asm"
 INCLUDE "audio/music/dive.asm"
 INCLUDE "audio/music/trade.asm"
+INCLUDE "audio/music/giovanni.asm"
 
 
 SECTION "Extra Songs 1", ROMX
