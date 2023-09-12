@@ -143,6 +143,10 @@ INCLUDE "audio/music/cinnabar.asm"
 INCLUDE "audio/music/dive.asm"
 INCLUDE "audio/music/trade.asm"
 INCLUDE "audio/music/giovanni.asm"
+INCLUDE "audio/music/cinnabarmansion.asm"
+INCLUDE "audio/music/pokemontower.asm"
+INCLUDE "audio/music/silphco.asm"
+INCLUDE "audio/music/surfingpikachu.asm"
 
 
 SECTION "Extra Songs 1", ROMX

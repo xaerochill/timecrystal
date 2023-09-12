@@ -110,6 +110,10 @@
 	const MUSIC_DIVE                         ; 68 
 	const MUSIC_TRADE                        ; 69
 	const MUSIC_GIOVANNI                     ; 70
+	const MUSIC_CINNABAR_MANSION             ; 71
+	const MUSIC_POKEMON_TOWER                ; 72
+	const MUSIC_SILPH_CO                     ; 73
+	const MUSIC_SURFING_PIKACHU              ; 74
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

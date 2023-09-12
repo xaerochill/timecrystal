@@ -112,4 +112,8 @@ Music:
 	dba Music_Dive
 	dba Music_Trade
 	dba Music_Giovanni
+	dba Music_CinnabarMansion
+	dba Music_PokemonTower
+	dba Music_SilphCo
+	dba Music_SurfingPikachu
 	assert_table_length NUM_MUSIC_SONGS
