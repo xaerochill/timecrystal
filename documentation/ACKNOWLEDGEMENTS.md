@@ -17,4 +17,5 @@
 
 **Music**
 - [TriteHexagon](https://github.com/TriteHexagon/Trite_ASM_Repository): [Midi2ASM-Converter](https://github.com/TriteHexagon/Midi2ASM-Converter) Cinnabar Island, Dive, Lavender Town
-- [IronInvoker47](https://drive.google.com/drive/folders/1Fdu5bzncseEciv4_7t4Xoxl-ApOf4Ej6) [Unused Trade Song from Red & Blue](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue#Unused_Song), [Unused Giovanni Theme from Yellow](https://tcrf.net/Pok%C3%A9mon_Yellow#Unused_Song)
+- pokeyellow for the [Unused Giovanni Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/yellowunusedsong.asm)
+- [IronInvoker47](https://drive.google.com/drive/folders/1Fdu5bzncseEciv4_7t4Xoxl-ApOf4Ej6) [Unused Trade Song from RBY](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue#Unused_Song)
