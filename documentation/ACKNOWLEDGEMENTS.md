@@ -3,10 +3,13 @@
 - GameFreak and Nintendo for creating this spectacular game in the first place
 - Everyone mentioned in the [README](/README.md) for their amazing work with the pokecrystal disassembly
 - [TCRF](https://tcrf.net/) for their documentation of unused or lost maps, tiles, trainers, text, and game assets where I have taken most material and inspiration from
-- vulcandth for all of their work on the disassembly and code such as the PokéSeer fix and the 60 FPS engine
-- Rangi42 for all of their work on the disassembly and code such as the diagonal stairs
-- Idain for the code cleanup of the fossil mechanic restauration
 - The kind people on the pret Discord for their continued help on all kinds of issues <3
+  -- vulcandth for all of the work on the disassembly and code such as the PokéSeer fix and the 60 FPS engine
+  -- Rangi42 for all of the work on the disassembly and code such as the diagonal stairs
+  -- Idain for the code cleanup of the fossil mechanic restauration
+
+**Easter Eggs**
+- Can you find the house of [Takeshi Shudo](https://lavacutcontent.com/takeshi-shudo-ending-pokemon/), the creator of Lugia who once drank with sailors to understand how they talk?
 
 **Graphics**
 - FrenchOrange for the [Tileset Atlas](https://www.deviantart.com/frenchorange/art/Pokemon-Generation-I-and-II-Tile-Atlas-948667086)
