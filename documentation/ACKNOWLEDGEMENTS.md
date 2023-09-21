@@ -3,6 +3,7 @@
 - GameFreak and Nintendo for creating this spectacular game in the first place
 - Everyone mentioned in the [README](/README.md) for their amazing work with the pokecrystal disassembly
 - [TCRF](https://tcrf.net/) for their documentation of unused or lost maps, tiles, trainers, text, and game assets where I have taken most material and inspiration from
+- The amazing artists at [Johto Redrawn](https://retroredrawn.com/johto/) which inspired many changes to maps
 - The kind people on the pret Discord for their continued help on all kinds of issues <3
   -- vulcandth for all of the work on the disassembly and code such as the PokéSeer fix and the 60 FPS engine
   -- Rangi42 for all of the work on the disassembly and code such as the diagonal stairs
