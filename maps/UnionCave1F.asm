@@ -81,9 +81,6 @@ UnionCave1FPotion:
 UnionCave1FAwakening:
 	itemball AWAKENING
 
-UnionCave1FUnusedSign: ; unreferenced
-	jumptext UnionCave1FUnusedSignText
-
 HikerRussellSeenText:
 	text "You're headed to"
 	line "AZALEA, are you?"
@@ -204,7 +201,7 @@ UnionCave1F_MapEvents:
 	warp_event  5, 19, UNION_CAVE_B1F, 3
 	warp_event  3, 33, UNION_CAVE_B1F, 4
 	warp_event 17, 31, ROUTE_33, 1
-	warp_event 17,  3, ROUTE_32, 4
+	warp_event 17,  3, ROUTE_32, 3
 
 	def_coord_events
 

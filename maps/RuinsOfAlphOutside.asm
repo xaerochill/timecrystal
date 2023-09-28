@@ -22,6 +22,7 @@ RuinsOfAlphOutsideNoop2Scene:
 	end
 
 RuinsOfAlphOutsideScientistCallback:
+	disappear RUINSOFALPHOUTSIDE_SPENCER
 	checkflag ENGINE_UNOWN_DEX
 	iftrue .NoScientist
 	checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
@@ -46,6 +47,9 @@ RuinsOfAlphOutsideScientistCallback:
 RuinsOfAlphCallback:
 	readvar VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .AllUnownCaught
+	sjump .NotEnoughUnown
+
+.NotEnoughUnown:
 	disappear RUINSOFALPHOUTSIDE_SPENCER
 	changeblock  0,  0, $05 ; trees
 	changeblock  2,  0, $05 ; trees
@@ -53,6 +57,8 @@ RuinsOfAlphCallback:
 	changeblock  2,  2, $05 ; trees
 	changeblock  0,  4, $05 ; trees
 	changeblock  2,  4, $05 ; trees
+	endcallback
+
 .AllUnownCaught:
 	appear RUINSOFALPHOUTSIDE_SPENCER
 	endcallback
@@ -155,6 +161,9 @@ RuinsOfAlphSign:
 
 RuinsOfAlphResearchCenterSign:
 	jumptext RuinsOfAlphResearchCenterSignText
+
+RuinsOfAlphRoute32Sign:
+	jumptext RuinsOfAlphRoute32SignText
 
 RuinsOfAlphOutsideScientistWalkToLabMovement:
 	step RIGHT
@@ -265,6 +274,11 @@ RuinsOfAlphResearchCenterSignText:
 	line "THE RUINS OF ALPH"
 	done
 
+RuinsOfAlphRoute32SignText:
+	text "ROUTE 32"
+	line "AHEAD"
+	done
+
 RuinsOfAlphOutsideFisherText1:
 	text "While exploring"
 	line "the RUINS, we"
@@ -347,8 +361,7 @@ RuinsOfAlphOutside_MapEvents:
 	warp_event  6, 19, UNION_CAVE_B1F, 1
 	warp_event  6, 27, UNION_CAVE_B1F, 2
 	warp_event  7,  5, ROUTE_36_RUINS_OF_ALPH_GATE, 3
-	warp_event 13, 20, ROUTE_32_RUINS_OF_ALPH_GATE, 1
-	warp_event 13, 21, ROUTE_32_RUINS_OF_ALPH_GATE, 2
+	warp_event 14, 27, ROUTE_32_RUINS_OF_ALPH_GATE, 2
 
 	def_coord_events
 	coord_event 11, 14, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene1
@@ -358,6 +371,7 @@ RuinsOfAlphOutside_MapEvents:
 	bg_event 16,  8, BGEVENT_READ, RuinsOfAlphOutsideMysteryChamberSign
 	bg_event 12, 16, BGEVENT_READ, RuinsOfAlphSign
 	bg_event 18, 12, BGEVENT_READ, RuinsOfAlphResearchCenterSign
+	bg_event 12, 28, BGEVENT_READ, RuinsOfAlphRoute32Sign
 
 	def_object_events
 	object_event  4, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerPsychicNathan, -1
