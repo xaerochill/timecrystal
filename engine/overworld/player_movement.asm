@@ -53,8 +53,6 @@ DoPlayerMovement::
 	ret c
 	call .TryJump
 	ret c
-	call .TryStairs
-	ret c
 	call .CheckWarp
 	ret c
 	jr .NotMoving
@@ -80,8 +78,6 @@ DoPlayerMovement::
 	call .TryStep
 	ret c
 	call .TryJump
-	ret c
-	call .TryStairs
 	ret c
 	call .CheckWarp
 	ret c
@@ -425,47 +421,6 @@ DoPlayerMovement::
 	db FACE_UP | FACE_RIGHT   ; COLL_HOP_UP_RIGHT
 	db FACE_UP | FACE_LEFT    ; COLL_HOP_UP_LEFT
 
-.TryStairs:
-	ld a, [wPlayerTile]
-	ld e, a
-	and $f0
-	cp $c0 ; sideways stairs
-	jr nz, .DontStairs
-
-	ld a, e
-	and 7
-	ld e, a
-	ld d, 0
-	ld hl, .FacingStairsTable
-	add hl, de
-	ld a, [wFacingDirection]
-	and [hl]
-	jr z, .DontStairs
-
-	ld a, [wPlayerTile]
-	cp COLL_STAIRS_RIGHT_UP
-	ld a, FALSE
-	jr c, .goingdown
-	inc a
-.goingdown
-	ld [wPlayerGoingUpStairs], a
-
-	ld a, STEP_STAIRS
-	call .DoStep
-	ld a, 7
-	scf
-	ret
-
-.FacingStairsTable:
-	db FACE_RIGHT
-	db FACE_LEFT
-	db FACE_RIGHT
-	db FACE_LEFT
-
-.DontStairs:
-	xor a
-	ret
-
 .CheckWarp:
 ; BUG: No bump noise if standing on tile $3E (see docs/bugs_and_glitches.md)
 
@@ -548,7 +503,6 @@ DoPlayerMovement::
 	dw .TurningStep
 	dw .BackJumpStep
 	dw .FinishFacing
-	dw .StairsStep
 	dw .SpinStep
 	assert_table_length NUM_STEPS
 
@@ -602,11 +556,6 @@ DoPlayerMovement::
 	stairs_step_up
 	stairs_step_left
 	stairs_step_right
-.SpinStep
-	turn_in_down
-	turn_in_up
-	turn_in_left
-	turn_in_right
 
 .StandInPlace:
 	ld a, 0

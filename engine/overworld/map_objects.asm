@@ -1152,8 +1152,6 @@ StepTypesJumptable:
 	dw StepFunction_17              ; 17
 	dw StepFunction_Delete          ; 18
 	dw StepFunction_SkyfallTop      ; 19
-	dw NPCSidewaysStairs            ; 1a
-	dw PlayerSidewaysStairs         ; 1b
 	assert_table_length NUM_STEP_TYPES
 
 WaitStep_InPlace:
@@ -1887,96 +1885,6 @@ UpdateJumpPosition:
 .y_offsets:
 	db  -4,  -6,  -8, -10, -11, -12, -12, -12
 	db -11, -10,  -9,  -8,  -6,  -4,   0,   0
-
-	NPCSidewaysStairs:
-	; TODO
-	ret
-
-PlayerSidewaysStairs:
-	call ObjectStep_AnonJumptable
-; anonymous dw
-	dw .InitHorizontal1
-	dw .StepHorizontal
-	dw .InitHorizontal2
-	dw .StepHorizontal
-	dw .InitVertical
-	dw .StepVertical
-
-.InitHorizontal2:
-	call GetNextTile
-.InitHorizontal1:
-	ld hl, wPlayerStepFlags
-	set 7, [hl]
-	call ObjectStep_IncAnonJumptableIndex
-.StepHorizontal:
-	call UpdateDiagonalStairsPosition
-	call UpdatePlayerStep
-	ld hl, OBJECT_STEP_DURATION
-	add hl, bc
-	dec [hl]
-	ret nz
-	call CopyCoordsTileToLastCoordsTile
-	ld hl, OBJECT_FLAGS2
-	add hl, bc
-	res 3, [hl]
-	ld hl, wPlayerStepFlags
-	set 6, [hl]
-	set 4, [hl]
-	jp ObjectStep_IncAnonJumptableIndex
-
-.InitVertical:
- 	ld hl, OBJECT_ACTION
-	add hl, bc
-	ld [hl], OBJECT_ACTION_STAND
-	ld a, [wPlayerGoingUpStairs]
-	and a
-	ld a, DOWN
-	jr z, .got_dir
-	ld a, UP
-.got_dir
-	ld hl, OBJECT_WALKING
-	add hl, bc
-	ld [hl], a
-	ld a, [wPlayerGoingUpStairs]
-	xor 1
-	ld [wPlayerGoingUpStairs], a
-	call GetNextTile
-	ld hl, wPlayerStepFlags
-	set 7, [hl]
-	call ObjectStep_IncAnonJumptableIndex
-.StepVertical:
-	call UpdateDiagonalStairsPosition
-	call UpdatePlayerStep
-	ld hl, OBJECT_STEP_DURATION
-	add hl, bc
-	dec [hl]
-	ret nz
-	ld hl, wPlayerStepFlags
-	set 6, [hl]
-	call CopyCoordsTileToLastCoordsTile
-	ld hl, OBJECT_STEP_TYPE
-	add hl, bc
-	ld [hl], STEP_TYPE_SLEEP
-	ret
-
-UpdateDiagonalStairsPosition:
-	ld hl, OBJECT_STEP_DURATION
-	add hl, bc
-	ld a, [hl]
-	and 1
-	ret z
-	ld a, [wPlayerGoingUpStairs]
-	and a
-	ld e, 1
-	jr z, .got_dir
-	ld e, -1
-.got_dir
-	ld hl, OBJECT_SPRITE_Y_OFFSET
-	add hl, bc
-	ld a, [hl]
-	add e
-	ld [hl], a
-	ret
 
 GetPlayerNextMovementIndex:
 ; copy [wPlayerNextMovement] to [wPlayerMovement]

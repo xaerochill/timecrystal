@@ -237,8 +237,6 @@ DEF NUM_SPRITEMOVEFN EQU const_value
 	const STEP_TYPE_17               ; 17
 	const STEP_TYPE_DELETE           ; 18
 	const STEP_TYPE_SKYFALL_TOP      ; 19
-	const STEP_TYPE_NPC_STAIRS       ; 1a
-	const STEP_TYPE_PLAYER_STAIRS    ; 1b
 DEF NUM_STEP_TYPES EQU const_value
 
 ; ObjectActionPairPointers indexes (see engine/overworld/map_object_action.asm)
@@ -302,15 +300,14 @@ DEF NUM_FACINGS EQU const_value
 ; DoPlayerMovement.DoStep arguments (see engine/overworld/player_movement.asm)
 ; TODO: fix STEP_RUN constant to have a value of $3
 	const_def
-	const STEP_SLOW          ; 00
-	const STEP_WALK          ; 01
-	const STEP_RUN           ; 02
-	const STEP_BIKE          ; 03
-	const STEP_LEDGE         ; 04
-	const STEP_ICE           ; 05
-	const STEP_TURN          ; 06
-	const STEP_BACK_LEDGE    ; 07
-	const STEP_WALK_IN_PLACE ; 08
-	const STEP_STAIRS        ; 09
-	const STEP_SPIN          ; 0a
+	const STEP_SLOW          ; 0
+	const STEP_WALK          ; 1
+	const STEP_RUN           ; 2
+	const STEP_BIKE          ; 3
+	const STEP_LEDGE         ; 4
+	const STEP_ICE           ; 5
+	const STEP_TURN          ; 6
+	const STEP_BACK_LEDGE    ; 7
+	const STEP_WALK_IN_PLACE ; 8
+	const STEP_SPIN          ; 9
 DEF NUM_STEPS EQU const_value

@@ -95,10 +95,6 @@ MovementPointers:
 	dw Movement_bike_step_up          ; 5b
 	dw Movement_bike_step_left        ; 5c
 	dw Movement_bike_step_right       ; 5d
-	dw Movement_stairs_step_down      ; 5e
-	dw Movement_stairs_step_up        ; 5f
-	dw Movement_stairs_step_left      ; 60
-	dw Movement_stairs_step_right     ; 61
 	assert_table_length NUM_MOVEMENT_CMDS
 
 Movement_teleport_from:
@@ -806,39 +802,4 @@ JumpStep:
 	ld hl, OBJECT_STEP_TYPE
 	add hl, bc
 	ld [hl], STEP_TYPE_PLAYER_JUMP
-	ret
-
-Movement_stairs_step_down:
-	ld a, STEP_WALK << 2 | DOWN
-	jr DiagonalStairsStep
-
-Movement_stairs_step_up:
-	ld a, STEP_WALK << 2 | UP
-	jr DiagonalStairsStep
-
-Movement_stairs_step_left:
-	ld a, STEP_WALK << 2 | LEFT
-	jr DiagonalStairsStep
-
-Movement_stairs_step_right:
-	ld a, STEP_WALK << 2 | RIGHT
-
-DiagonalStairsStep:
-	call InitStep
-	ld hl, OBJECT_JUMP_HEIGHT
-	add hl, bc
-	ld [hl], $0
-
-	ld hl, OBJECT_ACTION
-	add hl, bc
-	ld [hl], OBJECT_ACTION_STEP
-
-	ld hl, wCenteredObject
-	ld a, [hMapObjectIndex]
-	cp [hl]
-	ld hl, OBJECT_STEP_TYPE
-	add hl, bc
-	ld [hl], STEP_TYPE_NPC_STAIRS
-	ret nz
-	ld [hl], STEP_TYPE_PLAYER_STAIRS
 	ret

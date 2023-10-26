@@ -224,27 +224,6 @@ MACRO bike_step
 	db movement_bike_step + \1
 ENDM
 
-
-	const movement_stairs_step_down
-MACRO stairs_step_down
-	db movement_stairs_step_down ; $5b
-	endm
-
-	const movement_stairs_step_up
-MACRO stairs_step_up
-	db movement_stairs_step_up ; $5c
-	endm
-
-	const movement_stairs_step_left
-MACRO stairs_step_left
-	db movement_stairs_step_left ; $5d
-	endm
-
-	const movement_stairs_step_right
-MACRO stairs_step_right
-	db movement_stairs_step_right ; $5e
-	endm
-
 	const_skip 3
 
 DEF NUM_MOVEMENT_CMDS EQU const_value

@@ -2915,7 +2915,7 @@ wGameTimeFrames::  db
 
 wCurDay:: db
 
-wPlayerGoingUpStairs:: ds 1
+	ds 1
 
 wObjectFollow_Leader:: db
 wObjectFollow_Follower:: db

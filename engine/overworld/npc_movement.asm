@@ -150,6 +150,8 @@ GetSideWallDirectionMask:
 	and $f0
 	cp HI_NYBBLE_SIDE_WALLS
 	jr z, .continue
+	cp HI_NYBBLE_SIDE_BUOYS
+	jr z, .continue
 	xor a
 	ret
 
