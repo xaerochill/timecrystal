@@ -1267,7 +1267,7 @@ UpdateTitleTrailSprite: ; unreferenced
 	ret z
 	ld e, a
 	ld d, [hl]
-	ld a, SPRITE_ANIM_INDEX_GS_TITLE_TRAIL
+	ld a, SPRITE_ANIM_OBJ_GS_TITLE_TRAIL
 	call InitSpriteAnimStruct
 	ret
 
