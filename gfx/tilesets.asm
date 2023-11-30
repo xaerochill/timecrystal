@@ -198,7 +198,6 @@ TilesetGateColl::
 INCLUDE "data/tilesets/gate_collision.asm"
 
 TilesetJohtoModernGFX::
-TilesetBattleTowerOutsideGFX::
 INCBIN "gfx/tilesets/johto_modern.2bpp.lz"
 
 TilesetJohtoModernMeta::
@@ -401,3 +400,6 @@ INCBIN "data/tilesets/ice_path_attributes.bin"
 
 TilesetForestAttr::
 INCBIN "data/tilesets/forest_attributes.bin"
+
+TilesetBattleTowerOutsideGFX::
+INCBIN "gfx/tilesets/battle_tower_outside.2bpp.lz"

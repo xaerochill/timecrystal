@@ -8,71 +8,23 @@ BattleTowerOutside_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, BattleTowerOutsideDoorsCallback
-	callback MAPCALLBACK_OBJECTS, BattleTowerOutsideShowCiviliansCallback
-
-BattleTowerOutsideDoorsCallback:
-	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iftrue .doorsopen;$7CE6
-	changeblock 8, 8, $2C
-	endcallback
-
-.doorsopen
-	changeblock 8, 8, $12
-	endcallback
-
-BattleTowerOutsideShowCiviliansCallback:
-	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iffalse .nomobile
-	clearevent EVENT_BATTLE_TOWER_OPEN_CIVILIANS
-
-.nomobile
-	endcallback
 
 BattleTowerOutsideYoungsterScript:
-	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iftrue .mobile
-	jumptextfaceplayer BattleTowerOutsideYoungsterText_NotYetOpen
-
-.mobile
-	jumptextfaceplayer BattleTowerOutsideYoungsterText_Mobile
+	jumptextfaceplayer BattleTowerOutsideYoungsterText
 
 BattleTowerOutsideBeautyScript:
-	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iftrue .mobile
-	jumptextfaceplayer BattleTowerOutsideBeautyText_NotYetOpen
-
-.mobile
 	jumptextfaceplayer BattleTowerOutsideBeautyText
 
 BattleTowerOutsideSailorScript:
-	jumptextfaceplayer BattleTowerOutsideSailorText_Mobile
+	jumptextfaceplayer BattleTowerOutsideSailorText
 
 BattleTowerOutsideSign:
-	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iftrue .mobile
-	jumptext BattleTowerOutsideSignText_NotYetOpen
-
-.mobile
 	jumptext BattleTowerOutsideSignText
 
 BattleTowerOutsideDoor:
-	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iftrue .mobile
-	jumptext BattleTowerOutsideText_DoorsClosed
-
-.mobile
 	jumptext BattleTowerOutsideText_DoorsOpen
 
-BattleTowerOutsideYoungsterText_NotYetOpen:
-	text "Wow, the BATTLE"
-	line "TOWER is huge! My"
-
-	para "neck is tired from"
-	line "looking up at it."
-	done
-
-BattleTowerOutsideYoungsterText_Mobile:
+BattleTowerOutsideYoungsterText:
 	text "Wow, the BATTLE"
 	line "TOWER is huge!"
 
@@ -86,26 +38,6 @@ BattleTowerOutsideYoungsterText_Mobile:
 	line "#MON."
 	done
 
-BattleTowerOutsideYoungsterText:
-	text "Wow, the BATTLE"
-	line "TOWER is huge!"
-
-	para "There must be many"
-	line "kinds of #MON"
-	cont "in there!"
-	done
-
-BattleTowerOutsideBeautyText_NotYetOpen:
-	text "What on earth do"
-	line "they do here?"
-
-	para "If the name says"
-	line "anything, I guess"
-
-	para "it must be for"
-	line "#MON battles."
-	done
-
 BattleTowerOutsideBeautyText:
 	text "You can use only"
 	line "three #MON."
@@ -117,7 +49,7 @@ BattleTowerOutsideBeautyText:
 	line "battle…"
 	done
 
-BattleTowerOutsideSailorText_Mobile:
+BattleTowerOutsideSailorText:
 	text "Ehehehe…"
 	line "I sneaked out of"
 	cont "work to come here."
@@ -127,31 +59,11 @@ BattleTowerOutsideSailorText_Mobile:
 	cont "a LEADER!"
 	done
 
-BattleTowerOutsideSailorText:
-	text "Hehehe, I snuck"
-	line "out from work."
-
-	para "I can't bail out"
-	line "until I've won!"
-
-	para "I have to win it"
-	line "all. That I must!"
-	done
-
-BattleTowerOutsideSignText_NotYetOpen:
-	text "BATTLE TOWER"
-	done
-
 BattleTowerOutsideSignText:
 	text "BATTLE TOWER"
 
 	para "Take the Ultimate"
 	line "Trainer Challenge!"
-	done
-
-BattleTowerOutsideText_DoorsClosed:
-	text "The BATTLE TOWER's"
-	line "doors are closed…"
 	done
 
 BattleTowerOutsideText_DoorsOpen:
@@ -176,6 +88,6 @@ BattleTowerOutside_MapEvents:
 
 	def_object_events
 	object_event 32, 16, SPRITE_BEAUTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideBeautyScript, -1
-	object_event  9, 34, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, EVENT_BATTLE_TOWER_OPEN_CIVILIANS
+	object_event  9, 34, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideSailorScript, -1
 	object_event 32, 34, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 18, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleTowerOutsideYoungsterScript, -1

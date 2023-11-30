@@ -19,11 +19,6 @@ Route40_MapScripts:
 	callback MAPCALLBACK_OBJECTS, Route40MonicaCallback
 
 Route40MonicaCallback:
-	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iffalse .nomobile
-	clearevent EVENT_BATTLE_TOWER_OPEN_CIVILIANS
-
-.nomobile
 	readvar VAR_WEEKDAY
 	ifequal MONDAY, .MonicaAppears
 	disappear ROUTE40_MONICA
@@ -81,12 +76,7 @@ Route40Lass1Script:
 	jumptextfaceplayer Route40Lass1Text
 
 Route40PokefanMScript:
-	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iftrue .mobile
 	jumptextfaceplayer Route40PokefanMText
-
-.mobile
-	jumptextfaceplayer Route40PokefanMText_Mobile
 
 Route40Lass2Script:
 	jumptextfaceplayer Route40Lass2Text
@@ -138,31 +128,6 @@ Route40Rock:
 
 Route40HiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ROUTE_40_HIDDEN_HYPER_POTION
-
-Route40_StepRightUp6Movement: ; unreferenced
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-Route40_StepUp5Movement: ; unreferenced
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-Route40_StepUp4Movement: ; unreferenced
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
 
 SwimmermSimonSeenText:
 	text "You have to warm"
@@ -246,13 +211,6 @@ Route40Lass1Text:
 	done
 
 Route40PokefanMText:
-	text "Hm! There's a big"
-	line "building up ahead!"
-
-	para "What is it?"
-	done
-
-Route40PokefanMText_Mobile:
 	text "Hm! Look at all"
 	line "those serious-"
 	cont "looking trainers"
@@ -363,4 +321,4 @@ Route40_MapEvents:
 	object_event  8, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MonicaScript, EVENT_ROUTE_40_MONICA_OF_MONDAY
 	object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40PokefanMScript, -1
 	object_event 13,  4, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40Lass2Script, -1
-	object_event 12,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route40StandingYoungsterScript, EVENT_BATTLE_TOWER_OPEN_CIVILIANS
+	object_event 12,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route40StandingYoungsterScript, -1

@@ -6,37 +6,14 @@ Route40BattleTowerGate_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, RouteBattleTowerGateShowSailorCallback
-
-RouteBattleTowerGateShowSailorCallback:
-	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iffalse .nomobile
-	clearevent EVENT_BATTLE_TOWER_OPEN_CIVILIANS
-
-.nomobile
-	return
 
 Route40BattleTowerGateRockerScript:
 	jumptextfaceplayer Route40BattleTowerGateRockerText
 
 Route40BattleTowerGateTwinScript:
-	checkevent ENGINE_UNLOCKED_UNOWNS_X_TO_Z
-	iftrue .mobile
 	jumptextfaceplayer Route40BattleTowerGateTwinText
 
-.mobile
-	jumptextfaceplayer Route40BattleTowerGateTwinMobileText
-
 Route40BattleTowerGateTwinText:
-	text "Did you come to"
-	line "see the BATTLE"
-	cont "TOWER too?"
-
-	para "But I guess you"
-	line "can't go in yet."
-	done
-
-Route40BattleTowerGateTwinMobileText:
 	text "BATTLE TOWER has"
 	line "opened."
 
@@ -72,5 +49,5 @@ Route40BattleTowerGate_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  3, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateRockerScript, EVENT_BATTLE_TOWER_OPEN_CIVILIANS
+	object_event  3,  3, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateRockerScript, -1
 	object_event  7,  5, SPRITE_TWIN, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateTwinScript, -1
