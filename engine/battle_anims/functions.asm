@@ -436,7 +436,7 @@ GetBallAnimPal:
 	ld [hl], PAL_BATTLE_OB_RED
 	ret
 
-BattleAnimFunction_Ember:
+BattleAnimFunc_Ember:
 	call BattleAnim_AnonJumptable
 .anon_dw
 	dw .zero

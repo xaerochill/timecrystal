@@ -1341,7 +1341,7 @@ BattleAnim_Sonicboom:
 	anim_ret
 
 BattleAnim_Gust:
-	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
+	anim_2gfx BATTLE_ANIM_GFX_WIND, BATTLE_ANIM_GFX_HIT
 .loop
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_obj BATTLE_ANIM_OBJ_GUST, 136, 72, $0
