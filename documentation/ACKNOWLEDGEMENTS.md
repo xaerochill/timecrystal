@@ -1,13 +1,13 @@
 **Gameplay**
 
 - GameFreak and Nintendo for creating this spectacular game in the first place
-- Everyone involved in  for their amazing work with the pokecrystal disassembly
+- Everyone involved in the [pokecrystal wiki](https://github.com/pret/pokecrystal/wiki/Tutorials) where many changes were taken from
 - [TCRF](https://tcrf.net/) for their documentation of unused or lost maps, tiles, trainers, text, and game assets where I have taken most material and inspiration from
 - The amazing artists at [Johto Redrawn](https://retroredrawn.com/johto/) which inspired many changes to maps
 - The kind people on the pret Discord for their continued help on all kinds of issues <3
-  -- [vulcandth](https://github.com/vulcandth) for all of the work on the disassembly and code such as the PokéSeer fix and the 60 FPS engine
-  -- [Sylvie](https://github.com/rangi42) for all of the work on the disassembly and code such as the diagonal stairs
-  -- [Idain](https://github.com/Idain) for the diagonal stairs code & code cleanup of the fossil mechanic restauration
+  - [vulcandth](https://github.com/vulcandth) for all of the work on the disassembly and code such as the PokéSeer fix and the 60 FPS engine
+  - [Sylvie](https://github.com/rangi42) for all of the work on the disassembly and code such as the diagonal stairs
+  - [Idain](https://github.com/Idain) for the diagonal stairs code & code cleanup of the fossil mechanic restauration
 
 **Easter Eggs**
 - Can you find the house of [Takeshi Shudo](https://lavacutcontent.com/takeshi-shudo-ending-pokemon/), the creator of Lugia who once drank with sailors to understand how they talk?
@@ -23,15 +23,15 @@
 
 **Music**
 - [TriteHexagon](https://github.com/TriteHexagon/Trite_ASM_Repository):
-  -- [Midi2ASM-Converter](https://github.com/TriteHexagon/Midi2ASM-Converter)
-  -- [Dive](https://github.com/TriteHexagon/Trite_ASM_Repository/blob/main/normal/dive.asm)
+  - [Midi2ASM-Converter](https://github.com/TriteHexagon/Midi2ASM-Converter)
+  - [Dive](https://github.com/TriteHexagon/Trite_ASM_Repository/blob/main/normal/dive.asm)
 - [pokeyellow](https://github.com/pret/pokeyellow):
-  -- [Unused Giovanni Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/yellowunusedsong.asm)
-  -- [Cinnabar Island Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/cinnabar.asm)
-  -- [Cinnabar Mansion Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/cinnabarmansion.asm)
-  -- [Lavender Town Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/lavender.asm)
-  -- [Pokémon Tower Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/pokemontower.asm)
-  -- [Silph Co. Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/silphco.asm)
-  -- [Surfing Pikachu Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/surfingpikachu.asm)
+  - [Unused Giovanni Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/yellowunusedsong.asm)
+  - [Cinnabar Island Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/cinnabar.asm)
+  - [Cinnabar Mansion Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/cinnabarmansion.asm)
+  - [Lavender Town Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/lavender.asm)
+  - [Pokémon Tower Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/pokemontower.asm)
+  - [Silph Co. Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/silphco.asm)
+  - [Surfing Pikachu Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/surfingpikachu.asm)
 - [IronInvoker47](https://drive.google.com/drive/folders/1Fdu5bzncseEciv4_7t4Xoxl-ApOf4Ej6):
-  -- [Unused Trade Song from RBY](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue#Unused_Song)
+  - [Unused Trade Song from RBY](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue#Unused_Song)

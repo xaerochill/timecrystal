@@ -731,3 +731,7 @@ DEF KRIS EQU __trainer_class__
 	const YELLOW1
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
+
+; We can define constants for RandomPartyLists for use in data/trainers/parties.asm here:
+	const_def
+	const RANDOMLIST_BATTLEFRONTIER

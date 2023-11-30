@@ -2,20 +2,15 @@
 
 ## Table of Contents
 
-- [What is Time Crystal?](#what-is-time-crystal)
+- [Pokémon Changes](#pokemon-changes)
 - [Game Changes](#game-changes)
 - [Map Changes](#map-changes)
-- [What was changed?](#what-was-changed)
-  - [QOL Changes](#qol-changes)
-  - [Difficulty Changes](#difficulty-changes)
-  - [Other Changes](#other-changes)
+- [QOL Changes](#qol-changes)
+- [Difficulty Changes](#difficulty-changes)
+- [Other Changes](#other-changes)
 - [Fixed Design Flaws](#fixed-design-flaws)
 
-## What is Time Crystal?
-
-In terms of gameplay, it floats somewhere between RBY and HGSS and takes select elements of each generation without breaking compatibility with vanilla GSC. Canon-wise, it will take place after the [Gold, Silver & Crystal chapter](https://bulbapedia.bulbagarden.net/wiki/Gold,_Silver_%26_Crystal_chapter_(Adventures)) ince story elements are changed.
-
-In terms of graphics, the colours have been desaturated and the overworld is significantly more diverse
+## Pokémon Changes
 
 All Pokémon not present in vanilla Crystal are available:
 * Bulbasaur: Cerulean City Gift, Viridian Forest
@@ -94,11 +89,7 @@ Beating the Elite 4 resets the following Events:
 - [ ] Add the [Unknown Office](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Unknown_Office) to the Celadon Condominiums
 - [ ] Make use of [Olivine Gym 2F](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Olivine_Gym_2F)
 
-## What was changed?
-
-All of the changes are taken from the [pokecrystal wiki](https://github.com/pret/pokecrystal/wiki/Tutorials) unless credited otherwise.
-
-### QOL Changes
+## QOL Changes
 
 - Simplified clock reset by pressing Down and B
 - Option for instant text
@@ -109,50 +100,50 @@ All of the changes are taken from the [pokecrystal wiki](https://github.com/pret
 - Fixed the 6-bit Caught Level to record Pokemon > Level 63 by [vulcandth](https://github.com/thegsproj/pokegscrystal/pull/8/commits)
 - Evolution Stones can be bought at the Marts of Cinnabar Island and Lake of Rage
 - Improved the Swarm System and adding HG/SS Swarms. OAK'S AIDE triggers a random daily swarm:
-  -- Marill: Mt. Mortar
-  -- Yanma: Route 35
-  -- Dunsparce: Dark Cave
-  -- Snubbull: Route 38
-  -- Quilfish: Route 32
-  -- Remoraid: Route 44
+  - Marill: Mt. Mortar
+  - Yanma: Route 35
+  - Dunsparce: Dark Cave
+  - Snubbull: Route 38
+  - Quilfish: Route 32
+  - Remoraid: Route 44
 - Unlocking Unown X - Z unlocks dialogue related to mobile content in the following maps:
-  -- Cerulean Poké Center
-  -- Ecruteak Poké Center
-  -- Fast Ship
-  -- Goldenrod PokéCom Center
-  -- Route 40
-  -- Ruins of Alph Research Center
-  -- Saffron Poké Center
-  -- Violet Poké Center
+  - Cerulean Poké Center
+  - Ecruteak Poké Center
+  - Fast Ship
+  - Goldenrod PokéCom Center
+  - Route 40
+  - Ruins of Alph Research Center
+  - Saffron Poké Center
+  - Violet Poké Center
 
-### Difficulty Changes
+## Difficulty Changes
 - Removed Gym Badges Boosts
 - Removed 25% failure chance for AI status moves
 - Any encountered wild Pokémon (excluding legendaries) may vary up to 0-4 levels
 
-### Other Changes
-[ ] Removed redundant Japanese move grammar table
-[ ] Used unique colors and new animation for each thrown Ball
-[x] Animated tiles even when textboxes are open
-[x] Made overworld sprites darker at night
-[x] Expanded tilesets from 192 to 255 tiles
-[x] Allowed tiles to have different attributes in different blocks
-[ ] Allowed more than 15 object_events per map
-[x] Improved the outdoor sprite system
-[x] Reduced the command queue system to just stone tables
-[x] Improved the event initialization system
-[ ] Print text when you lose a trainer battle
-[ ] Disable jumping over ledges onto obstacle tiles or NPCs
+## Other Changes
+- [x] Animated tiles even when textboxes are open
+- [x] Made overworld sprites darker at night
+- [x] Expanded tilesets from 192 to 255 tiles
+- [x] Allowed tiles to have different attributes in different blocks
+- [x] Improved the outdoor sprite system
+- [x] Reduced the command queue system to just stone tables
+- [x] Improved the event initialization system
+- [ ] Removed redundant Japanese move grammar table
+- [ ] Used unique colors and new animation for each thrown Ball
+- [ ] Allowed more than 15 object_events per map
+- [ ] Print text when you lose a trainer battle
+- [ ] Disable jumping over ledges onto obstacle tiles or NPCs
 
 ## Fixed Design Flaws
 
 All of these were fixed as suggested in the [pokecrystal documentation](https://pret.github.io/pokecrystal/design_flaws.html)
 
-[x] Pic banks are not offset by PICS_FIX anymore
-[x] PokemonPicPointers and UnownPicPointers do not start at the same address anymore
-[x] Footprints are no longer split into top and bottom halves
-[x] Music IDs $64 and $80 or above now have regular behaviour
-[x] Changed Item order so that ITEM_C3 and ITEM_DC no longer break up the continuous sequence of TM items
-[ ] Fixing Pokédex entry banks being derived from their species IDs
-[x] Simplified GetForestTreeFrame
-[x] The overworld scripting engine no longer assumes no more than 127 banks
+- [x] Pic banks are not offset by PICS_FIX anymore
+- [x] PokemonPicPointers and UnownPicPointers do not start at the same address anymore
+- [x] Footprints are no longer split into top and bottom halves
+- [x] Music IDs $64 and $80 or above now have regular behaviour
+- [x] Changed Item order so that ITEM_C3 and ITEM_DC no longer break up the continuous sequence of TM items
+- [x] Simplified GetForestTreeFrame
+- [x] The overworld scripting engine no longer assumes no more than 127 banks
+- [ ] Fixing Pokédex entry banks being derived from their species IDs
