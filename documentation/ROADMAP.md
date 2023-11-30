@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [What is Violet?](#what-is-violet)
+- [What is Time Crystal?](#what-is-time-crystal)
 - [Game Changes](#game-changes)
 - [Map Changes](#map-changes)
 - [What was changed?](#what-was-changed)
@@ -11,9 +11,11 @@
   - [Other Changes](#other-changes)
 - [Fixed Design Flaws](#fixed-design-flaws)
 
-## What is Violet?
+## What is Time Crystal?
 
-In terms of gameplay, it floats somewhere between RBY and HGSS and takes select elements of each generation without breaking compatibility with vanilla GSC. Canon-wise, it will take place after the [Gold, Silver & Crystal chapter](https://bulbapedia.bulbagarden.net/wiki/Gold,_Silver_%26_Crystal_chapter_(Adventures)).
+In terms of gameplay, it floats somewhere between RBY and HGSS and takes select elements of each generation without breaking compatibility with vanilla GSC. Canon-wise, it will take place after the [Gold, Silver & Crystal chapter](https://bulbapedia.bulbagarden.net/wiki/Gold,_Silver_%26_Crystal_chapter_(Adventures)) ince story elements are changed.
+
+In terms of graphics, the colours have been desaturated and the overworld is significantly more diverse
 
 All Pokémon not present in vanilla Crystal are available:
 * Bulbasaur: Cerulean City Gift, Viridian Forest
@@ -48,6 +50,7 @@ Beating the Elite 4 resets the following Events:
 * Odd Egg
 
 ## Game Changes
+- [x] The game fully runs in 60 FPS
 - [x] All three fossils from Gen I can be found by smashing rocks and revived at the Cinnabar Pokémon Lab
 - [x] Fixed [Generation II off-model sprites](https://bulbapedia.bulbagarden.net/wiki/User:Vuvuzela2010/Sprite_Errors#Generation_II)
 - [ ] Scaling trainer parties with individual DVs, stat experience & nicknames
@@ -75,6 +78,7 @@ Beating the Elite 4 resets the following Events:
 - [x] Mount Mooon uses the Gen 1 layout again
 - [x] Kanto Underground has been reworked and features Red & Blue's unused [neon lights](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue/Unseen_Graphics#Tileset_12)
 - [x] Beta Lake of Rage has been restored and features [Old City's Gym](https://tcrf.net/Development:Pok%C3%A9mon_Gold_and_Silver/Unused_Maps/Interiors#Old_City.27s_Gym), where the last type not represented in a Gym up to Gen II is used: Dark
+- [x] The Battle Tower has been reworked into the Battle Frontier and is always open.
 - [ ] Entei is available as a static encounter in [Burned Tower B2F](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Burned_Tower) after beating the E4
 - [ ] Raikou is available as a static encounter in the [scrapped Seafoam Islands map](https://tcrf.net/Development:Pok%C3%A9mon_Red_and_Blue/Unused_Maps#Seafoam_Islands) after beating the E4
 - [ ] Suicune is available as a static encounter in [Bill's Garden](https://tcrf.net/Development:Pok%C3%A9mon_Red_and_Blue/Unused_Maps#Garden) after beating the E4
@@ -112,7 +116,6 @@ All of the changes are taken from the [pokecrystal wiki](https://github.com/pret
   -- Quilfish: Route 32
   -- Remoraid: Route 44
 - Unlocking Unown X - Z unlocks dialogue related to mobile content in the following maps:
-  -- Battle Tower Outside
   -- Cerulean Poké Center
   -- Ecruteak Poké Center
   -- Fast Ship

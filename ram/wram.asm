@@ -3146,7 +3146,11 @@ wKenjiFightCount::   db ; unreferenced
 wParryFightCount::   db
 wErinFightCount::    db
 
-	ds 100
+	ds 97
+
+wPlayerGoingUpDownStairs:: db
+wObjectGoingUpDownStairs:: db
+wPlayerGoingLeftRightStairs:: db
 
 wEventFlags:: flag_array NUM_EVENTS
 

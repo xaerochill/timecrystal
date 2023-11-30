@@ -751,10 +751,12 @@ PlayerMovementPointers:
 	dw .continue
 	dw .exit_water
 	dw .jump
+	dw .stairs
 	assert_table_length NUM_PLAYER_MOVEMENTS
 
 .normal:
 .finish:
+.stairs:
 	xor a
 	ld c, a
 	ret

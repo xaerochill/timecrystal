@@ -1152,6 +1152,8 @@ StepTypesJumptable:
 	dw StepFunction_17              ; 17
 	dw StepFunction_Delete          ; 18
 	dw StepFunction_SkyfallTop      ; 19
+	dw StepFunction_NPCDiagonalStairs
+	dw StepFunction_PlayerDiagonalStairs
 	assert_table_length NUM_STEP_TYPES
 
 WaitStep_InPlace:
@@ -1885,6 +1887,251 @@ UpdateJumpPosition:
 .y_offsets:
 	db  -4,  -6,  -8, -10, -11, -12, -12, -12
 	db -11, -10,  -9,  -8,  -6,  -4,   0,   0
+	
+StepFunction_NPCDiagonalStairs:
+	call ObjectStep_AnonJumptable
+; anonymous dw
+	dw .Start
+	dw .StepHorizontal
+	dw .StepHorizontal2
+
+.Start:
+	ld hl, OBJECT_LAST_TILE
+	add hl, bc
+	ld a, [hl]
+	and $f
+	ld e, a
+	ld d, 0
+	ld hl, FacingStairsTable
+	add hl, de
+
+	push hl
+	ld hl, OBJECT_WALKING
+	add hl, bc
+	ld a, [hl]
+	maskbits NUM_DIRECTIONS
+	pop hl
+
+	cp RIGHT
+	ld a, [hl]
+	jr z, .dont_swap
+	swap a
+.dont_swap
+	and $f
+	ld [wObjectGoingUpDownStairs], a
+	jp ObjectStep_IncAnonJumptableIndex
+
+.StepHorizontal:
+	call AddStepVector
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld a, [hl]
+	cp 5
+	call c, NPCDiagonalStairsUpdatePosition
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	ret nz
+	call CopyCoordsTileToLastCoordsTile
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	res OVERHEAD_F, [hl]
+	ld a, [wObjectGoingUpDownStairs]
+	and a
+	ld a, 1
+	jr z, .fix_offsets
+	ld a, -1
+.fix_offsets
+	ld hl, OBJECT_LAST_MAP_Y
+	add hl, bc
+	add [hl]
+	ld [hl], a
+	call GetNextTile
+	jp ObjectStep_IncAnonJumptableIndex
+
+.StepHorizontal2:
+	call AddStepVector
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld a, [hl]
+	cp 5
+	call nc, NPCDiagonalStairsUpdatePosition
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	ret nz
+	call CopyCoordsTileToLastCoordsTile
+	xor a
+	ld [wObjectGoingUpDownStairs], a
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_FROM_MOVEMENT
+	ret
+
+StepFunction_PlayerDiagonalStairs:
+	call ObjectStep_AnonJumptable
+; anonymous dw
+	dw .Start
+	dw .PreloadMap
+	dw .InitHorizontal1
+	dw .StepHorizontal
+	dw .InitHorizontal2
+	dw .StepHorizontal2
+
+.Start:
+	ld a, [wPlayerLastTile]
+	and $f
+	ld e, a
+	ld d, 0
+	ld hl, FacingStairsTable
+	add hl, de
+
+	ld a, [wPlayerWalking]
+	maskbits NUM_DIRECTIONS
+	ld [wPlayerGoingLeftRightStairs], a
+	cp RIGHT
+	ld a, [hl]
+	jr z, .dont_swap
+	swap a
+.dont_swap
+	and $f
+	inc a ; Either DOWN+1 or UP+1
+	ld [wPlayerGoingUpDownStairs], a
+	jp ObjectStep_IncAnonJumptableIndex
+
+.PreloadMap
+	push bc
+	; Scroll map twice in X-axis
+	ld a, [wPlayerGoingLeftRightStairs]
+	ld b, a
+	ld c, 2
+	farcall UpdateOWMapStairs
+	; Scroll map in Y-axis
+	ld a, [wPlayerGoingUpDownStairs]
+	dec a
+	ld b, a
+	ld c, 1
+	farcall UpdateOWMapStairs
+	; Scroll map back in X-axis
+	ld a, [wPlayerGoingLeftRightStairs]
+	xor 1
+	ld b, a
+	ld c, 2
+	farcall UpdateOWMapStairs
+	pop bc
+	jp ObjectStep_IncAnonJumptableIndex
+
+.InitHorizontal1:
+	ld hl, wPlayerStepFlags
+	set PLAYERSTEP_START_F, [hl]
+	call ObjectStep_IncAnonJumptableIndex
+.StepHorizontal:
+	call UpdatePlayerStep
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld a, [hl]
+	cp 5
+	call c, PlayerDiagonalStairsUpdatePosition
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	ret nz
+	call CopyCoordsTileToLastCoordsTile
+	ld hl, OBJECT_FLAGS2
+	add hl, bc
+	res OVERHEAD_F, [hl]
+	ld hl, wPlayerStepFlags
+	set PLAYERSTEP_STOP_F, [hl]
+	set PLAYERSTEP_MIDAIR_F, [hl]
+	; Fix Y-coordinate offsets
+	ld a, [wPlayerGoingUpDownStairs]
+	dec a
+	ld e, 1
+	jr z, .fix_offsets
+	ld e, -1
+.fix_offsets
+	ld a, [wYCoord]
+	add e
+	ld [wYCoord], a
+	ld a, [wPlayerLastMapY]
+	add e
+	ld [wPlayerLastMapY], a
+	jp ObjectStep_IncAnonJumptableIndex
+
+.InitHorizontal2:
+	call GetNextTile
+	ld hl, wPlayerStepFlags
+	set PLAYERSTEP_START_F, [hl]
+	call ObjectStep_IncAnonJumptableIndex
+.StepHorizontal2:
+	call UpdatePlayerStep
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	ld a, [hl]
+	cp 5
+	call nc, PlayerDiagonalStairsUpdatePosition
+	ld hl, OBJECT_STEP_DURATION
+	add hl, bc
+	dec [hl]
+	ret nz
+	call CopyCoordsTileToLastCoordsTile
+	ld hl, wPlayerStepFlags
+	set PLAYERSTEP_STOP_F, [hl]
+	xor a
+	ld [wPlayerGoingUpDownStairs], a
+	ld [wPlayerGoingLeftRightStairs], a
+	ld hl, OBJECT_STEP_TYPE
+	add hl, bc
+	ld [hl], STEP_TYPE_FROM_MOVEMENT
+	ret
+
+PlayerDiagonalStairsUpdatePosition:
+	ld a, [wPlayerGoingUpDownStairs]
+	dec a
+	ld e, 2
+	jr z, .updatePosition
+	ld e, -2
+.updatePosition
+	ld a, [hSCY]
+	add e
+	ld [hSCY], a
+	ld a, [wPlayerBGMapOffsetY]
+	sub e
+	ld [wPlayerBGMapOffsetY], a
+	ld hl, OBJECT_SPRITE_Y
+	add hl, bc
+	ld a, [hl]
+	add e
+	ld [hl], a
+	ret
+
+NPCDiagonalStairsUpdatePosition:
+	ld a, [wObjectGoingUpDownStairs]
+	and a
+	ld e, 2
+	jr z, .updatePosition
+	ld e, -2
+.updatePosition
+	ld hl, OBJECT_SPRITE_Y
+	add hl, bc
+	ld a, [hl]
+	add e
+	ld [hl], a
+	ret
+
+MACRO stairtable
+	dn \1, \2
+ENDM
+
+FacingStairsTable:
+	stairtable 	DOWN, 	DOWN, ; COLL_STAIRS_DOWN_RIGHT
+	stairtable	DOWN, 	DOWN, ; COLL_STAIRS_DOWN_LEFT
+	stairtable 	UP, 	UP,   ; COLL_STAIRS_UP_RIGHT
+	stairtable	UP, 	UP,   ; COLL_STAIRS_UP_LEFT
+	stairtable	UP, 	UP,	  ; COLL_STAIRS_UP_LEFT_UP_RIGHT
+	stairtable	DOWN, 	UP,   ; COLL_STAIRS_DOWN_LEFT_UP_RIGHT
+	stairtable	UP, 	DOWN, ; COLL_STAIRS_UP_LEFT_DOWN_RIGHT
+	stairtable	DOWN, 	DOWN, ; COLL_STAIRS_DOWN_LEFT_DOWN_RIGHT
 
 GetPlayerNextMovementIndex:
 ; copy [wPlayerNextMovement] to [wPlayerMovement]
