@@ -53,11 +53,11 @@ TrainerGroups:
 	dba FirebreatherGroup
 	dba JugglerGroup
 	dba BlackbeltGroup
-	dba ExecutiveMGroup
+	dba ArcherGroup
 	dba PsychicGroup
 	dba PicnickerGroup
 	dba CamperGroup
-	dba ExecutiveFGroup
+	dba ArianaGroup
 	dba SageGroup
 	dba MediumGroup
 	dba BoarderGroup
@@ -80,4 +80,6 @@ TrainerGroups:
 	dba TeacherMGroup
 	dba GreenGroup
 	dba YellowGroup
+	dba PetrelGroup
+	dba ProtonGroup
 	assert_table_length NUM_TRAINER_CLASSES

@@ -59,11 +59,11 @@ INCBIN "gfx/trainers/burglar.gbcpal", middle_colors
 INCBIN "gfx/trainers/firebreather.gbcpal", middle_colors
 INCBIN "gfx/trainers/juggler.gbcpal", middle_colors
 INCBIN "gfx/trainers/blackbelt_t.gbcpal", middle_colors
-INCBIN "gfx/trainers/executive_m.gbcpal", middle_colors
+INCBIN "gfx/trainers/archer.gbcpal", middle_colors
 INCBIN "gfx/trainers/psychic_t.gbcpal", middle_colors
 INCBIN "gfx/trainers/picnicker.gbcpal", middle_colors
 INCBIN "gfx/trainers/camper.gbcpal", middle_colors
-INCBIN "gfx/trainers/executive_f.gbcpal", middle_colors
+INCBIN "gfx/trainers/ariana.gbcpal", middle_colors
 INCBIN "gfx/trainers/sage.gbcpal", middle_colors
 INCBIN "gfx/trainers/medium.gbcpal", middle_colors
 INCBIN "gfx/trainers/boarder.gbcpal", middle_colors
@@ -86,5 +86,7 @@ INCBIN "gfx/trainers/sportsman.gbcpal", middle_colors
 INCBIN "gfx/trainers/teacher_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/green.gbcpal", middle_colors
 INCBIN "gfx/trainers/yellow.gbcpal", middle_colors
+INCBIN "gfx/trainers/petrel.gbcpal", middle_colors
+INCBIN "gfx/trainers/proton.gbcpal", middle_colors
 
 	assert_table_length NUM_TRAINER_CLASSES + 1

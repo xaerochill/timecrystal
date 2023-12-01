@@ -278,7 +278,7 @@ DEF KRIS EQU __trainer_class__
 	const MILLER
 
 	trainerclass GRUNTM ; 1f
-	const GRUNTM_1
+	const GRUNTM_1 ; unused
 	const GRUNTM_2
 	const GRUNTM_3
 	const GRUNTM_4
@@ -536,11 +536,8 @@ DEF KRIS EQU __trainer_class__
 	const KENJI3
 	const WAI
 
-	trainerclass EXECUTIVEM ; 33
-	const EXECUTIVEM_1
-	const EXECUTIVEM_2
-	const EXECUTIVEM_3
-	const EXECUTIVEM_4
+	trainerclass ARCHER ; 33
+	const ARCHER1
 
 	trainerclass PSYCHIC_T ; 34
 	const NATHAN
@@ -608,9 +605,8 @@ DEF KRIS EQU __trainer_class__
 	const TODD5
 	const QUENTIN
 
-	trainerclass EXECUTIVEF ; 37
-	const EXECUTIVEF_1
-	const EXECUTIVEF_2
+	trainerclass ARIANA ; 37
+	const ARIANA1
 
 	trainerclass SAGE ; 38
 	const CHOW
@@ -729,6 +725,12 @@ DEF KRIS EQU __trainer_class__
 	
 	trainerclass YELLOW ; 4d
 	const YELLOW1
+
+	trainerclass PETREL ; 4e
+	const PETREL1
+
+	trainerclass PROTON ; 4f
+	const PROTON1
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1
 

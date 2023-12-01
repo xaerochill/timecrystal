@@ -53,11 +53,11 @@ TrainerPicPointers::
 	dba FirebreatherPic
 	dba JugglerPic
 	dba BlackbeltTPic
-	dba ExecutivemPic
+	dba ArcherPic
 	dba PsychicTPic
 	dba PicnickerPic
 	dba CamperPic
-	dba ExecutivefPic
+	dba ArianaPic
 	dba SagePic
 	dba MediumPic
 	dba BoarderPic
@@ -80,4 +80,6 @@ TrainerPicPointers::
 	dba TeacherMPic
 	dba GreenPic
 	dba YellowPic
+	dba PetrelPic
+	dba ProtonPic
 	assert_table_length NUM_TRAINER_CLASSES

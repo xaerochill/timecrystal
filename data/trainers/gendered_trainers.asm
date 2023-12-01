@@ -16,6 +16,7 @@ MaleTrainers:
 	db HIKER
 	db FIREBREATHER
 	db BLACKBELT_T
+	db ARCHER
 	db PSYCHIC_T
 	db CAMPER
 	db COOLTRAINERM
@@ -33,6 +34,8 @@ MaleTrainers:
 	db SOLDIER
 	db SPORTSMAN
 	db TEACHERM
+	db PETREL
+	db PROTON
 .End
 
 FemaleTrainers:
@@ -42,6 +45,7 @@ FemaleTrainers:
 	db SKIER
 	db TEACHERF
 	db SWIMMERF
+	db ARIANA
 	db PICNICKER
 	db KIMONO_GIRL
 	db POKEFANF

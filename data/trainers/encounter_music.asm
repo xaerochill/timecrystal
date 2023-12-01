@@ -54,11 +54,11 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; firebreather
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; juggler
 	db MUSIC_HIKER_ENCOUNTER       ; blackbelt_t
-	db MUSIC_ROCKET_ENCOUNTER      ; executivem
+	db MUSIC_ROCKET_ENCOUNTER      ; archer
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; psychic_t
 	db MUSIC_LASS_ENCOUNTER        ; picnicker
 	db MUSIC_YOUNGSTER_ENCOUNTER   ; camper
-	db MUSIC_ROCKET_ENCOUNTER      ; executivef
+	db MUSIC_ROCKET_ENCOUNTER      ; ariana
 	db MUSIC_SAGE_ENCOUNTER        ; sage
 	db MUSIC_SAGE_ENCOUNTER        ; medium
 	db MUSIC_HIKER_ENCOUNTER       ; boarder
@@ -81,4 +81,6 @@ TrainerEncounterMusic::
 	db MUSIC_HIKER_ENCOUNTER       ; teacherm
 	db MUSIC_BEAUTY_ENCOUNTER      ; green
 	db MUSIC_HIKER_ENCOUNTER       ; yellow
+	db MUSIC_ROCKET_ENCOUNTER      ; petrel
+	db MUSIC_ROCKET_ENCOUNTER      ; proton
 	assert_table_length NUM_TRAINER_CLASSES + 1

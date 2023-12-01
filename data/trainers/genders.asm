@@ -53,11 +53,11 @@ BTTrainerClassGenders:
 	db MALE   ; FIREBREATHER
 	db MALE   ; JUGGLER
 	db MALE   ; BLACKBELT_T
-	db MALE   ; EXECUTIVEM
+	db MALE   ; ARCHER
 	db MALE   ; PSYCHIC_T
 	db FEMALE ; PICNICKER
 	db MALE   ; CAMPER
-	db FEMALE ; EXECUTIVEF
+	db FEMALE ; ARIANA
 	db MALE   ; SAGE
 	db FEMALE ; MEDIUM
 	db MALE   ; BOARDER
@@ -80,4 +80,6 @@ BTTrainerClassGenders:
 	db MALE   ; TEACHER_M
 	db FEMALE ; GREEN
 	db FEMALE ; YELLOW
+	db MALE   ; PETREL
+	db MALE   ; PROTON
 	assert_table_length NUM_TRAINER_CLASSES
