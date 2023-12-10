@@ -508,12 +508,12 @@ Route44_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 56,  7, ICE_PATH_1F, 1
+	warp_event 54,  7, ICE_PATH_1F, 1
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 53,  7, BGEVENT_READ, Route44Sign1
+	bg_event 49,  9, BGEVENT_READ, Route44Sign1
 	bg_event  6, 10, BGEVENT_READ, Route44Sign2
 	bg_event 32,  9, BGEVENT_ITEM, Route44HiddenElixer
 

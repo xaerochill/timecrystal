@@ -326,7 +326,7 @@ BlackthornCity_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 34, 24, BGEVENT_READ, BlackthornCitySign
+	bg_event 35, 25, BGEVENT_READ, BlackthornCitySign
 	bg_event 17, 13, BGEVENT_READ, BlackthornGymSign
 	bg_event  7, 31, BGEVENT_READ, MoveDeletersHouseSign
 	bg_event 21,  3, BGEVENT_READ, DragonDensSign

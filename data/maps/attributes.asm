@@ -142,7 +142,7 @@ ENDM
 	map_attributes LakeOfRage, LAKE_OF_RAGE, $05, SOUTH
 	connection south, Route43, ROUTE_43, 5
 
-	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, SOUTH | WEST
+	map_attributes BlackthornCity, BLACKTHORN_CITY, $D1, SOUTH | WEST
 	connection south, Route45, ROUTE_45, 0
 	connection west, Route44, ROUTE_44, 9
 
