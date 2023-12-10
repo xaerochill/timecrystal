@@ -1551,7 +1551,7 @@ JohtoGrassWildMons:
 	db 16, RATICATE
 	db 15, ARBOK
 	db 16, MAREEP
-	db 16, FEAROW
+	db 16, FLAAFFY
 	; day
 	db 13, EKANS
 	db 14, SPEAROW
@@ -1559,12 +1559,12 @@ JohtoGrassWildMons:
 	db 16, RATICATE
 	db 15, ARBOK
 	db 16, MAREEP
-	db 16, FEAROW
+	db 16, FLAAFFY
 	; nite
 	db 13, RATTATA
 	db 14, ZUBAT
 	db 15, RATICATE
-	db 16, GOLBAT
+	db 16, MANKEY
 	db 15, MARILL
 	db 16, GOLBAT
 	db 16, GOLBAT
@@ -1579,7 +1579,7 @@ JohtoGrassWildMons:
 	db 15, FURRET
 	db 17, RATICATE
 	db 17, MAREEP
-	db 17, MAREEP
+	db 17, FLAAFFY
 	; day
 	db 15, SENTRET
 	db 16, PIDGEOTTO
@@ -1587,14 +1587,14 @@ JohtoGrassWildMons:
 	db 15, FURRET
 	db 17, RATICATE
 	db 17, MAREEP
-	db 17, MAREEP
+	db 17, FLAAFFY
 	; nite
 	db 15, VENONAT
 	db 16, NOCTOWL
 	db 16, RATICATE
 	db 17, VENONAT
 	db 17, RATICATE
-	db 17, VENOMOTH
+	db 17, GIRAFARIG
 	db 17, VENOMOTH
 	end_grass_wildmons
 

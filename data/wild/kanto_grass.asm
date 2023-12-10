@@ -306,8 +306,8 @@ KantoGrassWildMons:
 	db 4, METAPOD
 	db 4, KAKUNA
 	db 7, BEEDRILL
-	db 7, BUTTERFREE
-	db 4, PIKACHU
+	db 7, BULBASAUR
+	db 4, BULBASAUR
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_3
@@ -318,7 +318,7 @@ KantoGrassWildMons:
 	db 8, EKANS
 	db 10, RATICATE
 	db 10, ARBOK
-	db 10, SANDSHREW
+	db 10, MANKEY
 	db 10, SANDSHREW
 	; day
 	db 5, SPEAROW
@@ -326,7 +326,7 @@ KantoGrassWildMons:
 	db 8, EKANS
 	db 10, RATICATE
 	db 10, ARBOK
-	db 10, SANDSHREW
+	db 10, MANKEY
 	db 10, SANDSHREW
 	; nite
 	db 5, RATTATA
@@ -346,7 +346,7 @@ KantoGrassWildMons:
 	db 8, EKANS
 	db 10, RATICATE
 	db 10, ARBOK
-	db 10, SANDSHREW
+	db 10, MANKEY
 	db 10, SANDSHREW
 	; day
 	db 5, SPEAROW
@@ -354,7 +354,7 @@ KantoGrassWildMons:
 	db 8, EKANS
 	db 10, RATICATE
 	db 10, ARBOK
-	db 10, SANDSHREW
+	db 10, MANKEY
 	db 10, SANDSHREW
 	; nite
 	db 5, RATTATA
@@ -372,7 +372,7 @@ KantoGrassWildMons:
 	db 13, PIDGEY
 	db 13, SNUBBULL
 	db 15, PIDGEOTTO
-	db 12, ABRA
+	db 12, MANKEY
 	db 14, JIGGLYPUFF
 	db 14, ABRA
 	db 14, ABRA
@@ -380,7 +380,7 @@ KantoGrassWildMons:
 	db 13, PIDGEY
 	db 13, SNUBBULL
 	db 15, PIDGEOTTO
-	db 12, ABRA
+	db 12, MANKEY
 	db 14, JIGGLYPUFF
 	db 14, ABRA
 	db 14, ABRA
@@ -388,7 +388,7 @@ KantoGrassWildMons:
 	db 13, HOOTHOOT
 	db 13, MEOWTH
 	db 15, NOCTOWL
-	db 12, ABRA
+	db 12, MANKEY
 	db 14, JIGGLYPUFF
 	db 14, ABRA
 	db 14, ABRA
@@ -402,7 +402,7 @@ KantoGrassWildMons:
 	db 14, MAGNEMITE
 	db 15, RATICATE
 	db 12, JIGGLYPUFF
-	db 15, GRANBULL
+	db 15, MANKEY
 	db 15, GRANBULL
 	; day
 	db 13, RATTATA
@@ -410,7 +410,7 @@ KantoGrassWildMons:
 	db 14, MAGNEMITE
 	db 15, RATICATE
 	db 12, JIGGLYPUFF
-	db 15, GRANBULL
+	db 15, MANKEY
 	db 15, GRANBULL
 	; nite
 	db 13, MEOWTH
@@ -418,7 +418,7 @@ KantoGrassWildMons:
 	db 14, MAGNEMITE
 	db 15, PSYDUCK
 	db 12, JIGGLYPUFF
-	db 15, RATICATE
+	db 15, MANKEY
 	db 15, RATICATE
 	end_grass_wildmons
 
@@ -430,7 +430,7 @@ KantoGrassWildMons:
 	db 18, SNUBBULL
 	db 18, RATICATE
 	db 18, JIGGLYPUFF
-	db 16, ABRA
+	db 16, MANKEY
 	db 16, ABRA
 	; day
 	db 17, RATTATA
@@ -438,7 +438,7 @@ KantoGrassWildMons:
 	db 18, SNUBBULL
 	db 18, RATICATE
 	db 18, JIGGLYPUFF
-	db 16, ABRA
+	db 16, MANKEY
 	db 16, ABRA
 	; nite
 	db 17, MEOWTH
@@ -446,7 +446,7 @@ KantoGrassWildMons:
 	db 18, HOUNDOUR
 	db 18, PERSIAN
 	db 18, JIGGLYPUFF
-	db 16, ABRA
+	db 16, MANKEY
 	db 16, ABRA
 	end_grass_wildmons
 
@@ -458,7 +458,7 @@ KantoGrassWildMons:
 	db 16, ABRA
 	db 17, GROWLITHE
 	db 16, JIGGLYPUFF
-	db 18, KADABRA
+	db 18, MANKEY
 	db 18, KADABRA
 	; day
 	db 17, SNUBBULL
@@ -466,7 +466,7 @@ KantoGrassWildMons:
 	db 16, ABRA
 	db 17, GROWLITHE
 	db 16, JIGGLYPUFF
-	db 18, KADABRA
+	db 18, MANKEY
 	db 18, KADABRA
 	; nite
 	db 17, MEOWTH
@@ -474,7 +474,7 @@ KantoGrassWildMons:
 	db 16, ABRA
 	db 17, HAUNTER
 	db 16, JIGGLYPUFF
-	db 18, KADABRA
+	db 18, MANKEY
 	db 18, KADABRA
 	end_grass_wildmons
 
@@ -484,7 +484,7 @@ KantoGrassWildMons:
 	db 15, RATTATA
 	db 15, SPEAROW
 	db 15, RATICATE
-	db 15, FEAROW
+	db 15, MANKEY
 	db 15, FEAROW
 	db 18, MAROWAK
 	db 18, MAROWAK
@@ -492,7 +492,7 @@ KantoGrassWildMons:
 	db 15, RATTATA
 	db 15, SPEAROW
 	db 15, RATICATE
-	db 15, FEAROW
+	db 15, MANKEY
 	db 15, FEAROW
 	db 18, MAROWAK
 	db 18, MAROWAK
@@ -763,7 +763,7 @@ KantoGrassWildMons:
 	; morn
 	db 3, RATTATA
 	db 3, SPEAROW
-	db 5, SPEAROW
+	db 5, MANKEY
 	db 4, DODUO
 	db 6, PONYTA
 	db 7, FEAROW
@@ -771,7 +771,7 @@ KantoGrassWildMons:
 	; day
 	db 3, RATTATA
 	db 3, SPEAROW
-	db 5, SPEAROW
+	db 5, MANKEY
 	db 4, DODUO
 	db 6, PONYTA
 	db 7, FEAROW
