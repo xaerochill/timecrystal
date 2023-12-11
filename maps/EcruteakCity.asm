@@ -246,7 +246,7 @@ EcruteakCity_MapEvents:
 	warp_event 20,  6, WISE_TRIOS_ROOM, 1
 	warp_event 20,  7, WISE_TRIOS_ROOM, 2
 	warp_event 23, 27, ECRUTEAK_POKECENTER_1F, 1
-	warp_event  5, 21, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1
+	warp_event 13, 11, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1
 	warp_event 23, 21, DANCE_THEATER, 1
 	warp_event 29, 21, ECRUTEAK_MART, 2
 	warp_event  6, 27, ECRUTEAK_GYM, 1

@@ -37,8 +37,10 @@ Route36ArthurCallback:
 Route36Callback:
 	readvar VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .AllUnownCaught
+	changeblock 20,  6, $05 ; trees
 	changeblock 20,  7, $05 ; trees
 	changeblock 20,  8, $05 ; trees
+	changeblock 21,  6, $05 ; trees
 	changeblock 21,  7, $05 ; trees
 	changeblock 21,  8, $05 ; trees
 .AllUnownCaught:
