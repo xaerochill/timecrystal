@@ -44,9 +44,6 @@ AI_Redundant:
 	dbw EFFECT_MOONLIGHT,    .Moonlight
 	dbw EFFECT_SWAGGER,      .Swagger
 	dbw EFFECT_FUTURE_SIGHT, .FutureSight
-	dbw EFFECT_FORCE_SWITCH, .WhirlwindRoar
-	dbw EFFECT_TELEPORT,     .Teleport
-	dbw EFFECT_BATON_PASS,   .BatonPass
 	db -1
 
 .LightScreen:
@@ -140,7 +137,8 @@ AI_Redundant:
 .Sandstorm:
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
-	jr .InvertZero
+	jr z, .Redundant
+	jr .NotRedundant
 
 .Attract:
 	farcall CheckOppositeGender
@@ -157,12 +155,14 @@ AI_Redundant:
 .RainDance:
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
-	jr .InvertZero
+	jr z, .Redundant
+	jr .NotRedundant
 
 .SunnyDay:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
-	jr .InvertZero
+	jr z, .Redundant
+	jr .NotRedundant
 
 .DreamEater:
 	ld a, [wBattleMonStatus]
@@ -176,22 +176,10 @@ AI_Redundant:
 	ret
 
 .FutureSight:
-	ld a, [wEnemyFutureSightCount]
-	and a
+; BUG: AI does not discourage Future Sight when it's already been used (see docs/bugs_and_glitches.md)
+	ld a, [wEnemyScreens]
+	bit 5, a
 	ret
-
-.BatonPass:
-.Teleport:
-	call StackCallOpponentTurn
-.WhirlwindRoar:
-	push hl
-	push de
-	push bc
-	farcall CheckAnyOtherAliveOpponentMons
-	pop bc
-	pop de
-	pop hl
-	jr .InvertZero
 
 .Heal:
 .MorningSun:
@@ -200,13 +188,11 @@ AI_Redundant:
 	farcall AICheckEnemyMaxHP
 	jr nc, .NotRedundant
 
+.Teleport:
 .Redundant:
 	ld a, 1
 	and a
 	ret
-
-.InvertZero:
-	jr z, .Redundant
 
 .NotRedundant:
 	xor a

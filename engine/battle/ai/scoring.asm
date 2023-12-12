@@ -1665,9 +1665,10 @@ AI_Smart_Thief:
 	ret
 
 AI_Smart_Conversion2:
+; BUG: "Smart" AI discourages Conversion2 after the first turn (see docs/bugs_and_glitches.md)
 	ld a, [wLastPlayerMove]
 	and a
-	jr z, .discourage
+	jr nz, .discourage
 
 	push hl
 	dec a
@@ -1744,7 +1745,8 @@ AI_Smart_MeanLook:
 	jp z, AIDiscourageMove
 
 ; 80% chance to greatly encourage this move if the enemy is badly poisoned.
-	ld a, [wPlayerSubStatus5]
+; BUG: "Smart" AI encourages Mean Look if its own Pokémon is badly poisoned (see docs/bugs_and_glitches.md)
+	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_TOXIC, a
 	jr nz, .encourage
 
@@ -2250,30 +2252,15 @@ AI_Smart_Earthquake:
 	ret
 
 AI_Smart_BatonPass:
-	; Check total net stat boost effect:
-	; <0: Discourage
-	; >2: Encourage
-	ld hl, wEnemyStatLevels
-	ld b, 7
-	xor a
-.loop
-	add [hl]
-	inc hl
-	dec b
-	jr nz, .loop
+; Discourage this move if the player hasn't shown super-effective moves against the enemy.
+; Consider player's type(s) if its moves are unknown.
 
-	sub BASE_STAT_LEVEL * 7
-	jr c, .discourage
-	cp 3
+	push hl
+	callfar CheckPlayerMoveTypeMatchups
+	ld a, [wEnemyAISwitchScore]
+	cp BASE_AI_SWITCH_SCORE
+	pop hl
 	ret c
-
-	; Encourage
-	dec [hl]
-	dec [hl]
-	ret
-
-.discourage
-	inc [hl]
 	inc [hl]
 	ret
 
