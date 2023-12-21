@@ -36,7 +36,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; GENTLEMAN
 	dn  9,  8,  8,  8 ; SKIER
 	dn  6,  8,  8,  8 ; TEACHER_F
-	dn 14, 12, 15, 15 ; SABRINA (hp ice)
+	dn 14, 12, 15, 15 ; SABRINA (hp fire)
 	dn  9,  8,  8,  8 ; BUG_CATCHER
 	dn  9,  8,  8,  8 ; FISHER
 	dn  9,  8,  8,  8 ; SWIMMERM
@@ -52,7 +52,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; FIREBREATHER
 	dn  9,  8,  8,  8 ; JUGGLER
 	dn  9,  8,  8,  8 ; BLACKBELT_T
-	dn 13, 13, 13, 13 ; ARCHER
+	dn 13, 13, 15, 15 ; ARCHER (hp bug)
 	dn  9,  8,  8,  8 ; PSYCHIC_T
 	dn  6, 10, 10,  8 ; PICNICKER
 	dn  9,  8,  8,  8 ; CAMPER
@@ -79,6 +79,6 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; TEACHER_M
 	dn 13, 13, 13, 13 ; GREEN
 	dn 14, 15, 15, 15 ; YELLOW (hp electric)
-	dn 13, 13, 13, 13 ; PETREL
-	dn 13, 13, 13, 13 ; PROTON
+	dn 12, 12, 15, 15 ; PETREL (hp ground)
+	dn 13, 13, 15, 15 ; PROTON (hp bug)
 	assert_table_length NUM_TRAINER_CLASSES

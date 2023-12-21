@@ -117,9 +117,16 @@ Beating the Elite 4 resets the following Events:
   - Violet Poké Center
 
 ## Difficulty Changes
-- Removed Gym Badges Boosts
-- Removed 25% failure chance for AI status moves
-- Any encountered wild Pokémon (excluding legendaries) may vary up to 0-4 levels
+- [x] Removed Gym Badges Boosts
+- [x] Removed 25% failure chance for AI status moves
+- [x] Any encountered wild Pokémon (excluding legendaries) may vary up to 0-4 levels
+- [x] Gym leaders have parties scaling by badge count. Their parties are inspired by teams in the manga, Pokémon Stadium 1 & 2 as well as their official TCG cards
+- [ ] Gym Leaders offer rematches after beating the Elite 4
+- [ ] Trainer classes use more diverse Pokémon and better AI
+
+- Improved AI
+  - [All known AI bugs](https://github.com/pret/pokecrystal/blob/master/docs/bugs_and_glitches.md) are fixed
+  - Improve AI for Teleport, Baton Pass and moves that force switches [by Idain](https://github.com/Idain/Another-PKMN-Crystal-Remaster/commit/442838dfdff0bf3e34f4a05846f821aa3d990a2b)
 
 ## Other Changes
 - [x] Animated tiles even when textboxes are open
