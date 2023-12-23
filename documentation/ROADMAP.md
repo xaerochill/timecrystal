@@ -73,7 +73,8 @@ Beating the Elite 4 resets the following Events:
 - [x] Mount Mooon uses the Gen 1 layout again
 - [x] Kanto Underground has been reworked and features Red & Blue's unused [neon lights](https://tcrf.net/Pok%C3%A9mon_Red_and_Blue/Unseen_Graphics#Tileset_12)
 - [x] Beta Lake of Rage has been restored and features [Old City's Gym](https://tcrf.net/Development:Pok%C3%A9mon_Gold_and_Silver/Unused_Maps/Interiors#Old_City.27s_Gym), where the last type not represented in a Gym up to Gen II is used: Dark
-- [x] The Battle Tower has been reworked into the Battle Frontier and is always open.
+- [x] The Battle Tower has been reworked into the Battle Frontier and is always open. The other buildings do not have content yet.
+- [x] Vermilion Gym has its trash can puzzle restored.
 - [ ] Entei is available as a static encounter in [Burned Tower B2F](https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver/Unused_Maps#Burned_Tower) after beating the E4
 - [ ] Raikou is available as a static encounter in the [scrapped Seafoam Islands map](https://tcrf.net/Development:Pok%C3%A9mon_Red_and_Blue/Unused_Maps#Seafoam_Islands) after beating the E4
 - [ ] Suicune is available as a static encounter in [Bill's Garden](https://tcrf.net/Development:Pok%C3%A9mon_Red_and_Blue/Unused_Maps#Garden) after beating the E4

@@ -1,7 +1,7 @@
 **Gameplay**
 
 - GameFreak and Nintendo for creating this spectacular game in the first place
-- Everyone involved in the [pokecrystal wiki](https://github.com/pret/pokecrystal/wiki/Tutorials) where many changes were taken from
+- Everyone involved in the [pokecrystal wiki](https://github.com/pret/pokecrystal/wiki/Tutorials) where all changes were taken from
 - [TCRF](https://tcrf.net/) for their documentation of unused or lost maps, tiles, trainers, text, and game assets where I have taken most material and inspiration from
 - The amazing artists at [Johto Redrawn](https://retroredrawn.com/johto/) which inspired many changes to maps
 - The kind people on the pret Discord for their continued help on all kinds of issues <3
@@ -17,6 +17,7 @@
   - Putting together the [Tileset Atlas](https://www.deviantart.com/frenchorange/art/Pokemon-Generation-I-and-II-Tile-Atlas-948667086)
   - Making [Crystal Sprite Error Fixes](https://www.deviantart.com/frenchorange/art/Pokemon-Crystal-Sprite-Errors-918359380)
   - Providing maps for [Kanoko's Room](https://www.spriters-resource.com/game_boy_gbc/pokemontradingcardgame2/sheet/198826/), [Psychic Stronghold](https://www.spriters-resource.com/game_boy_gbc/pokemontradingcardgame2/sheet/198768/), [Slots Room](https://www.spriters-resource.com/game_boy_gbc/pokemontradingcardgame2/sheet/138703/)& [Water Club](https://www.spriters-resource.com/game_boy_gbc/pokemontradingcardgame2/sheet/185937/) from Pokémon TCG 2
+  - [Miscellaneous Tiles](https://www.spriters-resource.com/fullview/8902/) from Pokémon TCG 2
 - [PolishedCrystal](https://github.com/Rangi42/polishedcrystal/tree/master/gfx/trainers) for the sprites of all four Rocket Executives
 - Lou Lilie for the sprite of [Yellow](https://www.deviantart.com/loulilie/gallery/38635722/pokemon-sprites)
 - Kage for the sprite of [Green](https://www.pokecommunity.com/showthread.php?p=7050285)

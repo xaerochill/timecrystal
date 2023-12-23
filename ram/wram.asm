@@ -3190,7 +3190,8 @@ wCurMapSceneScriptsPointer:: dw
 wCurMapCallbackCount:: db
 wCurMapCallbacksPointer:: dw
 
-	ds 2
+wVermilionGymTrashCan1:: db
+wVermilionGymTrashCan2:: db
 
 ; Sprite id of each decoration
 wDecoBed::           db

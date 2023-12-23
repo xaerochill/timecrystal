@@ -304,9 +304,9 @@
 	const EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
 	const EVENT_BEAT_YELLOW ; previously unused
 	const EVENT_REENA_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused
+	const EVENT_VERMILION_GYM_SWITCH_1 ; previously unused
 	const EVENT_JOEY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused
+	const EVENT_VERMILION_GYM_SWITCH_2 ; previously unused
 	const EVENT_WADE_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused
 	const EVENT_RALPH_ASKED_FOR_PHONE_NUMBER
