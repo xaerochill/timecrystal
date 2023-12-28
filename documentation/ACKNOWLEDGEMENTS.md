@@ -21,7 +21,9 @@
 - [PolishedCrystal](https://github.com/Rangi42/polishedcrystal/tree/master/gfx/trainers) for the sprites of all four Rocket Executives
 - Lou Lilie for the sprite of [Yellow](https://www.deviantart.com/loulilie/gallery/38635722/pokemon-sprites)
 - Kage for the sprite of [Green](https://www.pokecommunity.com/showthread.php?p=7050285)
-- Trainer Sprites for the added unused trainer classes from [TCRF](https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1999_Demo/Graphic_Differences#Trainer_Sprites)
+- The Cutting Room Floor for
+  - Front sprites for the added unused trainer classes from [the 1999 Spaceworld Demo](https://tcrf.net/Proto:Pok%C3%A9mon_Gold_and_Silver/Spaceworld_1999_Demo/Graphic_Differences#Trainer_Sprites)
+  - Alternative front sprites from the [CBB Scratchboard](https://tcrf.net/Development:Pok%C3%A9mon_Gold_and_Silver/Sprites/CBB_Scratchpads#Trainers)
 
 **Music**
 - [TriteHexagon](https://github.com/TriteHexagon/Trite_ASM_Repository):

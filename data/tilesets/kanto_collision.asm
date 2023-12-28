@@ -137,10 +137,14 @@
 	tilecoll FLOOR, WALL, LADDER, WALL ; 88
 	tilecoll WALL, FLOOR, WALL, WALL ; 89
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8a
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8b
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8c
+	tilecoll WALL, STAIRS_DOWN_LEFT, WALL, FLOOR ; 8b
+	tilecoll FLOOR, FLOOR, FLOOR, STAIRS_UP_RIGHT ; 8c
 	tilecoll WALL, WALL, WALL, WALL ; 8d
 	tilecoll WALL, WALL, WALL, WALL ; 8e
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 8f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 90
 	tilecoll WARP_CARPET_LEFT, FLOOR, WALL, WALL ; 91
+	tilecoll WALL, WALL, WALL, WALL ; 92
+	tilecoll WALL, WALL, WALL, WALL ; 93
+	tilecoll WALL, WALL, WALL, WALL ; 94
+	tilecoll , , ,  ; 95
