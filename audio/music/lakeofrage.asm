@@ -1,15 +1,16 @@
-Music_LakeOfRage:
+Music_LakeOfRage: ; ee6c5
 	channel_count 4
 	channel 1, Music_LakeOfRage_Ch1
 	channel 2, Music_LakeOfRage_Ch2
 	channel 3, Music_LakeOfRage_Ch3
 	channel 4, Music_LakeOfRage_Ch4
+; ee6d1
 
-Music_LakeOfRage_Ch1:
+Music_LakeOfRage_Ch1: ; ee6d1
 	tempo 144
 	volume 7, 7
-	duty_cycle 3
-	pitch_offset 2
+	duty_cycle $3
+	pitch_offset $0002
 	vibrato 8, 2, 2
 	stereo_panning TRUE, FALSE
 	note_type 12, 11, 4
@@ -19,7 +20,7 @@ Music_LakeOfRage_Ch1:
 	note D_, 6
 	note D_, 6
 	note E_, 4
-.mainloop:
+Music_LakeOfRage_branch_ee6e9: ; ee6e9
 	volume_envelope 11, 5
 	note F#, 6
 	note E_, 6
@@ -92,10 +93,11 @@ Music_LakeOfRage_Ch1:
 	note D_, 6
 	volume_envelope 10, 7
 	note D_, 6
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_LakeOfRage_branch_ee6e9
+; ee749
 
-Music_LakeOfRage_Ch2:
-	duty_cycle 3
+Music_LakeOfRage_Ch2: ; ee749
+	duty_cycle $3
 	vibrato 32, 4, 4
 	stereo_panning TRUE, TRUE
 	note_type 12, 9, 0
@@ -107,7 +109,7 @@ Music_LakeOfRage_Ch2:
 	note A_, 8
 	volume_envelope 10, 7
 	note A_, 8
-.mainloop:
+Music_LakeOfRage_branch_ee75e: ; ee75e
 	note_type 8, 12, 7
 	octave 4
 	note D_, 16
@@ -181,9 +183,10 @@ Music_LakeOfRage_Ch2:
 	note F#, 4
 	note_type 12, 12, 7
 	note A_, 16
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_LakeOfRage_branch_ee75e
+; ee7c1
 
-Music_LakeOfRage_Ch3:
+Music_LakeOfRage_Ch3: ; ee7c1
 	stereo_panning FALSE, TRUE
 	note_type 12, 1, 6
 	octave 3
@@ -196,7 +199,7 @@ Music_LakeOfRage_Ch3:
 	note F#, 4
 	rest 2
 	note E_, 4
-.mainloop:
+Music_LakeOfRage_branch_ee7d0: ; ee7d0
 	octave 3
 	note D_, 4
 	octave 2
@@ -294,13 +297,14 @@ Music_LakeOfRage_Ch3:
 	note D_, 2
 	octave 2
 	note A_, 2
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_LakeOfRage_branch_ee7d0
+; ee835
 
-Music_LakeOfRage_Ch4:
+Music_LakeOfRage_Ch4: ; ee835
 	stereo_panning TRUE, FALSE
-	toggle_noise 3
+	toggle_noise $3
 	drum_speed 12
-.mainloop:
+Music_LakeOfRage_branch_ee83b: ; ee83b
 	drum_note 3, 2
 	drum_note 3, 1
 	drum_note 3, 1
@@ -320,4 +324,72 @@ Music_LakeOfRage_Ch4:
 	drum_note 3, 1
 	drum_note 3, 1
 	drum_note 3, 1
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_LakeOfRage_branch_ee83b
+; ee852
+
+; ============================================================================================================
+; ============================================================================================================
+
+; 
+; Demixed by TriteHexagon
+Music_LakeOfRageNight:
+	channel_count 4
+	channel 1, Music_LakeOfRageNight_Ch1
+	channel 2, Music_LakeOfRageNight_Ch2
+	channel 3, Music_LakeOfRageNight_Ch3
+	channel 4, Music_LakeOfRageNight_Ch4
+
+; ============================================================================================================
+Music_LakeOfRageNight_Ch1:
+	tempo 150
+	volume 7, 7
+	duty_cycle $2
+	pitch_offset $0002
+	vibrato 8, 2, 1
+	stereo_panning TRUE, FALSE
+	note_type 12, 11, 4
+	octave 3
+	note D_, 6
+	note D_, 10
+	note D_, 6
+	note D_, 6
+	note E_, 4
+	sound_loop 0, Music_LakeOfRage_branch_ee6e9
+
+; ============================================================================================================
+Music_LakeOfRageNight_Ch2:
+	duty_cycle $2
+	vibrato 32, 4, 3
+	stereo_panning TRUE, TRUE
+	note_type 12, 9, 0
+	octave 3
+	note G_, 8
+	volume_envelope 9, 7
+	note G_, 8
+	volume_envelope 10, 0
+	note A_, 8
+	volume_envelope 10, 7
+	note A_, 8
+	sound_loop 0, Music_LakeOfRage_branch_ee75e
+
+; ============================================================================================================
+Music_LakeOfRageNight_Ch3:
+	stereo_panning FALSE, TRUE
+	note_type 12, 1, 0
+	octave 3
+	note G_, 4
+	rest 2
+	note G_, 4
+	rest 6
+	note F#, 4
+	rest 2
+	note F#, 4
+	rest 2
+	note E_, 4
+	sound_loop 0, Music_LakeOfRage_branch_ee7d0
+
+Music_LakeOfRageNight_Ch4:
+	stereo_panning TRUE, FALSE
+	toggle_noise 9
+	drum_speed 12
+	sound_loop 0, Music_LakeOfRage_branch_ee83b

@@ -1,15 +1,16 @@
-Music_Route30:
+Music_Route30: ; efc01
 	channel_count 4
 	channel 1, Music_Route30_Ch1
 	channel 2, Music_Route30_Ch2
 	channel 3, Music_Route30_Ch3
 	channel 4, Music_Route30_Ch4
+; efc0d
 
-Music_Route30_Ch1:
+Music_Route30_Ch1: ; efc0d
 	tempo 144
 	volume 7, 7
-	duty_cycle 3
-	pitch_offset 1
+	duty_cycle $3
+	pitch_offset $0001
 	vibrato 16, 1, 5
 	stereo_panning TRUE, FALSE
 	note_type 12, 11, 2
@@ -27,7 +28,7 @@ Music_Route30_Ch1:
 	note D_, 2
 	volume_envelope 4, -6
 	note C_, 4
-.mainloop:
+Music_Route30_branch_efc2e: ; efc2e
 	volume_envelope 11, 6
 	note D_, 6
 	volume_envelope 11, 4
@@ -182,10 +183,11 @@ Music_Route30_Ch1:
 	note B_, 2
 	octave 4
 	note D_, 2
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_Route30_branch_efc2e
+; efcda
 
-Music_Route30_Ch2:
-	duty_cycle 3
+Music_Route30_Ch2: ; efcda
+	duty_cycle $3
 	vibrato 18, 3, 6
 	stereo_panning FALSE, TRUE
 	note_type 12, 12, 2
@@ -206,7 +208,7 @@ Music_Route30_Ch2:
 	note E_, 1
 	note F_, 1
 	note F#, 1
-.mainloop:
+Music_Route30_branch_efcf6: ; efcf6
 	volume_envelope 12, 7
 	note G_, 10
 	octave 4
@@ -293,9 +295,10 @@ Music_Route30_Ch2:
 	volume_envelope 10, 7
 	octave 3
 	note F#, 2
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_Route30_branch_efcf6
+; efd5f
 
-Music_Route30_Ch3:
+Music_Route30_Ch3: ; efd5f
 	note_type 12, 2, 7
 	octave 2
 	note G_, 1
@@ -320,7 +323,7 @@ Music_Route30_Ch3:
 	rest 1
 	note G_, 1
 	rest 1
-.mainloop:
+Music_Route30_branch_efd79: ; efd79
 	note G_, 1
 	rest 1
 	note B_, 2
@@ -574,33 +577,35 @@ Music_Route30_Ch3:
 	rest 1
 	note G_, 1
 	rest 1
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_Route30_branch_efd79
+; efe7a
 
-Music_Route30_Ch4:
-	toggle_noise 3
+Music_Route30_Ch4: ; efe7a
+	toggle_noise $3
 	drum_speed 12
-	sound_call .sub1
-	sound_call .sub2
-.mainloop:
-	sound_call .sub3
-	sound_call .sub4
-	sound_call .sub4
-	sound_call .sub5
-	sound_call .sub4
-	sound_call .sub3
-	sound_call .sub4
-	sound_call .sub5
-	sound_call .sub4
-	sound_call .sub4
-	sound_call .sub3
-	sound_call .sub4
-	sound_call .sub4
-	sound_call .sub4
-	sound_call .sub3
-	sound_call .sub5
-	sound_loop 0, .mainloop
+	sound_call Music_Route30_branch_efeb8
+	sound_call Music_Route30_branch_efec1
+Music_Route30_branch_efe84: ; efe84
+	sound_call Music_Route30_branch_efecd
+	sound_call Music_Route30_branch_efed7
+	sound_call Music_Route30_branch_efed7
+	sound_call Music_Route30_branch_efee1
+	sound_call Music_Route30_branch_efed7
+	sound_call Music_Route30_branch_efecd
+	sound_call Music_Route30_branch_efed7
+	sound_call Music_Route30_branch_efee1
+	sound_call Music_Route30_branch_efed7
+	sound_call Music_Route30_branch_efed7
+	sound_call Music_Route30_branch_efecd
+	sound_call Music_Route30_branch_efed7
+	sound_call Music_Route30_branch_efed7
+	sound_call Music_Route30_branch_efed7
+	sound_call Music_Route30_branch_efecd
+	sound_call Music_Route30_branch_efee1
+	sound_loop 0, Music_Route30_branch_efe84
+; efeb8
 
-.sub1:
+Music_Route30_branch_efeb8: ; efeb8
 	drum_note 3, 2
 	drum_note 7, 2
 	drum_note 7, 2
@@ -610,8 +615,9 @@ Music_Route30_Ch4:
 	drum_note 3, 2
 	drum_note 3, 4
 	sound_ret
+; efec1
 
-.sub2:
+Music_Route30_branch_efec1: ; efec1
 	drum_note 3, 2
 	drum_note 7, 2
 	drum_note 7, 2
@@ -624,8 +630,9 @@ Music_Route30_Ch4:
 	drum_note 3, 1
 	drum_note 3, 1
 	sound_ret
+; efecd
 
-.sub3:
+Music_Route30_branch_efecd: ; efecd
 	drum_note 3, 2
 	drum_note 7, 2
 	drum_note 7, 2
@@ -636,8 +643,9 @@ Music_Route30_Ch4:
 	drum_note 3, 2
 	drum_note 3, 2
 	sound_ret
+; efed7
 
-.sub4:
+Music_Route30_branch_efed7: ; efed7
 	drum_note 3, 2
 	drum_note 7, 2
 	drum_note 7, 2
@@ -648,8 +656,9 @@ Music_Route30_Ch4:
 	drum_note 3, 2
 	drum_note 3, 2
 	sound_ret
+; efee1
 
-.sub5:
+Music_Route30_branch_efee1: ; efee1
 	drum_note 3, 2
 	drum_note 7, 2
 	drum_note 7, 2
@@ -668,3 +677,104 @@ Music_Route30_Ch4:
 	drum_note 3, 1
 	drum_speed 12
 	sound_ret
+; efef5
+
+; ============================================================================================================
+; ============================================================================================================
+
+Music_Route30Night:
+	channel_count 4
+	channel 1, Music_Route30Night_Ch1
+	channel 2, Music_Route30Night_Ch2
+	channel 3, Music_Route30Night_Ch3
+	channel 4, Music_Route30Night_Ch4
+
+; ============================================================================================================
+Music_Route30Night_Ch1:
+	tempo 150
+	volume 7, 7
+	duty_cycle $2
+	pitch_offset $0001
+	vibrato 16, 1, 5
+	stereo_panning TRUE, FALSE
+	note_type 12, 11, 2
+	octave 3
+	note D_, 6
+	note D_, 1
+	note D_, 1
+	note D_, 2
+	note D_, 2
+	note D_, 4
+	note D_, 6
+	note D_, 1
+	note D_, 1
+	note D_, 2
+	note D_, 2
+	volume_envelope 4, -6
+	note C_, 4
+
+	sound_loop 0, Music_Route30_branch_efc2e
+
+; ============================================================================================================
+Music_Route30Night_Ch2:
+	duty_cycle $2
+	vibrato 18, 2, 6
+	stereo_panning FALSE, TRUE
+	note_type 12, 12, 2
+	octave 3
+	note G_, 6
+	note G_, 1
+	note G_, 1
+	note G_, 2
+	note G_, 2
+	note G_, 4
+	note G_, 6
+	note G_, 1
+	note G_, 1
+	note G_, 2
+	note G_, 2
+	volume_envelope 12, 4
+	note D_, 1
+	note E_, 1
+	note F_, 1
+	note F#, 1
+
+	sound_loop 0, Music_Route30_branch_efcf6
+
+; ============================================================================================================
+Music_Route30Night_Ch3:
+	note_type 12, 2, 5
+	octave 2
+	note G_, 1
+	rest 5
+	note G_, 1
+	note G_, 1
+	note G_, 1
+	rest 1
+	note G_, 1
+	rest 1
+	note G_, 1
+	rest 3
+	note G_, 1
+	rest 5
+	note G_, 1
+	note G_, 1
+	note G_, 1
+	rest 1
+	note G_, 1
+	rest 1
+	note G_, 1
+	rest 1
+	note G_, 1
+	rest 1
+
+	sound_loop 0, Music_Route30_branch_efd79
+	
+; ============================================================================================================
+Music_Route30Night_Ch4:
+	toggle_noise 9
+	drum_speed 12
+	sound_call Music_Route30_branch_efeb8
+	sound_call Music_Route30_branch_efec1
+
+	sound_loop 0, Music_Route30_branch_efe84

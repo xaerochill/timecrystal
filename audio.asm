@@ -10,7 +10,6 @@ INCLUDE "audio/sfx_pointers.asm"
 
 SECTION "Songs 1", ROMX
 
-INCLUDE "audio/music/route36.asm"
 INCLUDE "audio/music/rivalbattle.asm"
 INCLUDE "audio/music/rocketbattle.asm"
 INCLUDE "audio/music/elmslab.asm"
@@ -18,7 +17,6 @@ INCLUDE "audio/music/darkcave.asm"
 INCLUDE "audio/music/johtogymbattle.asm"
 INCLUDE "audio/music/championbattle.asm"
 INCLUDE "audio/music/ssaqua.asm"
-INCLUDE "audio/music/newbarktown.asm"
 INCLUDE "audio/music/goldenrodcity.asm"
 INCLUDE "audio/music/vermilioncity.asm"
 INCLUDE "audio/music/titlescreen.asm"
@@ -30,11 +28,6 @@ INCLUDE "audio/music/trainervictory.asm"
 SECTION "Songs 2", ROMX
 
 INCLUDE "audio/music/route1.asm"
-INCLUDE "audio/music/route3.asm"
-INCLUDE "audio/music/route12.asm"
-INCLUDE "audio/music/kantogymbattle.asm"
-INCLUDE "audio/music/kantotrainerbattle.asm"
-INCLUDE "audio/music/kantowildbattle.asm"
 INCLUDE "audio/music/pokemoncenter.asm"
 INCLUDE "audio/music/looklass.asm"
 INCLUDE "audio/music/lookofficer.asm"
@@ -46,9 +39,7 @@ INCLUDE "audio/music/bicycle.asm"
 INCLUDE "audio/music/looksage.asm"
 INCLUDE "audio/music/pokemonchannel.asm"
 INCLUDE "audio/music/lighthouse.asm"
-INCLUDE "audio/music/lakeofrage.asm"
 INCLUDE "audio/music/indigoplateau.asm"
-INCLUDE "audio/music/route37.asm"
 INCLUDE "audio/music/rockethideout.asm"
 INCLUDE "audio/music/dragonsden.asm"
 INCLUDE "audio/music/ruinsofalphradio.asm"
@@ -65,7 +56,6 @@ INCLUDE "audio/music/route30.asm"
 
 SECTION "Songs 3", ROMX
 
-INCLUDE "audio/music/violetcity.asm"
 INCLUDE "audio/music/route29.asm"
 INCLUDE "audio/music/halloffame.asm"
 INCLUDE "audio/music/healpokemon.asm"
@@ -76,7 +66,6 @@ INCLUDE "audio/music/printer.asm"
 SECTION "Songs 4", ROMX
 
 INCLUDE "audio/music/viridiancity.asm"
-INCLUDE "audio/music/celadoncity.asm"
 
 INCLUDE "audio/music/wildpokemonvictory.asm"
 INCLUDE "audio/music/successfulcapture.asm"
@@ -95,7 +84,6 @@ assert BANK(Music_LookRival) == BANK(Music_AfterTheRivalFight)
 
 INCLUDE "audio/music/surf.asm"
 INCLUDE "audio/music/nationalpark.asm"
-INCLUDE "audio/music/azaleatown.asm"
 INCLUDE "audio/music/cherrygrovecity.asm"
 INCLUDE "audio/music/unioncave.asm"
 
@@ -147,6 +135,22 @@ INCLUDE "audio/music/cinnabarmansion.asm"
 INCLUDE "audio/music/pokemontower.asm"
 INCLUDE "audio/music/silphco.asm"
 INCLUDE "audio/music/surfingpikachu.asm"
+
+
+SECTION "Night Themes", ROMX
+
+INCLUDE "audio/music/azaleatown.asm"
+INCLUDE "audio/music/celadoncity.asm"
+INCLUDE "audio/music/kantogymbattle.asm"
+INCLUDE "audio/music/kantotrainerbattle.asm"
+INCLUDE "audio/music/kantowildbattle.asm"
+INCLUDE "audio/music/lakeofrage.asm"
+INCLUDE "audio/music/newbarktown.asm"
+INCLUDE "audio/music/route12.asm"
+INCLUDE "audio/music/route3.asm"
+INCLUDE "audio/music/route36.asm"
+INCLUDE "audio/music/route37.asm"
+INCLUDE "audio/music/violetcity.asm"
 
 
 SECTION "Extra Songs 1", ROMX

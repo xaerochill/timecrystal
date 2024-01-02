@@ -1,20 +1,21 @@
-Music_Route29:
+Music_Route29: ; f0386
 	channel_count 4
 	channel 1, Music_Route29_Ch1
 	channel 2, Music_Route29_Ch2
 	channel 3, Music_Route29_Ch3
 	channel 4, Music_Route29_Ch4
+; f0392
 
-Music_Route29_Ch1:
+Music_Route29_Ch1: ; f0392
 	tempo 146
 	volume 7, 7
-	duty_cycle 3
-	pitch_offset 1
+	duty_cycle $3
+	pitch_offset $0001
 	vibrato 16, 1, 5
 	stereo_panning FALSE, TRUE
 	note_type 12, 11, 2
 	rest 2
-.mainloop:
+Music_Route29_branch_f03a5: ; f03a5
 	rest 2
 	octave 4
 	note C_, 2
@@ -167,17 +168,18 @@ Music_Route29_Ch1:
 	note C_, 2
 	note G_, 2
 	note G_, 4
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_Route29_branch_f03a5
+; f044d
 
-Music_Route29_Ch2:
-	duty_cycle 3
+Music_Route29_Ch2: ; f044d
+	duty_cycle $3
 	vibrato 18, 3, 6
 	note_type 12, 12, 2
 	octave 4
 	note C_, 1
 	note D_, 1
-.mainloop:
-	sound_call .sub1
+Music_Route29_branch_f0458: ; f0458
+	sound_call Music_Route29_branch_f04de
 	note F_, 1
 	note E_, 1
 	note D_, 2
@@ -192,7 +194,7 @@ Music_Route29_Ch2:
 	octave 4
 	note C_, 1
 	note D_, 1
-	sound_call .sub1
+	sound_call Music_Route29_branch_f04de
 	note F_, 1
 	note E_, 1
 	note D_, 2
@@ -299,9 +301,10 @@ Music_Route29_Ch2:
 	octave 4
 	note C_, 1
 	note D_, 1
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_Route29_branch_f0458
+; f04de
 
-.sub1:
+Music_Route29_branch_f04de: ; f04de
 	note E_, 2
 	note E_, 2
 	note G_, 2
@@ -331,13 +334,14 @@ Music_Route29_Ch2:
 	note E_, 2
 	note C_, 2
 	sound_ret
+; f04fb
 
-Music_Route29_Ch3:
+Music_Route29_Ch3: ; f04fb
 	stereo_panning TRUE, FALSE
-	note_type 12, 2, 5
+	note_type 12, 2, 4
 	vibrato 9, 2, 7
 	rest 2
-.mainloop:
+Music_Route29_branch_f0504: ; f0504
 	rest 2
 	octave 3
 	note G_, 1
@@ -499,14 +503,15 @@ Music_Route29_Ch3:
 	rest 1
 	note C_, 1
 	rest 3
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_Route29_branch_f0504
+; f05a9
 
-Music_Route29_Ch4:
+Music_Route29_Ch4: ; f05a9
 	stereo_panning FALSE, TRUE
-	toggle_noise 0
+	toggle_noise $0
 	drum_speed 12
 	rest 2
-.mainloop:
+Music_Route29_branch_f05b0: ; f05b0
 	rest 2
 	drum_note 6, 2
 	drum_note 6, 6
@@ -518,4 +523,55 @@ Music_Route29_Ch4:
 	drum_note 6, 4
 	drum_note 6, 2
 	drum_note 6, 4
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_Route29_branch_f05b0
+; f05bf
+
+Music_Route29Night:
+	channel_count 4
+	channel 1, Music_Route29Night_Ch1
+	channel 2, Music_Route29Night_Ch2
+	channel 3, Music_Route29Night_Ch3
+	channel 4, Music_Route29Night_Ch4
+
+; ============================================================================================================
+; ============================================================================================================
+Music_Route29Night_Ch1:
+	tempo 152
+	volume 7, 7
+	duty_cycle $2
+	pitch_offset $0001
+	vibrato 16, 1, 5
+	stereo_panning FALSE, TRUE
+	note_type 12, 11, 2
+	rest 2
+
+	sound_loop 0, Music_Route29_branch_f03a5
+
+; ============================================================================================================
+Music_Route29Night_Ch2:
+	duty_cycle $2
+	vibrato 18, 2, 6
+	note_type 12, 12, 2
+	octave 4
+	note C_, 1
+	note D_, 1
+	
+	sound_loop 0, Music_Route29_branch_f0458
+
+; ============================================================================================================
+Music_Route29Night_Ch3:
+	stereo_panning TRUE, FALSE
+	note_type 12, 1, 1
+	vibrato 9, 1, 7
+	rest 2
+
+	sound_loop 0, Music_Route29_branch_f0504
+	
+; ============================================================================================================
+Music_Route29Night_Ch4:
+	stereo_panning FALSE, TRUE
+	toggle_noise 6
+	drum_speed 12
+	rest 2
+
+	sound_loop 0, Music_Route29_branch_f05b0

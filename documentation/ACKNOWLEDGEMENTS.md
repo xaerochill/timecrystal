@@ -29,6 +29,7 @@
 - [TriteHexagon](https://github.com/TriteHexagon/Trite_ASM_Repository):
   - [Midi2ASM-Converter](https://github.com/TriteHexagon/Midi2ASM-Converter)
   - [Dive](https://github.com/TriteHexagon/Trite_ASM_Repository/blob/main/normal/dive.asm)
+  - [Music that changes at night](https://github.com/pret/pokecrystal/wiki/Add-more-music-that-changes-at-night)
 - [pokeyellow](https://github.com/pret/pokeyellow):
   - [Unused Giovanni Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/yellowunusedsong.asm)
   - [Cinnabar Island Theme](https://github.com/pret/pokeyellow/blob/master/audio/music/cinnabar.asm)

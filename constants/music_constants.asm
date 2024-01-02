@@ -105,15 +105,35 @@
 	const MUSIC_SUICUNE_BATTLE               ; 64
 	const MUSIC_BATTLE_TOWER_LOBBY           ; 65
 	const MUSIC_MOBILE_CENTER                ; 66
-; custom
+; additional songs
 	const MUSIC_CINNABAR                     ; 67
 	const MUSIC_DIVE                         ; 68 
 	const MUSIC_TRADE                        ; 69
-	const MUSIC_GIOVANNI                     ; 70
-	const MUSIC_CINNABAR_MANSION             ; 71
-	const MUSIC_POKEMON_TOWER                ; 72
-	const MUSIC_SILPH_CO                     ; 73
-	const MUSIC_SURFING_PIKACHU              ; 74
+	const MUSIC_GIOVANNI                     ; 6a
+	const MUSIC_CINNABAR_MANSION             ; 6b
+	const MUSIC_POKEMON_TOWER                ; 6c
+	const MUSIC_SILPH_CO                     ; 6d
+	const MUSIC_SURFING_PIKACHU              ; 6e
+; night themes by TriteHexagon
+	const MUSIC_AZALEA_TOWN_NIGHT            ; 6f
+	const MUSIC_CELADON_CITY_NIGHT           ; 70
+	const MUSIC_CHERRYGROVE_CITY_NIGHT       ; 71
+	const MUSIC_ECRUTEAK_CITY_NIGHT          ; 72
+	const MUSIC_GOLDENROD_CITY_NIGHT         ; 73
+	const MUSIC_KANTO_WILD_BATTLE_NIGHT      ; 74
+	const MUSIC_NEW_BARK_TOWN_NIGHT          ; 75
+	const MUSIC_PALLET_TOWN_NIGHT            ; 76
+	const MUSIC_ROUTE_1_NIGHT                ; 77
+	const MUSIC_ROUTE_12_NIGHT               ; 78
+	const MUSIC_ROUTE_26_NIGHT               ; 79
+	const MUSIC_ROUTE_29_NIGHT               ; 7a
+	const MUSIC_ROUTE_3_NIGHT                ; 7b
+	const MUSIC_ROUTE_30_NIGHT               ; 7c
+	const MUSIC_ROUTE_36_NIGHT               ; 7d
+	const MUSIC_ROUTE_37_NIGHT               ; 7e
+	const MUSIC_LAKE_OF_RAGE_NIGHT           ; 7f
+	const MUSIC_VERMILION_CITY_NIGHT         ; 80
+	const MUSIC_VIOLET_CITY_NIGHT            ; 81
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)

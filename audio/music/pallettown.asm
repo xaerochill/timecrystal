@@ -1,17 +1,26 @@
-Music_PalletTown:
+Music_PalletTown: ; f4b0c
 	channel_count 3
 	channel 1, Music_PalletTown_Ch1
 	channel 2, Music_PalletTown_Ch2
 	channel 3, Music_PalletTown_Ch3
+; f4b15
 
-Music_PalletTown_Ch1:
+Music_PalletTown_Ch1: ; f4b15
 	tempo 188
 	volume 7, 7
 	vibrato 18, 2, 4
-	pitch_offset 1
+	pitch_offset $0001
 	stereo_panning FALSE, TRUE
-.mainloop:
-	duty_cycle 2
+Music_PalletTown_Ch1_loop: ; f4b22
+	sound_call Music_PalletTown_Ch1_Part1
+	duty_cycle $3
+	sound_call Music_PalletTown_branch_f4b59
+	sound_call Music_PalletTown_Ch1_Part2
+	sound_loop 0, Music_PalletTown_Ch1_loop
+; f4ba1
+
+Music_PalletTown_Ch1_Part1:
+	duty_cycle $2
 	note_type 12, 7, 8
 	octave 3
 	note B_, 12
@@ -60,30 +69,9 @@ Music_PalletTown_Ch1:
 	note B_, 8
 	volume_envelope 7, 7
 	note B_, 8
-.loop1:
-	duty_cycle 3
-	volume_envelope 9, 2
-	note G_, 2
-	note E_, 2
-	note G_, 2
-	note E_, 2
-	note G_, 2
-	note D#, 2
-	note G_, 2
-	note D#, 2
-	volume_envelope 5, -7
-	note G_, 1
-	note A_, 1
-	note B_, 1
-	octave 4
-	note C_, 1
-	note D_, 2
-	note G_, 4
-	note D_, 2
-	note C_, 2
-	octave 3
-	note B_, 2
-	sound_loop 2, .loop1
+	sound_ret
+
+Music_PalletTown_Ch1_Part2:
 	volume_envelope 3, -7
 	octave 4
 	note C_, 4
@@ -117,13 +105,38 @@ Music_PalletTown_Ch1:
 	note G_, 1
 	volume_envelope 1, -7
 	note F#, 8
-	sound_loop 0, .mainloop
+	sound_ret
 
-Music_PalletTown_Ch2:
+Music_PalletTown_branch_f4b59: ; f4b59
+	volume_envelope 9, 2
+	note G_, 2
+	note E_, 2
+	note G_, 2
+	note E_, 2
+	note G_, 2
+	note D#, 2
+	note G_, 2
+	note D#, 2
+	volume_envelope 5, -7
+	note G_, 1
+	note A_, 1
+	note B_, 1
+	octave 4
+	note C_, 1
+	note D_, 2
+	note G_, 4
+	note D_, 2
+	note C_, 2
+	octave 3
+	note B_, 2
+	sound_loop 2, Music_PalletTown_branch_f4b59
+	sound_ret
+
+Music_PalletTown_Ch2: ; f4ba1
 	vibrato 18, 4, 4
-	duty_cycle 2
+	duty_cycle $2
 	stereo_panning TRUE, FALSE
-.mainloop:
+Music_PalletTown_branch_f4ba8: ; f4ba8
 	note_type 12, 8, 8
 	octave 1
 	note G_, 2
@@ -183,7 +196,7 @@ Music_PalletTown_Ch2:
 	octave 3
 	note C_, 2
 	note D_, 2
-.loop1:
+Music_PalletTown_branch_f4be5: ; f4be5
 	volume_envelope 10, 2
 	octave 3
 	note E_, 2
@@ -207,7 +220,7 @@ Music_PalletTown_Ch2:
 	note G_, 3
 	note D_, 2
 	note G_, 4
-	sound_loop 2, .loop1
+	sound_loop 2, Music_PalletTown_branch_f4be5
 	note C_, 2
 	octave 3
 	note E_, 4
@@ -242,12 +255,13 @@ Music_PalletTown_Ch2:
 	octave 1
 	note B_, 2
 	note A_, 2
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_PalletTown_branch_f4ba8
+; f4c2a
 
-Music_PalletTown_Ch3:
+Music_PalletTown_Ch3: ; f4c2a
 	vibrato 20, 2, 4
-.mainloop:
 	note_type 12, 1, 0
+Music_PalletTown_branch_f4c2d: ; f4c2d
 	octave 6
 	note D_, 2
 	note C_, 2
@@ -355,4 +369,38 @@ Music_PalletTown_Ch3:
 	rest 1
 	note B_, 8
 	note A_, 8
-	sound_loop 0, .mainloop
+	sound_loop 0, Music_PalletTown_branch_f4c2d
+; f4c9f
+
+Music_PalletTownNight: ; f4b0c
+	channel_count 3
+	channel 1, Music_PalletTownNight_Ch1
+	channel 2, Music_PalletTownNight_Ch2
+	channel 3, Music_PalletTownNight_Ch3
+
+Music_PalletTownNight_Ch1: ; f4b15
+	tempo 197
+	volume 7, 7
+	vibrato 18, 1, 4
+	pitch_offset $0001
+	stereo_panning FALSE, TRUE
+Music_PalletTownNight_Ch1_loop: ; f4b22
+	sound_call Music_PalletTown_Ch1_Part1
+	duty_cycle $2
+	sound_call Music_PalletTown_branch_f4b59
+	sound_call Music_PalletTown_Ch1_Part2
+	sound_loop 0, Music_PalletTownNight_Ch1_loop
+
+Music_PalletTownNight_Ch2: ; f4ba1
+	vibrato 18, 3, 4
+	duty_cycle $2
+	stereo_panning TRUE, FALSE
+	transpose 1, 0
+	sound_call Music_PalletTown_branch_f4ba8
+	sound_ret
+
+Music_PalletTownNight_Ch3: ; f4c2a
+	vibrato 20, 1, 4
+	note_type 12, 1, 2
+	sound_call Music_PalletTown_branch_f4c2d
+	sound_ret

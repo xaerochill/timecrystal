@@ -107,7 +107,7 @@ Music:
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
 	dba Music_MobileCenter
-; custom
+; additional songs
 	dba Music_Cinnabar
 	dba Music_Dive
 	dba Music_Trade
@@ -116,4 +116,24 @@ Music:
 	dba Music_PokemonTower
 	dba Music_SilphCo
 	dba Music_SurfingPikachu
+; night themes by TriteHexagon
+	dba Music_AzaleaTownNight
+	dba Music_CeladonCityNight
+	dba Music_CherrygroveCityNight
+	dba Music_EcruteakCityNight
+	dba Music_GoldenrodCityNight
+	dba Music_KantoWildBattleNight
+	dba Music_NewBarkTownNight
+	dba Music_PalletTownNight
+	dba Music_Route1Night
+	dba Music_Route12Night
+	dba Music_Route26Night
+	dba Music_Route29Night
+	dba Music_Route3Night
+	dba Music_Route30Night
+	dba Music_Route36Night
+	dba Music_Route37Night
+	dba Music_LakeOfRageNight
+	dba Music_VermilionCityNight
+	dba Music_VioletCityNight
 	assert_table_length NUM_MUSIC_SONGS

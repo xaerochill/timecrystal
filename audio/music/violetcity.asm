@@ -1,17 +1,31 @@
-Music_VioletCity:
+Music_VioletCity: ; f0000
 	channel_count 4
 	channel 1, Music_VioletCity_Ch1
 	channel 2, Music_VioletCity_Ch2
 	channel 3, Music_VioletCity_Ch3
 	channel 4, Music_VioletCity_Ch4
+; f000c
 
-Music_VioletCity_Ch1:
+Music_VioletCity_Ch1: ; f000c
 	tempo 164
 	volume 7, 7
 	vibrato 18, 2, 5
-	duty_cycle 2
+	duty_cycle $2
 	note_type 12, 9, 5
 	rest 16
+
+	sound_call Music_VioletCity_Ch1_Intro
+	sound_call Music_VioletCity_Ch1_Master
+
+Music_VioletCity_Ch1_Master:
+
+	sound_call Music_VioletCity_Ch1_Part_1
+	duty_cycle $3
+	sound_call Music_VioletCity_Ch1_Part_2
+
+	sound_loop 0, Music_VioletCity_Ch1_Master
+
+Music_VioletCity_Ch1_Intro:
 	stereo_panning TRUE, FALSE
 	octave 2
 	note E_, 1
@@ -65,7 +79,9 @@ Music_VioletCity_Ch1:
 	octave 3
 	note C#, 12
 	rest 8
-.mainloop:
+	sound_ret
+
+Music_VioletCity_Ch1_Part_1: ; f0056
 	note_type 6, 9, 5
 	rest 4
 	octave 2
@@ -158,14 +174,14 @@ Music_VioletCity_Ch1:
 	rest 8
 	octave 4
 	note F_, 3
-	duty_cycle 1
+	duty_cycle $1
 	note_type 6, 7, 5
 	note G#, 1
 	note B_, 1
 	octave 5
 	note D#, 8
 	note_type 12, 9, 3
-	duty_cycle 2
+	duty_cycle $2
 	rest 16
 	note_type 6, 9, 1
 	stereo_panning TRUE, FALSE
@@ -187,7 +203,8 @@ Music_VioletCity_Ch1:
 	stereo_panning TRUE, TRUE
 	note D#, 8
 	rest 8
-	duty_cycle 3
+	sound_ret
+Music_VioletCity_Ch1_Part_2:
 	volume_envelope 8, 4
 	rest 4
 	note G_, 2
@@ -286,7 +303,7 @@ Music_VioletCity_Ch1:
 	note A#, 1
 	octave 5
 	note C#, 1
-	duty_cycle 2
+	duty_cycle $2
 	octave 4
 	note C#, 6
 	note C_, 1
@@ -295,13 +312,29 @@ Music_VioletCity_Ch1:
 	octave 4
 	note C#, 4
 	rest 4
-	sound_loop 0, .mainloop
+	sound_ret
+	
+; f0162
 
-Music_VioletCity_Ch2:
+Music_VioletCity_Ch2: ; f0162
 	vibrato 18, 2, 4
-	duty_cycle 2
+	duty_cycle $2
 	note_type 12, 12, 7
 	rest 16
+
+	sound_call Music_VioletCity_Ch2_Intro
+	sound_call Music_VioletCity_Ch2_Master
+
+Music_VioletCity_Ch2_Master:
+
+	sound_call Music_VioletCity_Ch2_Part_1
+	duty_cycle $3
+	sound_call Music_VioletCity_Ch2_Part_2
+	sound_call Music_VioletCity_Ch2_Part_3
+
+	sound_loop 0, Music_VioletCity_Ch2_Master
+
+Music_VioletCity_Ch2_Intro:
 	octave 3
 	note G#, 1
 	rest 1
@@ -348,7 +381,9 @@ Music_VioletCity_Ch2:
 	rest 2
 	note D#, 1
 	note E_, 1
-.mainloop:
+	sound_ret
+
+Music_VioletCity_Ch2_Part_1: ; f0199
 	volume_envelope 11, 7
 	note F#, 4
 	rest 2
@@ -424,7 +459,9 @@ Music_VioletCity_Ch2:
 	note B_, 12
 	rest 4
 	volume_envelope 10, 7
-	duty_cycle 3
+	sound_ret
+	
+Music_VioletCity_Ch2_Part_2:
 	rest 2
 	note B_, 1
 	octave 4
@@ -492,20 +529,42 @@ Music_VioletCity_Ch2:
 	rest 5
 	vibrato 18, 2, 4
 	volume_envelope 10, 7
-	duty_cycle 2
+	duty_cycle $2
 	octave 4
 	note A#, 6
 	note A_, 1
 	note G#, 1
 	note F#, 4
 	rest 2
+	sound_ret
+
+Music_VioletCity_Ch2_Part_3:
 	note D#, 1
 	note E_, 1
-	sound_loop 0, .mainloop
+	sound_ret
+; f0247
 
-Music_VioletCity_Ch3:
+Music_VioletCity_Ch3: ; f0247
 	note_type 12, 2, 5
 	rest 16
+	
+	sound_call Music_VioletCity_Ch3_Intro
+	sound_call Music_VioletCity_Ch3_Master
+
+Music_VioletCity_Ch3_Master:
+
+	note_type 12, 2, 5
+	sound_call Music_VioletCity_Ch3_Part_1
+	note_type 6, 2, 5
+	sound_call Music_VioletCity_Ch3_Part_2
+	sound_call Music_VioletCity_branch_f0311
+	sound_call Music_VioletCity_Ch3_Part_3
+	sound_call Music_VioletCity_branch_f0311
+	sound_call Music_VioletCity_Ch3_Part_4
+
+	sound_loop 0, Music_VioletCity_Ch3_Master
+
+Music_VioletCity_Ch3_Intro:
 	rest 6
 	octave 4
 	note E_, 4
@@ -528,8 +587,8 @@ Music_VioletCity_Ch3:
 	note F#, 2
 	octave 2
 	note A#, 2
-.mainloop:
-	note_type 12, 2, 5
+	sound_ret
+Music_VioletCity_Ch3_Part_1: ; f0261
 	note B_, 1
 	rest 5
 	note B_, 1
@@ -587,7 +646,9 @@ Music_VioletCity_Ch3:
 	note F#, 2
 	note F#, 1
 	rest 1
-	note_type 6, 2, 5
+	sound_ret
+Music_VioletCity_Ch3_Part_2:
+	
 	octave 3
 	note C#, 2
 	note F_, 2
@@ -600,9 +661,7 @@ Music_VioletCity_Ch3:
 	note B_, 2
 	octave 4
 	note C#, 6
-	note_type 12, 2, 5
-	rest 5
-	note_type 6, 2, 5
+	rest 10
 	octave 2
 	note E_, 2
 	rest 10
@@ -624,7 +683,9 @@ Music_VioletCity_Ch3:
 	note B_, 2
 	rest 2
 	note A_, 8
-	sound_call .sub1
+	sound_ret
+
+Music_VioletCity_Ch3_Part_3:
 	note F#, 2
 	rest 10
 	note B_, 2
@@ -634,7 +695,9 @@ Music_VioletCity_Ch3:
 	note A#, 8
 	note A_, 2
 	rest 2
-	sound_call .sub1
+	sound_ret
+
+Music_VioletCity_Ch3_Part_4:
 	note F#, 2
 	rest 10
 	note B_, 2
@@ -689,9 +752,10 @@ Music_VioletCity_Ch3:
 	rest 4
 	octave 2
 	note A#, 4
-	sound_loop 0, .mainloop
+	sound_ret
+; f0311
 
-.sub1:
+Music_VioletCity_branch_f0311: ; f0311
 	note G_, 2
 	rest 10
 	note G_, 2
@@ -705,9 +769,10 @@ Music_VioletCity_Ch3:
 	octave 2
 	note A_, 4
 	sound_ret
+; f031e
 
-Music_VioletCity_Ch4:
-	toggle_noise 3
+Music_VioletCity_Ch4: ; f031e
+	toggle_noise $3
 	drum_speed 12
 	drum_note 4, 2
 	drum_note 3, 2
@@ -716,35 +781,37 @@ Music_VioletCity_Ch4:
 	drum_note 3, 2
 	drum_note 3, 4
 	drum_note 7, 4
-	sound_call .sub1
-	sound_call .sub1
-	sound_call .sub1
+Music_VioletCityNight_Ch4_Intro:
+	sound_call Music_VioletCity_branch_f036c
+	sound_call Music_VioletCity_branch_f036c
+	sound_call Music_VioletCity_branch_f036c
 	drum_note 3, 2
 	drum_note 4, 1
 	drum_note 4, 1
 	drum_note 3, 2
 	drum_note 1, 8
 	drum_note 4, 2
-.mainloop:
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_call .sub2
-	sound_loop 0, .mainloop
+Music_VioletCity_branch_f0338: ; f0338
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_call Music_VioletCity_branch_f037a
+	sound_loop 0, Music_VioletCity_branch_f0338
+; f036c
 
-.sub1:
+Music_VioletCity_branch_f036c: ; f036c
 	drum_note 3, 1
 	drum_note 3, 1
 	drum_note 4, 1
@@ -759,8 +826,9 @@ Music_VioletCity_Ch4:
 	drum_note 8, 1
 	drum_note 8, 1
 	sound_ret
+; f037a
 
-.sub2:
+Music_VioletCity_branch_f037a: ; f037a
 	drum_note 4, 2
 	drum_note 8, 1
 	drum_note 8, 1
@@ -773,3 +841,81 @@ Music_VioletCity_Ch4:
 	drum_note 3, 2
 	drum_note 4, 2
 	sound_ret
+; f0386
+
+; ============================================================================================================
+; ============================================================================================================
+
+Music_VioletCityNight:
+	channel_count 4
+	channel 1, Music_VioletCityNight_Ch1
+	channel 2, Music_VioletCityNight_Ch2
+	channel 3, Music_VioletCityNight_Ch3
+	channel 4, Music_VioletCityNight_Ch4
+
+; ============================================================================================================
+Music_VioletCityNight_Ch1:
+	tempo 178
+	volume 7, 7
+	vibrato 18, 1, 5
+	duty_cycle $2
+	note_type 12, 9, 5
+	
+	sound_call Music_VioletCity_Ch1_Intro
+	sound_call Music_VioletCityNight_Ch1_Master
+
+Music_VioletCityNight_Ch1_Master:
+
+	duty_cycle $2
+	sound_call Music_VioletCity_Ch1_Part_1
+	duty_cycle $2
+	sound_call Music_VioletCity_Ch1_Part_2
+
+	sound_loop 0, Music_VioletCityNight_Ch1_Master
+
+; ============================================================================================================
+Music_VioletCityNight_Ch2:
+	vibrato 18, 1, 4
+	duty_cycle $2
+	note_type 12, 12, 7
+	
+	sound_call Music_VioletCity_Ch2_Intro
+	sound_call Music_VioletCityNight_Ch2_Master
+
+Music_VioletCityNight_Ch2_Master:
+
+	duty_cycle $2
+	sound_call Music_VioletCity_Ch2_Part_1
+	duty_cycle $2
+	sound_call Music_VioletCity_Ch2_Part_2
+	duty_cycle $2
+	sound_call Music_VioletCity_Ch2_Part_3
+
+	sound_loop 0, Music_VioletCityNight_Ch2_Master
+
+; ============================================================================================================
+Music_VioletCityNight_Ch3:
+	note_type 12, 2, 4
+
+	sound_call Music_VioletCity_Ch3_Intro
+	sound_call Music_VioletCityNight_Ch3_Master
+
+Music_VioletCityNight_Ch3_Master:
+
+	note_type 12, 2, 4
+	sound_call Music_VioletCity_Ch3_Part_1
+	note_type 6, 2, 4
+	sound_call Music_VioletCity_Ch3_Part_2
+	sound_call Music_VioletCity_branch_f0311
+	sound_call Music_VioletCity_Ch3_Part_3
+	sound_call Music_VioletCity_branch_f0311
+	sound_call Music_VioletCity_Ch3_Part_4
+
+	sound_loop 0, Music_VioletCityNight_Ch3_Master
+	
+; ============================================================================================================
+Music_VioletCityNight_Ch4:
+	toggle_noise 9
+	drum_speed 12
+
+	sound_loop 0, Music_VioletCityNight_Ch4_Intro
