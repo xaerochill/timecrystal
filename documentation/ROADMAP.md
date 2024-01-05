@@ -122,8 +122,34 @@ Beating the Elite 4 resets the following Events:
 - [x] Removed 25% failure chance for AI status moves
 - [x] Any encountered wild Pokémon (excluding legendaries) may vary up to 0-4 levels
 - [x] Gym leaders have parties scaling by badge count. Their parties are inspired by teams in the manga, Pokémon Stadium 1 & 2 as well as their official TCG cards
+- [x] Obedience now applies to all Pokémon you own and slightly increases per badge to act like a soft lavel cap (see table below - note: scaling trainer parties are not yet implemented)
 - [ ] Gym Leaders offer rematches after beating the Elite 4
-- [ ] Trainer classes use more diverse Pokémon and better AI
+- [ ] Trainer classes scale per badge and use more diverse Pokémon and better AI
+
+| Badges Count | Gym Leader Level | Trainer Level | Obedience Cap |
+| :---: | :---: | :---: | :---: |
+| 0 | 16 | 8 | 15 |
+| 1 | 16 | 8 | 18 |
+| 2 | 19 | 11 | 21 |
+| 3 | 22 | 14 | 24 |
+| 4 | 25 | 17 | 27 |
+| 5 | 28 | 20 | 30 |
+| 6 | 31 | 23 | 33 |
+| 7 | 34 | 26 | 36 |
+| 8 | 37 | 29 | 39 |
+| 9 | 40 | 32 | 42 |
+| 10 | 43 | 35 | 45 |
+| 11 | 46 | 38 | 48 |
+| 12 | 49 | 41 | 51 |
+| 13 | 52 | 44 | 54 |
+| 14 | 55 | 47 | 57 |
+| 15 | 58 | 50 | 60 |
+| 16 | 61 | 53 | 70 |
+| Will | 66 | 53 | 70 |
+| Koga | 68 | 53 | 70 |
+| Bruno | 70 | 53 | 70 |
+| Karen | 72 | 53 | 70 |
+| Lance | 74 | 53 | 100 |
 
 - Improved AI
   - [All known AI bugs](https://github.com/pret/pokecrystal/blob/master/docs/bugs_and_glitches.md) are fixed

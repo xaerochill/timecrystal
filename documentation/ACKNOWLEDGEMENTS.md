@@ -7,7 +7,7 @@
 - The kind people on the pret Discord for their continued help on all kinds of issues <3
   - [vulcandth](https://github.com/vulcandth) for all of the work on the disassembly and code such as the PokéSeer fix and the 60 FPS engine
   - [Sylvie](https://github.com/rangi42) for all of the work on the disassembly and code such as the diagonal stairs
-  - [Idain](https://github.com/Idain) for the diagonal stairs code & code cleanup of the fossil mechanic restauration
+  - [Idain](https://github.com/Idain) for cleaning up code for the fossil mechanic restauration, diagonal stairs as well as obedience level
 
 **Easter Eggs**
 - Can you find the house of [Takeshi Shudo](https://lavacutcontent.com/takeshi-shudo-ending-pokemon/), the creator of Lugia who once drank with sailors to understand how they talk?

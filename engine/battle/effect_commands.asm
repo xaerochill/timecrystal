@@ -655,45 +655,24 @@ BattleCommand_CheckObedience:
 	and a
 	ret nz
 
-	; If the monster's id doesn't match the player's,
-	; some conditions need to be met.
-	ld a, MON_ID
-	call BattlePartyAttr
+	; all Pokémon obey after entering the Hall of Fame at least once
+    ld a, [wHallOfFameCount] 
+    and a
+    ld a, MAX_LEVEL
+    jr nz, .getlevel
 
-	ld a, [wPlayerID]
-	cp [hl]
-	jr nz, .obeylevel
-	inc hl
-	ld a, [wPlayerID + 1]
-	cp [hl]
-	ret z
-
-.obeylevel
-	; The maximum obedience level is constrained by owned badges:
-	ld hl, wJohtoBadges
-
-	; risingbadge
-	bit RISINGBADGE, [hl]
-	ld a, MAX_LEVEL + 1
-	jr nz, .getlevel
-
-	; stormbadge
-	bit STORMBADGE, [hl]
-	ld a, 70
-	jr nz, .getlevel
-
-	; fogbadge
-	bit FOGBADGE, [hl]
-	ld a, 50
-	jr nz, .getlevel
-
-	; hivebadge
-	bit HIVEBADGE, [hl]
-	ld a, 30
-	jr nz, .getlevel
-
-	; no badges
-	ld a, 10
+    ; Count how many badges the player has.
+    ld hl, wBadges
+    ld b, 2
+    call CountSetBits
+    ; Get obedience level from table that corresponds to number of badges
+    ld hl, .ObedienceLevels
+    add l
+    ld l, a
+    adc h
+    sub l
+    ld h, a
+    ld a, [hl]
 
 .getlevel
 ; c = obedience level
@@ -909,6 +888,27 @@ BattleCommand_CheckObedience:
 	ld [wPlayerEncoreCount], a
 
 	jp EndMoveEffect
+
+.ObedienceLevels:
+	table_width 1, .ObedienceLevels
+	db 15
+	db 18
+	db 21
+	db 24
+	db 27
+	db 30
+	db 33
+	db 36
+	db 39
+	db 42
+	db 45
+	db 48
+	db 51
+	db 54
+	db 57
+	db 60
+	db 70
+	assert_table_length NUM_BADGES + 1
 
 IgnoreSleepOnly:
 	ld a, BATTLE_VARS_MOVE_ANIM
