@@ -14,7 +14,7 @@
 
 **Graphics**
 - [FrenchOrange](https://github.com/FrenchOrange) for
-  - Putting together the [Tileset Atlas](https://www.deviantart.com/frenchorange/art/Pokemon-Generation-I-and-II-Tile-Atlas-948667086)
+  - Putting together the [Tileset Atlas](https://www.deviantart.com/frenchorange/art/Pokemon-Generation-I-and-II-Tile-Atlas-948667086) & the [NPC Atlas](https://www.deviantart.com/frenchorange/art/Pokemon-Generation-I-and-II-NPC-Atlas-996170150)
   - Making [Crystal Sprite Error Fixes](https://www.deviantart.com/frenchorange/art/Pokemon-Crystal-Sprite-Errors-918359380)
   - Providing maps for [Kanoko's Room](https://www.spriters-resource.com/game_boy_gbc/pokemontradingcardgame2/sheet/198826/), [Psychic Stronghold](https://www.spriters-resource.com/game_boy_gbc/pokemontradingcardgame2/sheet/198768/), [Slots Room](https://www.spriters-resource.com/game_boy_gbc/pokemontradingcardgame2/sheet/138703/)& [Water Club](https://www.spriters-resource.com/game_boy_gbc/pokemontradingcardgame2/sheet/185937/) from Pokémon TCG 2
   - [Miscellaneous Tiles](https://www.spriters-resource.com/fullview/8902/) from Pokémon TCG 2
