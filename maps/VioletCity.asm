@@ -260,11 +260,9 @@ VioletCitySuperNerdText:
 	text "Hey, you're a"
 	line "#MON trainer?"
 
-	para "If you beat the"
-	line "GYM LEADER here,"
-
-	para "you'll be ready"
-	line "for prime time!"
+	para "I heard that"
+	line "MAREEP came back"
+	cont "to ROUTE 32."
 	done
 
 VioletCityGrampsText:
