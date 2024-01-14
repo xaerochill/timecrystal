@@ -293,6 +293,7 @@ ROMX $74
 	"Pokedex Entries 193-251"
 ROMX $75
 	"Tileset Data 2"
+	"Map Scripts 26"
 ROMX $76
 	"Tileset Data 3"
 ROMX $77

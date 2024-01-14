@@ -544,11 +544,11 @@ ENDM
 	map_attributes MineshaftB3F, MINESHAFT_B3F, $09, 0
 	map_attributes MineshaftB4F, MINESHAFT_B4F, $1D, 0
 	map_attributes MineshaftB5F, MINESHAFT_B5F, $1D, 0
-	map_attributes SeafoamIslands1F, SEAFOAM_ISLANDS_1F, $3B, 0
-	map_attributes SeafoamIslandsB1F, SEAFOAM_ISLANDS_B1F, $19, 0
-	map_attributes SeafoamIslandsB2F, SEAFOAM_ISLANDS_B2F, $3B, 0
-	map_attributes SeafoamIslandsB3F, SEAFOAM_ISLANDS_B3F, $19, 0
-	map_attributes SeafoamIslandsB4F, SEAFOAM_ISLANDS_B4F, $3B, 0
+	map_attributes SeafoamIslands1F, SEAFOAM_ISLANDS_1F, $09, 0
+	map_attributes SeafoamIslandsB1F, SEAFOAM_ISLANDS_B1F, $09, 0
+	map_attributes SeafoamIslandsB2F, SEAFOAM_ISLANDS_B2F, $09, 0
+	map_attributes SeafoamIslandsB3F, SEAFOAM_ISLANDS_B3F, $09, 0
+	map_attributes SeafoamIslandsB4F, SEAFOAM_ISLANDS_B4F, $09, 0
 	map_attributes EcruteakTinTowerEntrance, ECRUTEAK_TIN_TOWER_ENTRANCE, $00, 0
 	map_attributes WiseTriosRoom, WISE_TRIOS_ROOM, $00, 0
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0

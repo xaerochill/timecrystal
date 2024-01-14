@@ -30,11 +30,11 @@ TrainerClassDVs:
 	dn  7, 15, 15, 15 ; JANINE (female for 50/50 gender ratio and below)
 	dn 13,  8, 12,  8 ; COOLTRAINERM
 	dn  7, 12, 12,  8 ; COOLTRAINERF
-	dn  6,  9, 12,  8 ; BEAUTY
+	dn 14, 12, 10, 10 ; BEAUTY (hp fire)
 	dn  9,  8,  8,  8 ; POKEMANIAC
 	dn 13,  8, 10,  8 ; GRUNTM
 	dn  9,  8,  8,  8 ; GENTLEMAN
-	dn  9,  8,  8,  8 ; SKIER
+	dn 14, 12, 10, 10 ; SKIER (hp fire)
 	dn  6,  8,  8,  8 ; TEACHER_F
 	dn 14, 12, 15, 15 ; SABRINA (hp fire)
 	dn  9,  8,  8,  8 ; BUG_CATCHER
@@ -59,7 +59,7 @@ TrainerClassDVs:
 	dn  7, 15, 15, 15 ; ARIANA (female for 50/50 gender ratio and below)
 	dn  9,  8,  8,  8 ; SAGE
 	dn  7,  8,  8,  8 ; MEDIUM
-	dn  9,  8,  8,  8 ; BOARDER
+	dn 14, 14, 10, 10 ; BOARDER (hp grass)
 	dn  9,  8,  8,  8 ; POKEFANM
 	dn  6,  8,  8, 10 ; KIMONO_GIRL
 	dn  6,  8, 10,  8 ; TWINS

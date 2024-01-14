@@ -308,37 +308,37 @@
 	const EVENT_JOEY_ASKED_FOR_PHONE_NUMBER
 	const EVENT_VERMILION_GYM_SWITCH_2 ; previously unused
 	const EVENT_WADE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused
+	const EVENT_BOTH_BOULDERS_IN_SEAFOAM_B4F ; previously unused
 	const EVENT_RALPH_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_B4F_2 ; previously unused
 	const EVENT_LIZ_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_B4F_1 ; previously unused
 	const EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOTH_BOULDERS_IN_SEAFOAM_B3F ; previously unused
 	const EVENT_TODD_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_B3F_4 ; previously unused
 	const EVENT_GINA_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_B3F_3 ; previously unused
 	const EVENT_IRWIN_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_B3F_2 ; previously unused
 	const EVENT_ARNIE_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_B3F_1 ; previously unused
 	const EVENT_ALAN_ASKED_FOR_PHONE_NUMBER
 	const EVENT_GAVE_SCIENTIST_OLD_AMBER ; previously unused
 	const EVENT_GAVE_SCIENTIST_DOME_FOSSIL ; previously unused
 	const EVENT_GAVE_SCIENTIST_HELIX_FOSSIL ; previously unused
 	const EVENT_DANA_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_B2F_2 ; previously unused
 	const EVENT_CHAD_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_B2F_1 ; previously unused
 	const EVENT_DEREK_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_B1F_2 ; previously unused
 	const EVENT_TULLY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_B1F_1 ; previously unused
 	const EVENT_BRENT_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused
+	const EVENT_BOULDER_IN_SEAFOAM_1F_2 ; previously unused
 	const EVENT_TIFFANY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BOULDER_IN_SEAFOAM_1F_1 ; previously unused
 	const EVENT_VANCE_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
 	const EVENT_WILTON_ASKED_FOR_PHONE_NUMBER
@@ -563,6 +563,8 @@
 	const EVENT_BEAT_BOARDER_RONALD
 	const EVENT_BEAT_BOARDER_BRAD
 	const EVENT_BEAT_BOARDER_DOUGLAS
+	const EVENT_BEAT_BOARDER_SHAUN
+	const EVENT_BEAT_BOARDER_BRYCE
 ; Sage
 	const EVENT_BEAT_SAGE_CHOW
 	const EVENT_BEAT_SAGE_NICO
@@ -986,6 +988,7 @@
 ; Skier
 	const EVENT_BEAT_SKIER_ROXANNE
 	const EVENT_BEAT_SKIER_CLARISSA
+	const EVENT_BEAT_SKIER_CADY
 ; SwimmerM
 	const EVENT_BEAT_SWIMMERM_HAROLD
 	const EVENT_BEAT_SWIMMERM_SIMON
@@ -1047,7 +1050,7 @@
 	const EVENT_BEAT_SAGE_GAKU
 	const EVENT_BEAT_SAGE_MASA
 	const EVENT_BEAT_SAGE_KOJI
-; Unused: next 116 events
+; Unused: next 113 events
 
 	const_next 1600
 ; Sprite visibility flags
@@ -1356,11 +1359,7 @@
 	const EVENT_FLORIA_AT_SUDOWOODO
 	const EVENT_GOLDENROD_CITY_MOVE_TUTOR
 	const EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR
-; Unused: next 0 events
-; (In pokegold the previous 4 event flags were not defined,
-; but in pokecrystal the 'const_next 1900' is redundant.)
 
-	const_next 1900
 ; Kanto people
 	const EVENT_ROUTE_24_ROCKET
 	const EVENT_CERULEAN_GYM_ROCKET

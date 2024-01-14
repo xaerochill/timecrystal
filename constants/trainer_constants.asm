@@ -200,7 +200,7 @@ DEF KRIS EQU __trainer_class__
 	const TYLER ; unused
 	const SEAN
 	const KEVIN
-	const STEVE ; unused
+	const STEVE
 	const ALLEN
 	const DARIN
 
@@ -235,11 +235,11 @@ DEF KRIS EQU __trainer_class__
 	const BRENDA ; unused
 	const CASSIE
 	const CAROLINE ; unused
-	const CARLENE ; unused
+	const CARLENE
 	const JESSICA ; unused
 	const RACHAEL ; unused
 	const ANGELICA ; unused
-	const KENDRA ; unused
+	const KENDRA
 	const VERONICA ; unused
 	const JULIA
 	const THERESA ; unused
@@ -306,6 +306,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass SKIER ; 21
 	const ROXANNE
 	const CLARISSA
+	const CADY
 
 	trainerclass TEACHERF ; 22
 	const COLETTE
@@ -616,6 +617,8 @@ DEF KRIS EQU __trainer_class__
 	const RONALD
 	const BRAD
 	const DOUGLAS
+	const SHAUN
+	const BRYCE
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM

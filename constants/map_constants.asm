@@ -182,8 +182,8 @@ ENDM
 	map_const SEAFOAM_ISLANDS_1F,                          15,  9 ; 117
 	map_const SEAFOAM_ISLANDS_B1F,                         15,  9 ; 118
 	map_const SEAFOAM_ISLANDS_B2F,                         15,  9 ; 119
-	map_const SEAFOAM_ISLANDS_B3F,                         15,  9 ; 120
-	map_const SEAFOAM_ISLANDS_B4F,                         15,  9 ; 121
+	map_const SEAFOAM_ISLANDS_B3F,                         17, 11 ; 120
+	map_const SEAFOAM_ISLANDS_B4F,                         17, 11 ; 121
 	map_const MOUNT_MOON_B1F,                              14, 14 ; 122
 	map_const MOUNT_MOON_B2F,                              20, 18 ; 123
 	map_const UNDERGROUND_NORTH,                            7, 20 ; 124
