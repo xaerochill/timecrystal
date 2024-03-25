@@ -1,7 +1,7 @@
 TreeMons:
 ; entries correspond to TREEMON_SET_* constants
 	table_width 2, TreeMons
-	dw TreeMonSet_City
+	dw TreeMonSet_Unused
 	dw TreeMonSet_Canyon
 	dw TreeMonSet_Town
 	dw TreeMonSet_Route
@@ -9,6 +9,7 @@ TreeMons:
 	dw TreeMonSet_Lake
 	dw TreeMonSet_Forest
 	dw TreeMonSet_Rock
+	dw TreeMonSet_City
 	assert_table_length NUM_TREEMON_SETS
 
 ; Two tables each (common, rare).
@@ -144,3 +145,6 @@ TreeMonSet_Rock:
 	db 90, KRABBY,     20
 	db 10, SHUCKLE,    20
 	db -1
+
+TreeMonSet_Unused:
+	db -1 ; placeholder so that TreeMonSetCity actually works
