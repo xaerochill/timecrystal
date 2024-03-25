@@ -264,7 +264,7 @@ DEF KRIS EQU __trainer_class__
 	const MILLER
 
 	trainerclass GRUNTM ; 1f
-	const GRUNTM_1 ; unused
+	const GRUNTM_1 ; UNOVA GUY
 	const GRUNTM_2
 	const GRUNTM_3
 	const GRUNTM_4
@@ -300,7 +300,7 @@ DEF KRIS EQU __trainer_class__
 	const PRESTON
 	const EDWARD
 	const GREGORY
-	const VIRGIL ; unused
+	const VIRGIL
 	const ALFRED
 
 	trainerclass SKIER ; 21

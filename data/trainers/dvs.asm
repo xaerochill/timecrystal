@@ -32,8 +32,8 @@ TrainerClassDVs:
 	dn  7, 12, 12,  8 ; COOLTRAINERF
 	dn 14, 12, 10, 10 ; BEAUTY (hp fire)
 	dn  9,  8,  8,  8 ; POKEMANIAC
-	dn 13,  8, 10,  8 ; GRUNTM
-	dn  9,  8,  8,  8 ; GENTLEMAN
+	dn  9,  9, 15, 15 ; GRUNTM (hp bug)
+	dn  4, 15, 11, 11 ; GENTLEMAN (hp ground)
 	dn 14, 12, 10, 10 ; SKIER (hp fire)
 	dn  6,  8,  8,  8 ; TEACHER_F
 	dn 14, 12, 15, 15 ; SABRINA (hp fire)

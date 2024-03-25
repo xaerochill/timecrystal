@@ -135,20 +135,34 @@ MountMoonRivalTextLoss:
 	cont "greatest trainer."
 	done
 
+MountMoonB2FHPUp:
+	itemball HP_UP
+
+MountMoonB2FTMMegaPunch:
+	itemball TM_MEGA_PUNCH
+
 MountMoonB2F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 25,  9, MOUNT_MOON_B1F, 2
-	warp_event 25, 13, MOUNT_MOON_B1F, 5
-	warp_event 15, 27, MOUNT_MOON_B1F, 6
-	warp_event  5,  7, MOUNT_MOON_B1F, 7
-	warp_event 33, 13, MOUNT_MOON_B1F, 10
+	warp_event 27,  9, MOUNT_MOON_B1F, 2
+	warp_event 27, 13, MOUNT_MOON_B1F, 5
+	warp_event 17, 27, MOUNT_MOON_B1F, 6
+	warp_event  7,  7, MOUNT_MOON_B1F, 7
+	warp_event 35, 13, MOUNT_MOON_B1F, 10
+	warp_event 39, 25, MOUNT_MOON_B1F, 12
 
 	def_coord_events
-	coord_event  4,  5, SCENE_MOUNTMOON_RIVAL_BATTLE, MountMoonRivalFight
+	coord_event  6,  5, SCENE_MOUNTMOON_RIVAL_BATTLE, MountMoonRivalFight
 
 	def_bg_events
 
 	def_object_events
-	object_event  5,  7, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_IN_MT_MOON
+	object_event  7,  7, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_IN_MT_MOON
+	object_event 13,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, 0
+	object_event 12, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MOUNT_MOON_ROCKETS
+	object_event 17, 22, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MOUNT_MOON_ROCKETS
+	object_event 30,  9, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MOUNT_MOON_ROCKETS
+	object_event 39, 31, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 5, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MOUNT_MOON_ROCKETS ; PETREL
+	object_event 27, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FHPUp, EVENT_MOUNT_MOON_B2F_HP_UP
+	object_event 31,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2FTMMegaPunch, EVENT_MOUNT_MOON_B2F_TM_MEGA_PUNCH
