@@ -20,12 +20,8 @@ rsset BASE_ITEMS
 DEF BASE_ITEM_1      rb
 DEF BASE_ITEM_2      rb
 DEF BASE_GENDER      rb
-                     rb_skip
 DEF BASE_EGG_STEPS   rb
-                     rb_skip
 DEF BASE_PIC_SIZE    rb
-DEF BASE_FRONTPIC    rw
-DEF BASE_BACKPIC     rw
 DEF BASE_GROWTH_RATE rb
 DEF BASE_EGG_GROUPS  rb
 DEF BASE_TMHM        rb (NUM_TM_HM_TUTOR + 7) / 8
@@ -184,7 +180,7 @@ DEF NUM_ROAMMON_MAPS EQU 16 ; RoamMaps table size (see data/wild/roammon_maps.as
 ; treemon sets
 ; TreeMons indexes (see data/wild/treemons.asm)
 	const_def
-	const TREEMON_SET_CITY
+	const TREEMON_SET_UNUSED
 	const TREEMON_SET_CANYON
 	const TREEMON_SET_TOWN
 	const TREEMON_SET_ROUTE
@@ -192,6 +188,7 @@ DEF NUM_ROAMMON_MAPS EQU 16 ; RoamMaps table size (see data/wild/roammon_maps.as
 	const TREEMON_SET_LAKE
 	const TREEMON_SET_FOREST
 	const TREEMON_SET_ROCK
+	const TREEMON_SET_CITY
 DEF NUM_TREEMON_SETS EQU const_value
 
 ; treemon scores
