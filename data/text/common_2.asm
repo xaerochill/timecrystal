@@ -582,14 +582,6 @@ _SweetScentNothingText::
 	line "nothing here…"
 	done
 
-_SquirtbottleNothingText::
-	text "<PLAYER> sprinkled"
-	line "water."
-
-	para "But nothing"
-	line "happened…"
-	done
-
 _UseSacredAshText::
 	text "<PLAYER>'s #MON"
 	line "were all healed!"

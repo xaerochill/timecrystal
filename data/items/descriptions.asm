@@ -6,7 +6,6 @@ ItemDescriptions:
 	dw BrightpowderDesc
 	dw GreatBallDesc
 	dw PokeBallDesc
-	dw TeruSama1Desc
 	dw BicycleDesc
 	dw MoonStoneDesc
 	dw AntidoteDesc
@@ -45,12 +44,10 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw TeruSama3Desc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
-	dw TeruSama4Desc
 	dw XDefendDesc
 	dw XSpeedDesc
 	dw XSpecialDesc
@@ -66,12 +63,6 @@ ItemDescriptions:
 	dw EtherDesc
 	dw MaxEtherDesc
 	dw ElixerDesc
-	dw RedScaleDesc
-	dw SecretPotionDesc
-	dw SSTicketDesc
-	dw MysteryEggDesc
-	dw ClearBellDesc
-	dw SilverWingDesc
 	dw MoomooMilkDesc
 	dw QuickClawDesc
 	dw PsnCureBerryDesc
@@ -90,7 +81,6 @@ ItemDescriptions:
 	dw BigMushroomDesc
 	dw SilverPowderDesc
 	dw BluApricornDesc
-	dw TeruSama6Desc
 	dw AmuletCoinDesc
 	dw YlwApricornDesc
 	dw GrnApricornDesc
@@ -100,7 +90,6 @@ ItemDescriptions:
 	dw WhtApricornDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
-	dw TeruSama7Desc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
@@ -120,49 +109,33 @@ ItemDescriptions:
 	dw MiracleSeedDesc
 	dw ThickClubDesc
 	dw FocusBandDesc
-	dw TeruSama8Desc
 	dw EnergyPowderDesc
 	dw EnergyRootDesc
 	dw HealPowderDesc
 	dw RevivalHerbDesc
 	dw HardStoneDesc
 	dw LuckyEggDesc
-	dw CardKeyDesc
-	dw MachinePartDesc
 	dw EggTicketDesc
-	dw LostItemDesc
 	dw StardustDesc
 	dw StarPieceDesc
-	dw BasementKeyDesc
-	dw PassDesc
 	dw OldAmberDesc
 	dw DomeFossilDesc
 	dw HelixFossilDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
-	dw TeruSama12Desc
-	dw TeruSama13Desc
 	dw MetalCoatDesc
 	dw DragonFangDesc
-	dw TeruSama14Desc
 	dw LeftoversDesc
-	dw TeruSama15Desc
-	dw TeruSama16Desc
-	dw TeruSama17Desc
 	dw MysteryBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
-	dw TeruSama18Desc
-	dw TeruSama19Desc
-	dw TeruSama20Desc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
-	dw TeruSama21Desc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -171,15 +144,10 @@ ItemDescriptions:
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
-	dw TeruSama22Desc
 	dw UpGradeDesc
 	dw BerryDesc
 	dw GoldBerryDesc
-	dw SquirtBottleDesc
-	dw TeruSama23Desc
 	dw ParkBallDesc
-	dw RainbowWingDesc
-	dw TeruSama24Desc
 	dw BrickPieceDesc
 	dw SurfMailDesc
 	dw LiteBlueMailDesc
@@ -190,15 +158,47 @@ ItemDescriptions:
 	dw BlueSkyMailDesc
 	dw MusicMailDesc
 	dw MirageMailDesc
-	dw TeruSama25Desc
-	dw TeruSama26Desc
-	dw TeruSama27Desc
-	dw TeruSama28Desc
-	dw TeruSama29Desc
-	dw TeruSama30Desc
-	dw TeruSama31Desc
-	dw TeruSama32Desc
 	assert_table_length NUM_ITEMS
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
+	dw TeruSama33Desc
 	dw TeruSama33Desc
 	dw TeruSama33Desc
 	dw TeruSama33Desc
@@ -280,9 +280,6 @@ GreatBallDesc:
 PokeBallDesc:
 	db   "An item for catch-"
 	next "ing #MON.@"
-
-TeruSama1Desc:
-	db   "?@"
 
 BicycleDesc:
 	db   "A collapsible bike"
@@ -436,9 +433,6 @@ DireHitDesc:
 	db   "Ups critical hit"
 	next "ratio. (1 BTL)@"
 
-TeruSama3Desc:
-	db   "?@"
-
 FreshWaterDesc:
 	db   "Restores #MON"
 	next "HP by 50.@"
@@ -454,9 +448,6 @@ LemonadeDesc:
 XAttackDesc:
 	db   "Raises ATTACK."
 	next "(1 BTL)@"
-
-TeruSama4Desc:
-	db   "?@"
 
 XDefendDesc:
 	db   "Raises DEFENSE."
@@ -516,30 +507,6 @@ MaxEtherDesc:
 ElixerDesc:
 	db   "Restores PP of all"
 	next "moves by 10.@"
-
-RedScaleDesc:
-	db   "A scale from the"
-	next "red GYARADOS.@"
-
-SecretPotionDesc:
-	db   "Fully heals any"
-	next "#MON.@"
-
-SSTicketDesc:
-	db   "A ticket for the"
-	next "S.S.AQUA.@"
-
-MysteryEggDesc:
-	db   "An EGG obtained"
-	next "from MR.#MON.@"
-
-ClearBellDesc:
-	db   "Makes a gentle"
-	next "ringing.@"
-
-SilverWingDesc:
-	db   "A strange, silver-"
-	next "colored feather.@"
 
 MoomooMilkDesc:
 	db   "Restores #MON"
@@ -611,9 +578,6 @@ SilverPowderDesc:
 BluApricornDesc:
 	db   "A blue APRICORN.@"
 
-TeruSama6Desc:
-	db   "?@"
-
 AmuletCoinDesc:
 	db   "Doubles monetary"
 	next "earnings. (HOLD)@"
@@ -646,9 +610,6 @@ BlackbeltDesc:
 BlkApricornDesc:
 	db   "A black APRICORN."
 	next "@"
-
-TeruSama7Desc:
-	db   "?@"
 
 PnkApricornDesc:
 	db   "A pink APRICORN."
@@ -726,9 +687,6 @@ FocusBandDesc:
 	db   "May prevent faint-"
 	next "ing. (HOLD)@"
 
-TeruSama8Desc:
-	db   "?@"
-
 EnergyPowderDesc:
 	db   "Restores #MON"
 	next "HP by 50. Bitter.@"
@@ -753,21 +711,9 @@ LuckyEggDesc:
 	db   "Earns extra EXP."
 	next "points. (HOLD)@"
 
-CardKeyDesc:
-	db   "Opens shutters in"
-	next "the RADIO TOWER.@"
-
-MachinePartDesc:
-	db   "A machine part for"
-	next "the POWER PLANT.@"
-
 EggTicketDesc:
 	db   "May use at Golden-"
 	next "rod trade corner.@"
-
-LostItemDesc:
-	db   "The # DOLL lost"
-	next "by the COPYCAT.@"
 
 StardustDesc:
 	db   "Pretty, red sand."
@@ -776,13 +722,6 @@ StardustDesc:
 StarPieceDesc:
 	db   "A hunk of red gem."
 	next "Sell very high.@"
-
-BasementKeyDesc:
-	db   "Opens doors.@"
-
-PassDesc:
-	db   "A ticket for the"
-	next "MAGNET TRAIN.@"
 
 OldAmberDesc:
 	db   "Prehistoric Fossi-"
@@ -808,12 +747,6 @@ ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (HOLD)@"
 
-TeruSama12Desc:
-	db   "?@"
-
-TeruSama13Desc:
-	db   "?@"
-
 MetalCoatDesc:
 	db   "Powers up steel-"
 	next "type moves. (HOLD)@"
@@ -822,21 +755,9 @@ DragonFangDesc:
 	db   "Powers up dragon-"
 	next "type moves. (HOLD)@"
 
-TeruSama14Desc:
-	db   "?@"
-
 LeftoversDesc:
 	db   "Restores HP during"
 	next "battle. (HOLD)@"
-
-TeruSama15Desc:
-	db   "?@"
-
-TeruSama16Desc:
-	db   "?@"
-
-TeruSama17Desc:
-	db   "?@"
 
 MysteryBerryDesc:
 	db   "A self-restore"
@@ -849,15 +770,6 @@ DragonScaleDesc:
 BerserkGeneDesc:
 	db   "Boosts ATTACK but"
 	next "causes confusion.@"
-
-TeruSama18Desc:
-	db   "?@"
-
-TeruSama19Desc:
-	db   "?@"
-
-TeruSama20Desc:
-	db   "?@"
 
 SacredAshDesc:
 	db   "Fully revives all"
@@ -882,9 +794,6 @@ LureBallDesc:
 FastBallDesc:
 	db   "A BALL for catch-"
 	next "ing fast #MON.@"
-
-TeruSama21Desc:
-	db   "?@"
 
 LightBallDesc:
 	db   "An odd, electrical"
@@ -918,9 +827,6 @@ PolkadotBowDesc:
 	db   "Powers up normal-"
 	next "type moves. (HOLD)@"
 
-TeruSama22Desc:
-	db   "?@"
-
 UpGradeDesc:
 	db   "A mysterious box"
 	next "made by SILPH CO.@"
@@ -933,13 +839,6 @@ GoldBerryDesc:
 	db   "A self-restore"
 	next "item. (30HP, HOLD)@"
 
-SquirtBottleDesc:
-	db   "A bottle used for"
-	next "watering plants.@"
-
-TeruSama23Desc:
-	db   "?@"
-
 ParkBallDesc:
 	db   "The Bug-Catching"
 	next "Contest BALL.@"
@@ -947,9 +846,6 @@ ParkBallDesc:
 RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
-
-TeruSama24Desc:
-	db   "?@"
 
 BrickPieceDesc:
 	db   "A rare chunk of"
@@ -990,30 +886,6 @@ MusicMailDesc:
 MirageMailDesc:
 	db   "MEW-print MAIL."
 	next "(HOLD)@"
-
-TeruSama25Desc:
-	db   "?@"
-
-TeruSama26Desc:
-	db   "?@"
-
-TeruSama27Desc:
-	db   "?@"
-
-TeruSama28Desc:
-	db   "?@"
-
-TeruSama29Desc:
-	db   "?@"
-
-TeruSama30Desc:
-	db   "?@"
-
-TeruSama31Desc:
-	db   "?@"
-
-TeruSama32Desc:
-	db   "?@"
 
 TeruSama33Desc:
 	db   "?@"
