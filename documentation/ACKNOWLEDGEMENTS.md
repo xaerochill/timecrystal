@@ -8,6 +8,7 @@
   - [vulcandth](https://github.com/vulcandth) for all of the work on the disassembly and code such as the PokéSeer fix and the 60 FPS engine
   - [Sylvie](https://github.com/rangi42) for all of the work on the disassembly and code such as the diagonal stairs
   - [Idain](https://github.com/Idain) for cleaning up code for the fossil mechanic restauration, diagonal stairs as well as obedience level
+  - [FrenchOrange](https://github.com/FrenchOrange/pokezelda/blob/main/maps/GoldenrodFlowerShop.asm#L50) for the Goldenrod Flower Shop selling decorative plants
 
 **Easter Eggs**
 - Can you find the house of [Takeshi Shudo](https://lavacutcontent.com/takeshi-shudo-ending-pokemon/), the creator of Lugia who once drank with sailors to understand how they talk?
