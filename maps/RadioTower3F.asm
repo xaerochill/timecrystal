@@ -130,7 +130,7 @@ CardKeySlotScript::
 	waitbutton
 	checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
 	iftrue .UsedCardKey
-	checkitem CARD_KEY
+	checkevent EVENT_RECEIVED_CARD_KEY
 	iftrue .HaveCardKey
 .UsedCardKey:
 	closetext
@@ -313,8 +313,8 @@ RadioTower3FCardKeySlotText:
 	done
 
 InsertedTheCardKeyText:
-	text "<PLAYER> inserted"
-	line "the CARD KEY."
+	text "<PLAYER> enterted"
+	line "the code 1111."
 	done
 
 RadioTower3FPersonnelSignText:

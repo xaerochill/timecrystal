@@ -377,7 +377,7 @@ GuitaristVincentBeatenText:
 
 GuitaristVincentAfterBattleText:
 	text "If the GYM's traps"
-	line "were working, you"
+	line "fooled you, you"
 
 	para "would have been"
 	line "toast…"

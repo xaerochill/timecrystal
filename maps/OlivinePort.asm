@@ -93,7 +93,7 @@ OlivinePortWalkUpToShipScript:
 	iffalse OlivinePortNotRidingMoveAwayScript
 	writetext OlivinePortAskTicketText
 	promptbutton
-	checkitem S_S_TICKET
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iffalse .NoTicket
 	writetext OlivinePortFlashTicketText
 	waitbutton
@@ -158,7 +158,7 @@ OlivinePortSailorAfterHOFScript:
 	iffalse OlivinePortNotRidingScript
 	writetext OlivinePortAskTicketText
 	promptbutton
-	checkitem S_S_TICKET
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iffalse .NoTicket
 	writetext OlivinePortFlashTicketText
 	waitbutton

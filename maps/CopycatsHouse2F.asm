@@ -1,7 +1,7 @@
 	object_const_def
 	const COPYCATSHOUSE2F_COPYCAT1 ; if player is male
 	const COPYCATSHOUSE2F_DODRIO
-	const COPYCATSHOUSE2F_FAIRYDOLL ; lost item
+	const COPYCATSHOUSE2F_FAIRYDOLL
 	const COPYCATSHOUSE2F_MONSTERDOLL
 	const COPYCATSHOUSE2F_BIRDDOLL
 	const COPYCATSHOUSE2F_COPYCAT2 ; if player is female
@@ -26,12 +26,12 @@ CopycatsHouse2FWhichGenderCallback:
 
 Copycat:
 	faceplayer
-	checkevent EVENT_GOT_PASS_FROM_COPYCAT
-	iftrue .GotPass
-	checkevent EVENT_RETURNED_LOST_ITEM_TO_COPYCAT
-	iftrue .TryGivePassAgain
-	checkitem LOST_ITEM
-	iftrue .ReturnLostItem
+	checkevent EVENT_GOT_TM_MIMIC
+	iftrue .GotMimic
+	readvar VAR_UNOWNCOUNT
+	ifequal NUM_UNOWN, .GiveMimic
+	checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
+	iftrue .CheckOutRuins
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Default_Female_1
 	applymovement COPYCATSHOUSE2F_COPYCAT1, CopycatSpinAroundMovementData
@@ -45,16 +45,14 @@ Copycat:
 	variablesprite SPRITE_COPYCAT, SPRITE_KRIS
 .Default_Merge_1:
 	special LoadUsedSpritesGFX
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .TalkAboutLostItem
 	opentext
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Default_Female_2a
-	writetext CopycatText_Male_1
+	writetext CopycatText_Intro
 	sjump .Default_Merge_2a
 
 .Default_Female_2a:
-	writetext CopycatText_Female_1
+	writetext CopycatText_Intro
 .Default_Merge_2a:
 	waitbutton
 	closetext
@@ -75,91 +73,56 @@ Copycat:
 	closetext
 	end
 
-.TalkAboutLostItem:
+.CheckOutRuins:
 	opentext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Default_Female_2b
-	writetext CopycatText_Male_2
-	sjump .Default_Merge_2b
-
-.Default_Female_2b:
-	writetext CopycatText_Female_2
-.Default_Merge_2b:
-	waitbutton
-	closetext
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Default_Female_3b
-	applymovement COPYCATSHOUSE2F_COPYCAT1, CopycatSpinAroundMovementData
-	sjump .Default_Merge_3b
-
-.Default_Female_3b:
-	applymovement COPYCATSHOUSE2F_COPYCAT2, CopycatSpinAroundMovementData
-.Default_Merge_3b:
-	faceplayer
-	variablesprite SPRITE_COPYCAT, SPRITE_LASS
-	special LoadUsedSpritesGFX
-	opentext
-	writetext CopycatText_Worried
-	waitbutton
-	closetext
-	setevent EVENT_MET_COPYCAT_FOUND_OUT_ABOUT_LOST_ITEM
+	writetext CopycatText_CheckOutRuins
 	end
 
-.ReturnLostItem:
+.GiveMimic:
 	opentext
-	writetext CopycatText_GiveDoll
+	writetext CopycatText_GiveMimic
 	promptbutton
-	takeitem LOST_ITEM
-	setevent EVENT_RETURNED_LOST_ITEM_TO_COPYCAT
-	clearevent EVENT_COPYCATS_HOUSE_2F_DOLL
-	sjump .GivePass
-
-.TryGivePassAgain:
-	opentext
-.GivePass:
-	writetext CopycatText_GivePass
-	promptbutton
-	verbosegiveitem PASS
+	verbosegiveitem TM_MIMIC
 	iffalse .Cancel
-	setevent EVENT_GOT_PASS_FROM_COPYCAT
-	writetext CopycatText_ExplainPass
+	setevent EVENT_GOT_TM_MIMIC
+	writetext CopycatText_ExplainMimic
 	waitbutton
 	closetext
 	end
 
-.GotPass:
+.GotMimic:
 	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .GotPass_Female_1
+	iftrue .GotMimic_Female_1
 	applymovement COPYCATSHOUSE2F_COPYCAT1, CopycatSpinAroundMovementData
 	faceplayer
 	variablesprite SPRITE_COPYCAT, SPRITE_CHRIS
-	sjump .GotPass_Merge_1
+	sjump .GotMimic_Merge_1
 
-.GotPass_Female_1:
+.GotMimic_Female_1:
 	applymovement COPYCATSHOUSE2F_COPYCAT2, CopycatSpinAroundMovementData
 	faceplayer
 	variablesprite SPRITE_COPYCAT, SPRITE_KRIS
-.GotPass_Merge_1:
+.GotMimic_Merge_1:
 	special LoadUsedSpritesGFX
 	opentext
 	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .GotPass_Female_2
-	writetext CopycatText_Male_3
-	sjump .GotPass_Merge_2
+	iftrue .GotMimic_Female_2
+	writetext CopycatText_GotMimic
+	sjump .GotMimic_Merge_2
 
-.GotPass_Female_2:
-	writetext CopycatText_Female_3
-.GotPass_Merge_2:
+.GotMimic_Female_2:
+	writetext CopycatText_GotMimic
+.GotMimic_Merge_2:
 	waitbutton
 	closetext
 	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .GotPass_Female_3
+	iftrue .GotMimic_Female_3
 	applymovement COPYCATSHOUSE2F_COPYCAT1, CopycatSpinAroundMovementData
-	sjump .GotPass_Merge_3
+	sjump .GotMimic_Merge_3
 
-.GotPass_Female_3:
+.GotMimic_Female_3:
 	applymovement COPYCATSHOUSE2F_COPYCAT2, CopycatSpinAroundMovementData
-.GotPass_Merge_3:
+.GotMimic_Merge_3:
 	faceplayer
 	variablesprite SPRITE_COPYCAT, SPRITE_LASS
 	special LoadUsedSpritesGFX
@@ -198,7 +161,7 @@ CopycatSpinAroundMovementData:
 	turn_head DOWN
 	step_end
 
-CopycatText_Male_1:
+CopycatText_Intro:
 	text "<PLAYER>: Hi! Do"
 	line "you like #MON?"
 
@@ -217,72 +180,37 @@ CopycatText_QuickMimicking:
 	line "favorite hobby!"
 	done
 
-CopycatText_Male_2:
-	text "<PLAYER>: Hi!"
-	line "I heard that you"
+CopycatText_CheckOutRuins:
+	text "COPYCAT: Have you"
+	line "checked out the"
+	cont "RUINS OF ALPH in"
+	cont "JOHTO yet?"
 
-	para "lost your favorite"
-	line "# DOLL."
+	para "I heard rumours of"
+	line "weird #MON that"
+	cont "only exist there."
 
-	para "<PLAYER>: If I find"
-	line "it, you'll give me"
-	cont "a rail PASS?"
+CopycatText_GiveMimic:
+	text "Oh, you managed to"
+	line "catch all of the"
+	cont "#MON and they"
+	cont "are called UNOWN?"
 
-	para "<PLAYER>: I'll go"
-	line "find it for you."
-
-	para "You think you lost"
-	line "it when you went"
-	cont "to VERMILION CITY?"
+	para "Impressive! I have"
+	line "a gift for your"
+	cont "hard work!"
 	done
 
-CopycatText_Worried:
-	text "COPYCAT: Pardon?"
-
-	para "I shouldn't decide"
-	line "what you should"
-	cont "do?"
-
-	para "But I'm really"
-	line "worried… What if"
-	cont "someone finds it?"
-	done
-
-CopycatText_GiveDoll:
-	text "COPYCAT: Yay!"
-	line "That's my CLEFAIRY"
-	cont "# DOLL!"
-
-	para "See the tear where"
-	line "the right leg is"
-
-	para "sewn on? That's"
-	line "proof!"
-	done
-
-CopycatText_GivePass:
-	text "OK. Here's the"
-	line "MAGNET TRAIN PASS"
-	cont "like I promised!"
-	done
-
-CopycatText_ExplainPass:
+CopycatText_ExplainMimic:
 	text "COPYCAT: That's"
-	line "the PASS for the"
-	cont "MAGNET TRAIN."
-
-	para "The rail company"
-	line "man gave me that"
-
-	para "when they tore"
-	line "down our old house"
-	cont "for the STATION."
+	line "TM 62: MIMIC. It"
+	cont "can copy a move."
 	done
 
-CopycatText_Male_3:
+CopycatText_GotMimic:
 	text "<PLAYER>: Hi!"
 	line "Thanks a lot for"
-	cont "the rail PASS!"
+	cont "TM 62: MIMIC!"
 
 	para "<PLAYER>: Pardon?"
 
@@ -294,49 +222,6 @@ CopycatText_Male_3:
 CopycatText_ItsAScream:
 	text "COPYCAT: You bet!"
 	line "It's a scream!"
-	done
-
-CopycatText_Female_1:
-	text "<PLAYER>: Hi. You"
-	line "must like #MON."
-
-	para "<PLAYER>: No, not"
-	line "me. I asked you."
-
-	para "<PLAYER>: Pardon?"
-	line "You're weird!"
-	done
-
-CopycatText_Female_2:
-	text "<PLAYER>: Hi. Did"
-	line "you really lose"
-	cont "your # DOLL?"
-
-	para "<PLAYER>: You'll"
-	line "really give me a"
-
-	para "rail PASS if I"
-	line "find it for you?"
-
-	para "<PLAYER>: Sure,"
-	line "I'll look for it!"
-
-	para "You think you lost"
-	line "it when you were"
-	cont "in VERMILION?"
-	done
-
-CopycatText_Female_3:
-	text "<PLAYER>: Thank you"
-	line "for the rail PASS!"
-
-	para "<PLAYER>: …Pardon?"
-
-	para "<PLAYER>: Is it"
-	line "really that fun to"
-
-	para "copy what I say"
-	line "and do?"
 	done
 
 CopycatsDodrioText1:
@@ -373,7 +258,7 @@ CopycatsHouse2F_MapEvents:
 	def_object_events
 	object_event  4,  3, SPRITE_COPYCAT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Copycat, EVENT_COPYCAT_1
 	object_event  6,  4, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CopycatsDodrio, -1
-	object_event  6,  1, SPRITE_FAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CopycatsHouse2FDoll, EVENT_COPYCATS_HOUSE_2F_DOLL
+	object_event  6,  1, SPRITE_FAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CopycatsHouse2FDoll, 0
 	object_event  2,  1, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CopycatsHouse2FDoll, -1
 	object_event  7,  1, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopycatsHouse2FDoll, -1
 	object_event  4,  3, SPRITE_COPYCAT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Copycat, EVENT_COPYCAT_2

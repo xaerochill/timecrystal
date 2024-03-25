@@ -14,15 +14,15 @@ CopycatsHouse1FPokefanMScript:
 CopycatsHouse1FPokefanFScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
+	readvar VAR_UNOWNCOUNT
+	ifequal NUM_UNOWN, .CaughtAllUnown
 	writetext CopycatsHouse1FPokefanFText
 	waitbutton
 	closetext
 	end
 
-.ReturnedMachinePart:
-	writetext CopycatsHouse1FPokefanFText_ReturnedMachinePart
+.CaughtAllUnown:
+	writetext CopycatsHouse1FPokefanFText_CaughtAllUnown
 	waitbutton
 	closetext
 	end
@@ -54,9 +54,10 @@ CopycatsHouse1FPokefanFText:
 	line "friends."
 	done
 
-CopycatsHouse1FPokefanFText_ReturnedMachinePart:
-	text "She recently lost"
-	line "the # DOLL that"
+CopycatsHouse1FPokefanFText_CaughtAllUnown:
+	text "Thank goodness"
+	line "she got back"
+	cont "the # DOLL that"
 
 	para "a boy gave her"
 	line "three years ago."

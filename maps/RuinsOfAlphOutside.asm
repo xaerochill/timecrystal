@@ -145,8 +145,6 @@ TrainerSuperNerdStan: ; unreferenced
 
 SpencerGiveTicketScript:
 	writetext SpencerGiveTicketText1
-	promptbutton
-	verbosegiveitem S_S_TICKET
 	setevent EVENT_GOT_SS_TICKET_FROM_ELM
 	writetext SpencerGiveTicketText2
 	waitbutton

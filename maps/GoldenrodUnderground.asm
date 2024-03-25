@@ -17,7 +17,7 @@ GoldenrodUnderground_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, GoldenrodUndergroundResetSwitchesCallback
-	callback MAPCALLBACK_TILES, GoldenrodUndergroundCheckBasementKeyCallback
+	callback MAPCALLBACK_TILES, GoldenrodUndergroundCheckBeatenPetrelCallback
 	callback MAPCALLBACK_OBJECTS, GoldenrodUndergroundCheckDayOfWeekCallback
 
 GoldenrodUndergroundResetSwitchesCallback:
@@ -40,8 +40,8 @@ GoldenrodUndergroundResetSwitchesCallback:
 	writemem wUndergroundSwitchPositions
 	endcallback
 
-GoldenrodUndergroundCheckBasementKeyCallback:
-	checkevent EVENT_USED_BASEMENT_KEY
+GoldenrodUndergroundCheckBeatenPetrelCallback:
+	checkevent EVENT_BEAT_RADIO_TOWER_PETREL
 	iffalse .LockBasementDoor
 	endcallback
 
@@ -373,7 +373,7 @@ BasementDoorScript::
 	opentext
 	checkevent EVENT_USED_BASEMENT_KEY
 	iftrue .Open
-	checkitem BASEMENT_KEY
+	checkevent EVENT_BEAT_RADIO_TOWER_PETREL
 	iftrue .Unlock
 	writetext GoldenrodUndergroundTheDoorsLockedText
 	waitbutton
@@ -382,7 +382,7 @@ BasementDoorScript::
 
 .Unlock:
 	playsound SFX_TRANSACTION
-	writetext GoldenrodUndergroundBasementKeyOpenedDoorText
+	writetext GoldenrodUndergroundOpenedDoorText
 	waitbutton
 	closetext
 	changeblock 18, 6, $2e ; unlocked door
@@ -517,8 +517,8 @@ GoldenrodUndergroundTheDoorIsOpenText:
 	text "The door is open."
 	done
 
-GoldenrodUndergroundBasementKeyOpenedDoorText:
-	text "The BASEMENT KEY"
+GoldenrodUndergroundOpenedDoorText:
+	text "#PLAYER"
 	line "opened the door."
 	done
 

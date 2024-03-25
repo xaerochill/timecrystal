@@ -16,19 +16,9 @@ SaffronMagnetTrainStationNoopScene:
 SaffronMagnetTrainStationOfficerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .MagnetTrainToGoldenrod
-	writetext SaffronMagnetTrainStationOfficerTrainIsntOperatingText
-	waitbutton
-	closetext
-	end
-
-.MagnetTrainToGoldenrod:
 	writetext SaffronMagnetTrainStationOfficerAreYouComingOnBoardText
 	yesorno
 	iffalse .DecidedNotToRide
-	checkitem PASS
-	iffalse .PassNotInBag
 	writetext SaffronMagnetTrainStationOfficerRightThisWayText
 	waitbutton
 	closetext
@@ -45,12 +35,6 @@ SaffronMagnetTrainStationOfficerScript:
 .MovementBoardTheTrain:
 	turn_head DOWN
 	step_end
-
-.PassNotInBag:
-	writetext SaffronMagnetTrainStationOfficerYouDontHaveAPassText
-	waitbutton
-	closetext
-	end
 
 .DecidedNotToRide:
 	writetext SaffronMagnetTrainStationOfficerHopeToSeeYouAgainText
@@ -71,15 +55,7 @@ Script_ArriveFromGoldenrod:
 SaffronMagnetTrainStationGymGuideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
 	writetext SaffronMagnetTrainStationGymGuideText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext SaffronMagnetTrainStationGymGuideText_ReturnedMachinePart
 	waitbutton
 	closetext
 	end
@@ -124,12 +100,6 @@ SaffronMagnetTrainStationPlayerLeaveTrainAndEnterStationMovement:
 	turn_head UP
 	step_end
 
-SaffronMagnetTrainStationOfficerTrainIsntOperatingText:
-	text "I'm sorry, but the"
-	line "MAGNET TRAIN isn't"
-	cont "operating now."
-	done
-
 SaffronMagnetTrainStationOfficerAreYouComingOnBoardText:
 	text "We'll soon depart"
 	line "for GOLDENROD."
@@ -139,16 +109,8 @@ SaffronMagnetTrainStationOfficerAreYouComingOnBoardText:
 	done
 
 SaffronMagnetTrainStationOfficerRightThisWayText:
-	text "May I see your"
-	line "rail PASS, please?"
-
-	para "OK. Right this"
+	text "OK. Right this"
 	line "way, please."
-	done
-
-SaffronMagnetTrainStationOfficerYouDontHaveAPassText:
-	text "Sorry, but you"
-	line "don't have a PASS."
 	done
 
 SaffronMagnetTrainStationOfficerHopeToSeeYouAgainText:
@@ -165,22 +127,6 @@ SaffronMagnetTrainStationOfficerArrivedInSaffronText:
 	done
 
 SaffronMagnetTrainStationGymGuideText:
-	text "The MAGNET TRAIN"
-	line "is a super-modern"
-
-	para "rail liner that"
-	line "uses electricity"
-
-	para "and magnets to"
-	line "attain incredible"
-	cont "speed."
-
-	para "However, if there"
-	line "isn't any elec-"
-	cont "tricity…"
-	done
-
-SaffronMagnetTrainStationGymGuideText_ReturnedMachinePart:
 	text "Whew…"
 
 	para "How many times"
@@ -203,14 +149,16 @@ SaffronMagnetTrainStationTeacherText:
 	done
 
 SaffronMagnetTrainStationLassText:
-	text "Hi. Do you have a"
-	line "rail PASS? I have"
+	text "So cool riding the"
+	line "MAGNET TRAIN is"
+	cont "free nowadays!"
 
-	para "one. All the peo-"
-	line "ple in SAFFRON who"
+	para "You had to have a"
+	line "PASS to board it."
 
-	para "ride the MAGNET"
-	line "TRAIN have PASSES."
+	para "Now everyone can"
+	line "come to SAFFRON!"
+	cont "That is so cool!"
 	done
 
 SaffronMagnetTrainStation_MapEvents:

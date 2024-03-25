@@ -192,8 +192,6 @@ TinTower1FSage5Script:
 	checkevent EVENT_GOT_RAINBOW_WING
 	iftrue .GotRainbowWing
 	writetext TinTower1FSage5Text1
-	promptbutton
-	verbosegiveitem RAINBOW_WING
 	closetext
 	refreshscreen
 	earthquake 72
@@ -202,8 +200,6 @@ TinTower1FSage5Script:
 	changeblock 10, 2, $20 ; stairs
 	reloadmappart
 	setevent EVENT_GOT_RAINBOW_WING
-	closetext
-	opentext
 .GotRainbowWing:
 	writetext TinTower1FSage5Text2
 	waitbutton
@@ -423,9 +419,10 @@ TinTower1FSage4Text1:
 	done
 
 TinTower1FSage5Text1:
-	text "This will protect"
-	line "you. Take it."
+	text "The stairs"
+	line "have opened."
 	done
+
 
 TinTower1FSage5Text2:
 	text "Now, go."

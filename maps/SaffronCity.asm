@@ -21,15 +21,7 @@ SaffronCityFlypointCallback:
 SaffronCityLass1Script:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
 	writetext SaffronCityLass1Text
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext SaffronCityLass1Text_ReturnedMachinePart
 	waitbutton
 	closetext
 	end
@@ -37,15 +29,7 @@ SaffronCityLass1Script:
 SaffronCityPokefanMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
 	writetext SaffronCityPokefanMText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext SaffronCityPokefanMText_ReturnedMachinePart
 	waitbutton
 	closetext
 	end
@@ -59,15 +43,7 @@ SaffronCityCooltrainerFScript:
 SaffronCityFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
 	writetext SaffronCityFisherText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext SaffronCityFisherText_ReturnedMachinePart
 	waitbutton
 	closetext
 	end
@@ -122,25 +98,7 @@ SaffronCityLass1Text:
 	line "It's confusing."
 	done
 
-SaffronCityLass1Text_ReturnedMachinePart:
-	text "The COPYCAT girl"
-	line "looked unhappy."
-
-	para "She said she lost"
-	line "her favorite #"
-	cont "DOLL--CLEFAIRY."
-	done
-
 SaffronCityPokefanMText:
-	text "You came out from"
-	line "JOHTO?"
-
-	para "You can zip back"
-	line "home if the MAGNET"
-	cont "TRAIN's running."
-	done
-
-SaffronCityPokefanMText_ReturnedMachinePart:
 	text "You came out from"
 	line "JOHTO?"
 
@@ -179,22 +137,11 @@ SaffronCityCooltrainerFText:
 SaffronCityFisherText:
 	text "Chew… Chew…"
 
-	para "I hear there's big"
-	line "trouble brewing at"
+	para "I hear there are"
+	line "strong #MON at"
 	cont "the POWER PLANT."
 
 	para "Chew… Chew…"
-	done
-
-SaffronCityFisherText_ReturnedMachinePart:
-	text "Chew… Chew…"
-
-	para "I hear there was"
-	line "big trouble at the"
-	cont "POWER PLANT."
-
-	para "Chew… Chew…"
-	line "Haaah, I'm full!"
 	done
 
 SaffronCityYoungster1Text:

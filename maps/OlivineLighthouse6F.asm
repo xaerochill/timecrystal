@@ -11,7 +11,7 @@ OlivineLighthouse6F_MapScripts:
 OlivineLighthouseJasmine:
 	faceplayer
 	opentext
-	checkitem SECRETPOTION
+	checkevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY
 	iftrue .BroughtSecretpotion
 	checkevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
 	iftrue .ExplainedSickness
@@ -25,25 +25,6 @@ OlivineLighthouseJasmine:
 	end
 
 .BroughtSecretpotion:
-	writetext JasmineCureAmphyText
-	yesorno
-	iffalse .Refused
-	writetext PlayerHandedSecretpotionText
-	promptbutton
-	takeitem SECRETPOTION
-	writetext JasmineDontBeOffendedText
-	waitbutton
-	closetext
-	turnobject OLIVINELIGHTHOUSE6F_JASMINE, RIGHT
-	pause 15
-	turnobject OLIVINELIGHTHOUSE6F_MONSTER, LEFT
-	opentext
-	playmusic MUSIC_HEAL
-	writetext JasmineAmphyHowAreYouFeelingText
-	pause 60
-	promptbutton
-	closetext
-	special RestartMapMusic
 	cry AMPHAROS
 	special FadeOutPalettes
 	pause 10
@@ -95,9 +76,6 @@ OlivineLighthouseJasmine:
 	writetext JasmineAmphyHangOnText
 	waitbutton
 	closetext
-	end
-
-.Unused: ; unreferenced
 	end
 
 OlivineLighthouseAmphy:
@@ -187,35 +165,6 @@ JasmineGetSomeMedicineText:
 	text "…May I ask you to"
 	line "get some medicine"
 	cont "for me? Please?"
-	done
-
-JasmineCureAmphyText:
-	text "JASMINE: …Will"
-	line "that medicine cure"
-	cont "AMPHY?"
-	done
-
-PlayerHandedSecretpotionText:
-	text "<PLAYER> handed the"
-	line "SECRETPOTION to"
-	cont "JASMINE."
-	done
-
-JasmineDontBeOffendedText:
-	text "JASMINE: …Um,"
-	line "please don't be"
-	cont "offended…"
-
-	para "…AMPHY will not"
-	line "take anything from"
-	cont "anyone but me…"
-	done
-
-JasmineAmphyHowAreYouFeelingText:
-	text "JASMINE: …"
-
-	para "AMPHY, how are you"
-	line "feeling?"
 	done
 
 JasmineThankYouText:

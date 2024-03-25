@@ -24,12 +24,11 @@ PewterCityBugCatcherScript:
 PewterCityGrampsScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_SILVER_WING
+	checkevent EVENT_GRAMPS_MET_SHUDO
 	iftrue .GotSilverWing
 	writetext PewterCityGrampsText
 	promptbutton
-	verbosegiveitem SILVER_WING
-	setevent EVENT_GOT_SILVER_WING
+	setevent EVENT_GRAMPS_MET_SHUDO
 	closetext
 	end
 
@@ -100,9 +99,17 @@ PewterCityGrampsText:
 	para "like as a young"
 	line "man."
 
-	para "Here. I want you"
-	line "to have this item"
-	cont "I found in JOHTO."
+	para "I met a weird guy"
+	line "in OLIVINE CITY"
+	cont "who talked about a"
+	
+	para "legendary #MON."
+	line "I think he used to"
+	cont "call her LUGIA."
+	
+	para "If you ever visit,"
+	line "please make sure"
+	cont "he is fine..."
 	done
 
 PewterCityGrampsText_GotSilverWing:

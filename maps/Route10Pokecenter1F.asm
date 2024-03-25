@@ -18,15 +18,7 @@ Route10Pokecenter1FGentlemanScript:
 Route10Pokecenter1FGymGuideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
 	writetext Route10Pokecenter1FGymGuideText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext Route10Pokecenter1FGymGuideText_ReturnedMachinePart
 	waitbutton
 	closetext
 	end
@@ -43,20 +35,6 @@ Route10Pokecenter1FGentlemanText:
 	done
 
 Route10Pokecenter1FGymGuideText:
-	text "The POWER PLANT's"
-	line "MANAGER is looking"
-
-	para "for a strong #-"
-	line "MON trainer."
-
-	para "He needs help"
-	line "getting back"
-
-	para "something that"
-	line "was stolen."
-	done
-
-Route10Pokecenter1FGymGuideText_ReturnedMachinePart:
 	text "I hear TEAM ROCKET"
 	line "got back together"
 

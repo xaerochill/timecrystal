@@ -19,15 +19,7 @@ CeruleanCityFlypointCallback:
 CeruleanCityCooltrainerMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
 	writetext CeruleanCityCooltrainerMText1
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext CeruleanCityCooltrainerMText2
 	waitbutton
 	closetext
 	end
@@ -68,18 +60,7 @@ CeruleanCityCooltrainerFScript:
 CeruleanCityFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	checkevent EVENT_MET_ROCKET_GRUNT_AT_CERULEAN_GYM
-	iftrue .MetCeruleanRocket
-.ReturnedMachinePart:
 	writetext CeruleanCityFisherText
-	waitbutton
-	closetext
-	end
-
-.MetCeruleanRocket:
-	writetext CeruleanCityFisherRocketTipText
 	waitbutton
 	closetext
 	end
@@ -148,21 +129,6 @@ CeruleanCityHiddenBerserkGene:
 	hiddenitem BERSERK_GENE, EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY
 
 CeruleanCityCooltrainerMText1:
-	text "KANTO's POWER"
-	line "PLANT?"
-
-	para "It's near the end"
-	line "of ROUTE 9, the"
-
-	para "road that heads"
-	line "east from here."
-
-	para "I think there was"
-	line "an accident of"
-	cont "some sort there."
-	done
-
-CeruleanCityCooltrainerMText2:
 	text "You're collecting"
 	line "every single kind"
 	cont "of #MON?"
@@ -203,12 +169,6 @@ CeruleanCityFisherText:
 	text "I'm a huge fan of"
 	line "CERULEAN GYM's"
 	cont "MISTY."
-	done
-
-CeruleanCityFisherRocketTipText:
-	text "I saw this shady"
-	line "guy go off toward"
-	cont "CERULEAN's CAPE."
 	done
 
 CeruleanCityYoungsterText1:

@@ -53,47 +53,7 @@ PokemonFanClubReceptionistScript:
 PokemonFanClubClefairyGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_LOST_ITEM_FROM_FAN_CLUB
-	iftrue .GotLostItem
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .FoundClefairyDoll
 	writetext PokemonFanClubClefairyGuyClefairyIsSoAdorableText
-	waitbutton
-	closetext
-	end
-
-.FoundClefairyDoll:
-	writetext PokemonFanClubClefairyGuyMakingDoWithADollIFoundText
-	checkevent EVENT_MET_COPYCAT_FOUND_OUT_ABOUT_LOST_ITEM
-	iftrue .MetCopycat
-	waitbutton
-	closetext
-	end
-
-.MetCopycat:
-	promptbutton
-	writetext PokemonFanClubClefairyGuyTakeThisDollBackToGirlText
-	promptbutton
-	waitsfx
-	giveitem LOST_ITEM
-	iffalse .NoRoom
-	disappear POKEMONFANCLUB_FAIRY
-	writetext PokemonFanClubPlayerReceivedDollText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	itemnotify
-	setevent EVENT_GOT_LOST_ITEM_FROM_FAN_CLUB
-	closetext
-	end
-
-.GotLostItem:
-	writetext PokemonFanClubClefairyGuyGoingToGetARealClefairyText
-	waitbutton
-	closetext
-	end
-
-.NoRoom:
-	writetext PokemonFanClubClefairyGuyPackIsJammedFullText
 	waitbutton
 	closetext
 	end
@@ -212,54 +172,12 @@ PokemonFanClubClefairyGuyClefairyIsSoAdorableText:
 
 	para "METRONOME."
 	line "It's so adorable!"
-	done
 
-PokemonFanClubClefairyGuyMakingDoWithADollIFoundText:
-	text "I love CLEFAIRY,"
-	line "but I could never"
-
-	para "catch one. So I'm"
-	line "making do with a"
-
-	para "# DOLL that I"
-	line "found."
-	done
-
-PokemonFanClubClefairyGuyTakeThisDollBackToGirlText:
-	text "Oh, I see now. The"
-	line "girl who lost this"
-
-	para "# DOLL is sad…"
-
-	para "OK. Could you take"
-	line "this # DOLL"
-
-	para "back to that poor"
-	line "little girl?"
-
-	para "I'll befriend a"
-	line "real CLEFAIRY on"
-
-	para "my own one day."
-	line "No worries!"
-	done
-
-PokemonFanClubPlayerReceivedDollText:
-	text "<PLAYER> received"
-	line "# DOLL."
-	done
-
-PokemonFanClubClefairyGuyGoingToGetARealClefairyText:
-	text "You watch. I'm"
+	para "You watch. I'm"
 	line "going to get a"
 
 	para "real CLEFAIRY as"
 	line "my friend."
-	done
-
-PokemonFanClubClefairyGuyPackIsJammedFullText:
-	text "Your PACK is"
-	line "jammed full."
 	done
 
 PokemonFanClubTeacherText:

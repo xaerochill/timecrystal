@@ -73,7 +73,6 @@ GoldenrodUndergroundWarehouseDirectorScript:
 	iftrue .GotCardKey
 	writetext DirectorIntroText
 	promptbutton
-	verbosegiveitem CARD_KEY
 	setevent EVENT_RECEIVED_CARD_KEY
 	setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1
 	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
@@ -172,14 +171,17 @@ DirectorIntroText:
 	para "Taken over by TEAM"
 	line "ROCKET?"
 
-	para "Here. Take this"
+	para "They took my"
 	line "CARD KEY."
 	done
 
 DirectorCardKeyText:
-	text "DIRECTOR: Use that"
-	line "to open the shut-"
-	cont "ters on 3F."
+	text "DIRECTOR: You can"
+	line "open the shutters"
+	cont "on 3F with a code."
+	
+	para "It is still the"
+	line "default code 1111."
 	done
 
 DirectorAfterText:

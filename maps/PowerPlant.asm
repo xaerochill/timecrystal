@@ -20,48 +20,39 @@ PowerPlantNoop1Scene:
 PowerPlantNoop2Scene:
 	end
 
-PowerPlantGuardPhoneScript:
+PowerPlantGuardIntruderScript:
 	playsound SFX_CALL
 	showemote EMOTE_SHOCK, POWERPLANT_OFFICER1, 15
 	waitsfx
 	pause 30
-	applymovement POWERPLANT_OFFICER1, PowerPlantOfficer1ApproachGymGuide2Movement
-	turnobject POWERPLANT_GYM_GUIDE1, DOWN
-	turnobject POWERPLANT_GYM_GUIDE2, DOWN
+	applymovement POWERPLANT_GYM_GUIDE2, PowerPlantGymGuide2Movement
+	turnobject POWERPLANT_OFFICER1, LEFT
+	turnobject POWERPLANT_GYM_GUIDE2, RIGHT
 	opentext
-	writetext PowerPlantOfficer1CeruleanShadyCharacterText
+	writetext PowerPlantOfficer1ShadyCharacterText
 	waitbutton
 	closetext
-	turnobject POWERPLANT_OFFICER1, LEFT
-	turnobject PLAYER, RIGHT
+	turnobject POWERPLANT_OFFICER1, RIGHT
+	turnobject PLAYER, LEFT
 	opentext
 	writetext PowerPlantOfficer1CouldIAskForYourCooperationText
 	waitbutton
 	closetext
-	turnobject PLAYER, DOWN
-	applymovement POWERPLANT_OFFICER1, PowerPlantOfficer1ReturnToPostMovement
+	applymovement POWERPLANT_GYM_GUIDE2, PowerPlantGymGuide2ReturnMovement
 	setscene SCENE_POWERPLANT_NOOP
 	end
 
 PowerPlantOfficerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
-	iftrue .MetManager
-	writetext PowerPlantOfficer1AThiefBrokeInText
+	checkevent EVENT_FOUND_POWER_PLANT_ROCKET
+	iftrue .FoundRocket
+	writetext PowerPlantOfficer1BrokeInText
 	waitbutton
 	closetext
 	end
 
-.MetManager:
-	writetext PowerPlantOfficer1CouldIAskForYourCooperationText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
+.FoundRocket:
 	writetext PowerPlantOfficer1HaveToBeefUpSecurityText
 	waitbutton
 	closetext
@@ -70,15 +61,15 @@ PowerPlantOfficerScript:
 PowerPlantGymGuide1Script:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantGymGuide1SomeoneStoleAPartText
+	checkevent EVENT_FOUND_POWER_PLANT_ROCKET
+	iftrue .FoundRocket
+	writetext PowerPlantGymGuide1DangerousText
 	waitbutton
 	closetext
 	end
 
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuide1GeneratorUpAndRunningText
+.FoundRocket:
+	writetext PowerPlantGymGuide1DimwitsText
 	waitbutton
 	closetext
 	end
@@ -86,15 +77,15 @@ PowerPlantGymGuide1Script:
 PowerPlantGymGuide2Script:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
+	checkevent EVENT_FOUND_POWER_PLANT_ROCKET
+	iftrue .FoundRocket
 	writetext PowerPlantGymGuide2PowerPlantUpAndRunningText
 	waitbutton
 	closetext
 	end
 
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuide2GeneratorIsRunningAgainText
+.FoundRocket:
+	writetext PowerPlantGymGuide2PowerSourceText
 	waitbutton
 	closetext
 	end
@@ -102,15 +93,15 @@ PowerPlantGymGuide2Script:
 PowerPlantOfficer2Script:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext PowerPlantOfficer2ManagerHasBeenSadAndFuriousText
+	checkevent EVENT_FOUND_POWER_PLANT_ROCKET
+	iftrue .FoundRocket
+	writetext PowerPlantOfficer2PlantSecurityText
 	waitbutton
 	closetext
 	end
 
-.ReturnedMachinePart:
-	writetext PowerPlantOfficer2ManagerHasBeenCheerfulText
+.FoundRocket:
+	writetext PowerPlantOfficer2PlantRevisionText
 	waitbutton
 	closetext
 	end
@@ -118,15 +109,15 @@ PowerPlantOfficer2Script:
 PowerPlantGymGuide4Script:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
+	checkevent EVENT_FOUND_POWER_PLANT_ROCKET
+	iftrue .FoundRocket
 	writetext PowerPlantGymGuide4MagnetTrainConsumesElectricityText
 	waitbutton
 	closetext
 	end
 
-.ReturnedMachinePart:
-	writetext PowerPlantGymGuide4WeCanGetMagnetTrainRunningText
+.FoundRocket:
+	writetext PowerPlantGymGuide4WondersText
 	waitbutton
 	closetext
 	end
@@ -134,38 +125,20 @@ PowerPlantGymGuide4Script:
 PowerPlantManager:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	checkitem MACHINE_PART
-	iftrue .FoundMachinePart
-	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT
-	iftrue .MetManager
-	writetext PowerPlantManagerWhoWouldRuinMyGeneratorText
+	checkevent EVENT_FOUND_POWER_PLANT_ROCKET
+	iftrue .FoundRocket
+	writetext PowerPlantManagerPlantHistoryText
 	waitbutton
 	closetext
-	setevent EVENT_MET_MANAGER_AT_POWER_PLANT
-	clearevent EVENT_CERULEAN_GYM_ROCKET
-	clearevent EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM
-	setmapscene CERULEAN_GYM, SCENE_CERULEANGYM_GRUNT_RUNS_OUT
-	setscene SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL
 	end
 
-.MetManager:
+.FoundRocket:
 	writetext PowerPlantManagerIWontForgiveCulpritText
-	waitbutton
-	closetext
-	end
-
-.FoundMachinePart:
-	writetext PowerPlantManagerThatsThePartText
-	promptbutton
-	takeitem MACHINE_PART
-	setevent EVENT_RETURNED_MACHINE_PART
+	setscene SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL
 	clearevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
 	setevent EVENT_ROUTE_24_ROCKET
 	setevent EVENT_RESTORED_POWER_TO_KANTO
 	clearevent EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
-.ReturnedMachinePart:
 	checkevent EVENT_GOT_TM07_ZAP_CANNON
 	iftrue .GotZapCannon
 	writetext PowerPlantManagerTakeThisTMText
@@ -196,14 +169,18 @@ Forest:
 PowerPlantBookshelf:
 	jumpstd DifficultBookshelfScript
 
-PowerPlantOfficer1ApproachGymGuide2Movement:
+PowerPlantGymGuide2Movement:
 	step RIGHT
 	step RIGHT
-	step UP
-	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
 	step_end
 
-PowerPlantOfficer1ReturnToPostMovement:
+PowerPlantGymGuide2ReturnMovement:
 	step DOWN
 	step DOWN
 	step LEFT
@@ -211,23 +188,24 @@ PowerPlantOfficer1ReturnToPostMovement:
 	turn_head DOWN
 	step_end
 
-PowerPlantOfficer1AThiefBrokeInText:
-	text "A thief broke into"
-	line "the POWER PLANT…"
+PowerPlantOfficer1BrokeInText:
+	text "Who breaks into"
+	line "a POWER PLANT…"
 
 	para "What is the world"
 	line "coming to?"
 	done
 
-PowerPlantOfficer1CeruleanShadyCharacterText:
+PowerPlantOfficer1ShadyCharacterText:
 	text "I just got word"
-	line "from CERULEAN."
+	line "from downstairs."
 
-	para "It appears that a"
-	line "shady character"
+	para "It appears that"
+	line "shady characters"
 
-	para "has been loitering"
-	line "around."
+	para "have been seen"
+	line "loitering around"
+	cont "in the basement."
 	done
 
 PowerPlantOfficer1CouldIAskForYourCooperationText:
@@ -236,29 +214,33 @@ PowerPlantOfficer1CouldIAskForYourCooperationText:
 	done
 
 PowerPlantOfficer1HaveToBeefUpSecurityText:
-	text "We'll have to beef"
-	line "up our security"
-	cont "presence."
+	text "TEAM ROCKET?!"
+	line "We'll have to beef"
+	cont "up our security."
 	done
 
-PowerPlantGymGuide1SomeoneStoleAPartText:
-	text "Someone made off"
-	line "with a part that's"
+PowerPlantGymGuide1DangerousText:
+	text "Who in their right"
+	line "mind wants to go"
+	cont "down there?"
 
-	para "essential for the"
-	line "generator."
-
-	para "Without it, the"
-	line "new generator's"
-	cont "useless!"
+	para "There are lots of"
+	line "strong and wild"
+	cont "#MON around!"
 	done
 
-PowerPlantGymGuide1GeneratorUpAndRunningText:
-	text "The generator's up"
-	line "and running. It's"
+PowerPlantGymGuide1DimwitsText:
+	text "Those TEAM ROCKET"
+	line "dimwits are up to"
+	cont "no good at all!"
 
-	para "making electricity"
-	line "to spare."
+	para "Then again, so did"
+	line "the people abando-"
+	cont "ning the PLANT."
+
+	para "It is an economic"
+	line "and ecological"
+	cont "disaster..."
 	done
 
 PowerPlantGymGuide2PowerPlantUpAndRunningText:
@@ -270,32 +252,42 @@ PowerPlantGymGuide2PowerPlantUpAndRunningText:
 	line "and running to"
 
 	para "provide power to"
-	line "the MAGNET TRAIN."
+	line "the KANTO region."
 	done
 
-PowerPlantGymGuide2GeneratorIsRunningAgainText:
-	text "The generator's"
-	line "running again!"
+PowerPlantGymGuide2PowerSourceText:
+	text "Do you know how"
+	line "we can generate"
+	cont "electricity here?"
+
+	text "The water currents"
+	line "from nearby are"
+	cont "our power source:"
+
+	para "We call this an"
+	line "underground hydro-"
+	cont "electric power"
+	cont "plant. Cool, eh?"
 	done
 
-PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
+PowerPlantOfficer2PlantSecurityText:
 	text "The POWER PLANT's"
-	line "MANAGER is up"
-	cont "ahead."
+	line "security system is"
+	cont "ancient, really."
 
-	para "But since someone"
-	line "wrecked the gener-"
-	cont "ator, he's been"
-	cont "both sad and"
-	cont "furious…"
+	para "But since no one"
+	line "ever goes down"
+	cont "there, it is ok."
 	done
 
-PowerPlantOfficer2ManagerHasBeenCheerfulText:
-	text "Since the gener-"
-	line "ator's been fixed,"
+PowerPlantOfficer2PlantRevisionText:
+	text "I did not think"
+	line "TEAM ROCKET would"
+	cont "dare to break in!"
 
-	para "the MANAGER has"
-	line "been cheerful."
+	para "We need to upgrade"
+	line "our security sys-"
+	cont "tem after all..."
 	done
 
 PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
@@ -303,35 +295,41 @@ PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
 	line "consumes a lot of"
 	cont "electricity."
 
-	para "It can't move if"
-	line "the new generator"
-	cont "isn't operating."
+	para "It was the main"
+	line "reason to get"
+	cont "the POWER PLANT"
+	cont "running again."
 	done
 
-PowerPlantGymGuide4WeCanGetMagnetTrainRunningText:
-	text "All right! We can"
-	line "finally get the"
+PowerPlantGymGuide4WondersText:
+	text "What could TEAM"
+	line "ROCKET possibly"
+	cont "have wanted here?"
 
-	para "MAGNET TRAIN"
-	line "running again."
+	para "Why are they in-"
+	line "terested in our"
+	cont "energy production?"
 	done
 
-PowerPlantManagerWhoWouldRuinMyGeneratorText:
-	text "MANAGER: I, I, I'm"
-	line "ready to blast"
-	cont "someone!"
+PowerPlantManagerPlantHistoryText:
+	text "MANAGER: I bought"
+	line "the POWER PLANT"
+	cont "years ago. My Plan"
 
-	para "Who would dare"
-	line "ruin my generator?"
+	para "was to make it"
+	line "clean and safe."
 
 	para "I spent so much"
-	line "time on it!"
+	line "time on this!"
 
-	para "If I catch him,"
-	line "he's going to get"
+	para "But downstairs"
+	line "there are too"
+	cont "many wild #MON."
 
-	para "a taste of my ZAP"
-	line "CANNON!"
+	para "They attacked the"
+	line "workers so we gave"
+	cont "up removing the"
+	cont "old toxic waste..."
 	done
 
 PowerPlantManagerIWontForgiveCulpritText:
@@ -345,15 +343,6 @@ PowerPlantManagerIWontForgiveCulpritText:
 	line "hammer him!"
 
 	para "Gahahahah!"
-	done
-
-PowerPlantManagerThatsThePartText:
-	text "MANAGER: Ah! Yeah!"
-
-	para "That's the missing"
-	line "PART from my be-"
-	cont "loved generator!"
-	cont "You found it?"
 	done
 
 PowerPlantManagerTakeThisTMText:
@@ -391,19 +380,19 @@ PowerPlant_MapEvents:
 	def_warp_events
 	warp_event  2, 17, ROUTE_10_NORTH, 2
 	warp_event  3, 17, ROUTE_10_NORTH, 2
-	warp_event  1, 14, POWER_PLANT_B1F, 1
+	warp_event  9, 14, POWER_PLANT_B1F, 1
 
 	def_coord_events
-	coord_event  5, 12, SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL, PowerPlantGuardPhoneScript
+	coord_event  9, 15, SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL, PowerPlantGuardIntruderScript
 
 	def_bg_events
 	bg_event  0,  1, BGEVENT_READ, PowerPlantBookshelf
 	bg_event  1,  1, BGEVENT_READ, PowerPlantBookshelf
 
 	def_object_events
-	object_event  4, 14, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PowerPlantOfficerScript, -1
+	object_event  8, 14, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PowerPlantOfficerScript, -1
 	object_event  2,  9, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuide1Script, -1
-	object_event  6, 11, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuide2Script, -1
+	object_event  2, 11, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuide2Script, -1
 	object_event  9,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PowerPlantOfficer2Script, -1
 	object_event  7,  2, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PowerPlantGymGuide4Script, -1
 	object_event 14, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlantManager, -1

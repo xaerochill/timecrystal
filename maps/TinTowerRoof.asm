@@ -11,10 +11,7 @@ TinTowerRoofHoOhCallback:
 	checkevent EVENT_FOUGHT_HO_OH
 	iftrue .NoAppear
 	checkevent ENGINE_UNLOCKED_UNOWNS_L_TO_R
-	iftrue .NoAppear
-	checkitem RAINBOW_WING
-	iftrue .Appear
-	sjump .NoAppear
+	iffalse .NoAppear
 
 .Appear:
 	appear TINTOWERROOF_HO_OH

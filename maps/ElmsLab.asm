@@ -325,12 +325,11 @@ ElmAfterTheftDoneScript:
 
 ElmAfterTheftScript:
 	writetext ElmAfterTheftText1
-	checkitem MYSTERY_EGG
+	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	iffalse ElmAfterTheftDoneScript
 	promptbutton
 	writetext ElmAfterTheftText2
 	waitbutton
-	takeitem MYSTERY_EGG
 	scall ElmJumpBackScript1
 	writetext ElmAfterTheftText3
 	waitbutton
@@ -412,7 +411,6 @@ ElmGiveMasterBallScript:
 ElmGiveTicketScript:
 	writetext ElmGiveTicketText1
 	promptbutton
-	verbosegiveitem S_S_TICKET
 	setevent EVENT_GOT_SS_TICKET_FROM_ELM
 	writetext ElmGiveTicketText2
 	waitbutton

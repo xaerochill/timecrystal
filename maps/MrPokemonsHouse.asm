@@ -26,13 +26,6 @@ MrPokemonsHouseMrPokemonEventScript:
 	applymovement PLAYER, MrPokemonsHouse_PlayerWalksToMrPokemon
 	opentext
 	writetext MrPokemonIntroText2
-	promptbutton
-	waitsfx
-	giveitem MYSTERY_EGG
-	writetext MrPokemonsHouse_GotEggText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	itemnotify
 	setevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	blackoutmod CHERRYGROVE_CITY
 	writetext MrPokemonIntroText3
@@ -50,8 +43,8 @@ MrPokemonsHouseMrPokemonEventScript:
 MrPokemonsHouse_MrPokemonScript:
 	faceplayer
 	opentext
-	checkitem RED_SCALE
-	iftrue .RedScale
+	checkevent EVENT_BEAT_OKERA
+	iftrue .Okera
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	iftrue .AlwaysNewDiscoveries
 	writetext MrPokemonText_ImDependingOnYou
@@ -65,18 +58,12 @@ MrPokemonsHouse_MrPokemonScript:
 	closetext
 	end
 
-.RedScale:
-	writetext MrPokemonText_GimmeTheScale
-	yesorno
-	iffalse .refused
+.Okera:
+	writetext MrPokemonText_Okera
 	verbosegiveitem EXP_SHARE
 	iffalse .full
-	takeitem RED_SCALE
 	sjump .AlwaysNewDiscoveries
 
-.refused
-	writetext MrPokemonText_Disappointed
-	waitbutton
 .full
 	closetext
 	end
@@ -182,11 +169,6 @@ MrPokemonIntroText2:
 	text "This is what I"
 	line "want PROF.ELM to"
 	cont "examine."
-	done
-
-MrPokemonsHouse_GotEggText:
-	text "<PLAYER> received"
-	line "MYSTERY EGG."
 	done
 
 MrPokemonIntroText3:
@@ -326,26 +308,16 @@ MrPokemonsHouse_OakText2:
 	line "counting on you!"
 	done
 
-MrPokemonText_GimmeTheScale:
-	text "Hm? That SCALE!"
-	line "What's that?"
-	cont "A red GYARADOS?"
+MrPokemonText_Okera:
+	text "So you beat Okera!"
+	line "How did you do it?"
 
-	para "That's rare! "
-	line "I, I want it…"
+	para "That's quite an"
+	line "accomplishment!"
 
-	para "<PLAY_G>, would you"
-	line "care to trade it?"
-
-	para "I can offer this"
+	para "Please take the"
 	line "EXP.SHARE I got"
 	cont "from PROF.OAK."
-	done
-
-MrPokemonText_Disappointed:
-	text "That's disappoint-"
-	line "ing. That happens"
-	cont "to be very rare."
 	done
 
 MrPokemonsHouse_ForeignMagazinesText:

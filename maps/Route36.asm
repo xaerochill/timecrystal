@@ -61,7 +61,7 @@ Route36SuicuneScript:
 	end
 
 SudowoodoScript:
-	checkitem SQUIRTBOTTLE
+	checkevent EVENT_GOT_SQUIRTBOTTLE
 	iftrue .Fight
 
 	waitsfx
@@ -71,13 +71,10 @@ SudowoodoScript:
 
 .Fight:
 	opentext
-	writetext UseSquirtbottleText
+	writetext TickleTreeText
 	yesorno
-	iffalse DidntUseSquirtbottleScript
-	closetext
-WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
-	opentext
-	writetext UsedSquirtbottleText
+	iffalse NoTickledTreeText
+	writetext TickledTreeText
 	waitbutton
 	closetext
 	waitsfx
@@ -95,7 +92,7 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	reloadmapafterbattle
 	end
 
-DidntUseSquirtbottleScript:
+NoTickledTreeText:
 	closetext
 	end
 
@@ -418,20 +415,20 @@ Route36SuicuneMovement:
 	remove_sliding
 	step_end
 
-UseSquirtbottleText:
+TickleTreeText:
 	text "It's a weird tree."
-	line "Use SQUIRTBOTTLE?"
+	line "Tickle it?"
 	done
 
-UsedSquirtbottleText:
-	text "<PLAYER> used the"
-	line "SQUIRTBOTTLE."
+TickledTreeText:
+	text "<PLAYER>"
+	line "tickled the tree."
 	done
 
 SudowoodoAttackedText:
 	text "The weird tree"
-	line "doesn't like the"
-	cont "SQUIRTBOTTLE!"
+	line "doesn't like"
+	cont "being tickled!"
 
 	para "The weird tree"
 	line "attacked!"
@@ -443,25 +440,14 @@ FloriaText1:
 
 	para "Listen, listen!"
 
-	para "When I sprinkled"
-	line "water on that"
+	para "When I tickled"
+	line "that wiggly little"
 
-	para "wiggly tree, it"
+	para "tree there, it"
 	line "jumped right up!"
 
 	para "It just has to be"
 	line "a #MON."
-
-	para "I bet it would be"
-	line "shocked out of its"
-
-	para "disguise if you"
-	line "soaked it!"
-
-	para "I know! I'll tell"
-	line "my sis and borrow"
-	cont "her water bottle!"
-	done
 
 FloriaText2:
 	text "When I told my sis"
@@ -472,10 +458,7 @@ FloriaText2:
 
 	para "If I beat WHITNEY,"
 	line "I wonder if she'll"
-
-	para "lend me her water"
-	line "bottle…"
-	done
+	cont "still say that..."
 
 RockSmashGuyText1:
 	text "Wa-hey!"
@@ -497,11 +480,6 @@ RockSmashGuyText2:
 	para "I'm impressed!"
 	line "I want you to"
 	cont "have this."
-	done
-
-Text_ReceivedTM08: ; unreferenced
-	text "<PLAYER> received"
-	line "TM08."
 	done
 
 RockSmashGuyText3:
@@ -529,18 +507,6 @@ Route36LassPCCText:
 
 	para "CENTER they just"
 	line "opened…"
-	done
-
-Route36LassText: ; Unused, English version of the above dialog.
-	text "An odd tree is"
-	line "blocking the way"
-	cont "to GOLDENROD CITY."
-
-	para "It's preventing"
-	line "me from shopping."
-
-	para "Something should"
-	line "be done about it."
 	done
 
 Route36LassText_ClearedSudowoodo:

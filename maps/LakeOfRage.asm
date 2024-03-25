@@ -20,6 +20,7 @@ LakeOfRage_MapScripts:
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, LakeOfRageFlypointCallback
 	callback MAPCALLBACK_OBJECTS, LakeOfRageWesleyCallback
+	callback MAPCALLBACK_OBJECTS, LakeOfRageGyaradosCallback
 
 LakeOfRageNoop1Scene:
 	end
@@ -39,6 +40,18 @@ LakeOfRageWesleyCallback:
 
 .WesleyAppears:
 	appear LAKEOFRAGE_WESLEY
+	endcallback
+
+LakeOfRageGyaradosCallback:
+	checkevent EVENT_FOUGHT_GYARADOS
+	iftrue .NoAppear
+
+.Appear:
+	appear LAKEOFRAGE_GYARADOS
+	endcallback
+
+.NoAppear:
+	disappear LAKEOFRAGE_GYARADOS
 	endcallback
 
 LakeOfRageLanceScript:
@@ -89,16 +102,9 @@ RedGyarados:
 	startbattle
 	ifequal LOSE, .NotBeaten
 	disappear LAKEOFRAGE_GYARADOS
+	setevent EVENT_FOUGHT_GYARADOS
 .NotBeaten:
 	reloadmapafterbattle
-	opentext
-	giveitem RED_SCALE
-	waitsfx
-	writetext LakeOfRageGotRedScaleText
-	playsound SFX_ITEM
-	waitsfx
-	itemnotify
-	closetext
 	setscene 0 ; Lake of Rage does not have a scene variable
 	appear LAKEOFRAGE_LANCE
 	end
@@ -312,11 +318,6 @@ LakeOfRageLanceAskHelpText:
 
 LakeOfRageGyaradosCryText:
 	text "GYARADOS: Gyashaa!"
-	done
-
-LakeOfRageGotRedScaleText:
-	text "<PLAYER> obtained a"
-	line "RED SCALE."
 	done
 
 LakeOfRageGrampsText:

@@ -13,46 +13,16 @@ Route6SaffronGateNoopScene:
 Route6SaffronGuardScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedPart
 	writetext Route6SaffronGuardWelcomeText
 	waitbutton
 	closetext
 	end
-
-.ReturnedPart:
-	writetext Route6SaffronGuardMagnetTrainText
-	waitbutton
-	closetext
 	end
 
 Route6SaffronGuardWelcomeText:
 	text "Welcome to SAFFRON"
 	line "CITY, home of the"
 	cont "MAGNET TRAIN!"
-
-	para "…That's what I'd"
-	line "normally say, but"
-
-	para "the MAGNET TRAIN"
-	line "isn't running now."
-
-	para "It's not getting"
-	line "any electricity"
-
-	para "because there's"
-	line "something wrong"
-
-	para "with the POWER"
-	line "PLANT."
-	done
-
-Route6SaffronGuardMagnetTrainText:
-	text "The MAGNET TRAIN"
-	line "is the most famous"
-
-	para "thing about SAF-"
-	line "FRON."
 	done
 
 Route6SaffronGate_MapEvents:

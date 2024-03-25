@@ -127,34 +127,6 @@ IrwinVermilionCityGossipText:
 	line "your backdrop!"
 	done
 
-IrwinTrainPassGossipText:
-	text "I heard, I heard!"
-
-	para "You got a MAGNET"
-	line "TRAIN PASS!"
-
-	para "When I saw you"
-	line "departing on the"
-
-	para "ship, I felt sad"
-	line "that I wouldn't be"
-
-	para "able to see you"
-	line "for a while."
-
-	para "But since you have"
-	line "that PASS, you can"
-
-	para "zip back anytime!"
-	line "That's reassuring!"
-
-	para "What? You can FLY"
-	line "back anytime?"
-
-	para "What do you mean"
-	line "by FLY?"
-	done
-
 IrwinSnorlaxGossipText:
 	text "I saw, I saw!"
 

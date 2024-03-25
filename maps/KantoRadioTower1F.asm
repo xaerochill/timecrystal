@@ -19,26 +19,26 @@ KantoRadioTower1FOfficerScript:
 KantoRadioTower1FSuperNerd1Script:
 	jumptextfaceplayer KantoRadioTower1FSuperNerd1Text
 
-KantoRadioTower1FGentlemanScript:
+KantoRadioTower1FGentlemanVirgilScript:
 	faceplayer
 	opentext
 	checkflag ENGINE_EXPN_CARD
 	iftrue .GotExpnCard
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
-	writetext KantoRadioTower1FGentlemanText
+	writetext KantoRadioTower1FGentlemanVirgilText_Intro
 	waitbutton
 	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext KantoRadioTower1FGentlemanText_ReturnedMachinePart
+	winlosstext KantoRadioTower1FGentlemanVirgilText_Win, KantoRadioTower1FGentlemanVirgilText_Loss
+	loadtrainer GENTLEMAN, VIRGIL
+	startbattle
+	reloadmapafterbattle
+	writetext KantoRadioTower1FGentlemanVirgilText_KeepMyPromise
 	promptbutton
 	getstring STRING_BUFFER_4, .expncardname
 	scall .receiveitem
 	setflag ENGINE_EXPN_CARD
+	setevent EVENT_BEAT_GENTLEMAN_VIRGIL
 .GotExpnCard:
-	writetext KantoRadioTower1FGentlemanText_GotExpnCard
+	writetext KantoRadioTower1FGentlemanVirgilText_GotExpnCard
 	waitbutton
 	closetext
 	end
@@ -103,42 +103,50 @@ KantoRadioTower1FSuperNerd1Text:
 	cont "on good shows."
 	done
 
-KantoRadioTower1FGentlemanText:
-	text "Oh, no, no, no!"
-
-	para "We've been off the"
-	line "air ever since the"
-
-	para "POWER PLANT shut"
-	line "down."
+KantoRadioTower1FGentlemanVirgilText_Intro:
+	text "Oh, you travelled"
+	line "all the way from"
+	cont "JOHTO!"
 
 	para "All my efforts to"
 	line "start this station"
 
-	para "would be wasted if"
-	line "I can't broadcast."
+	para "should be for you"
+	line "to enjoy as well."
 
-	para "I'll be ruined!"
+	para "If you beat me, I"
+	line "will tell you how"
+	cont "to tune in!"
 	done
 
-KantoRadioTower1FGentlemanText_ReturnedMachinePart:
-	text "Ah! So you're the"
-	line "<PLAY_G> who solved"
+KantoRadioTower1FGentlemanVirgilText_Win:
+	para "Wow! You beat me"
+	line "fair and square!"
+	done
+	
+KantoRadioTower1FGentlemanVirgilText_Loss:
+	para "Well, you should"
+	line "train more!"
 
-	para "the POWER PLANT's"
-	line "problem?"
+KantoRadioTower1FGentlemanVirgilText_KeepMyPromise:
+	text "Ah! It has been"
+	line "quite a while"
 
-	para "Thanks to you, I"
-	line "never lost my job."
+	para "since I got to"
+	line "fight like this!"
 
-	para "I tell you, you're"
-	line "a real lifesaver!"
+	para "You remind me of"
+	line "myself when I was"
+	cont "young..."
+
+	para "But well! I made a"
+	line "promise to keep."
 
 	para "Please take this"
 	line "as my thanks."
 	done
 
-KantoRadioTower1FGentlemanText_GotExpnCard:
+KantoRadioTower1FGentlemanVirgilText_GotExpnCard:
 	text "With that thing,"
 	line "you can tune into"
 
@@ -221,5 +229,5 @@ KantoRadioTower1F_MapEvents:
 	object_event  6,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, KantoRadioTower1FReceptionistScript, -1
 	object_event 14,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, KantoRadioTower1FOfficerScript, -1
 	object_event  1,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, KantoRadioTower1FSuperNerd1Script, -1
-	object_event  9,  1, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KantoRadioTower1FGentlemanScript, -1
+	object_event  9,  1, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KantoRadioTower1FGentlemanVirgilScript, -1
 	object_event 14,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KantoRadioTower1FSuperNerd2Script, -1

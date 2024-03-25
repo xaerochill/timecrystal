@@ -174,23 +174,11 @@ VermilionPortWalkUpToShipScript:
 	writetext VermilionPortAskBoardingText
 	yesorno
 	iffalse VermilionPortNotRidingMoveAwayScript
-	writetext VermilionPortAskTicketText
-	promptbutton
-	checkitem S_S_TICKET
-	iffalse .NoTicket
-	writetext VermilionPortSSTicketText
 	waitbutton
 	closetext
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	applymovement PLAYER, VermilionPortApproachFastShipMovement
 	sjump VermilionPortSailorAtGangwayScript
-
-.NoTicket:
-	writetext VermilionPortNoTicketText
-	waitbutton
-	closetext
-	applymovement PLAYER, VermilionPortCannotEnterFastShipMovement
-	end
 
 .NextShipWednesday:
 	writetext VermilionPortSailMondayText
@@ -236,22 +224,11 @@ VermilionPortSailorScript:
 	writetext VermilionPortAskBoardingText
 	yesorno
 	iffalse VermilionPortNotRidingScript
-	writetext VermilionPortAskTicketText
-	promptbutton
-	checkitem S_S_TICKET
-	iffalse .NoTicket
-	writetext VermilionPortSSTicketText
 	waitbutton
 	closetext
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	applymovement PLAYER, VermilionPortApproachFastShipRightMovement
 	sjump VermilionPortSailorAtGangwayScript
-
-.NoTicket:
-	writetext VermilionPortNoTicketText
-	waitbutton
-	closetext
-	end
 
 .NextShipWednesday:
 	writetext VermilionPortSailMondayText
@@ -326,36 +303,9 @@ VermilionPortAskBoardingText:
 	line "ing today?"
 	done
 
-VermilionPortAskTicketText:
-	text "May I see your"
-	line "S.S.TICKET?"
-	done
-
 VermilionPortComeAgainText:
 	text "We hope to see you"
 	line "again!"
-	done
-
-VermilionPortSSTicketText:
-	text "<PLAYER> flashed"
-	line "the S.S.TICKET."
-
-	para "That's it."
-	line "Thank you!"
-	done
-
-VermilionPortNoTicketText:
-	text "<PLAYER> tried to"
-	line "show the S.S."
-	cont "TICKET…"
-
-	para "…But no TICKET!"
-
-	para "Sorry!"
-	line "You may board only"
-
-	para "if you have an"
-	line "S.S.TICKET."
 	done
 
 VermilionPortSailMondayText:

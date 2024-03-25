@@ -12,7 +12,7 @@ WhirlIslandLugiaChamberLugiaCallback:
 	iftrue .NoAppear
 	checkevent ENGINE_UNLOCKED_UNOWNS_L_TO_R
 	iftrue .NoAppear
-	checkitem SILVER_WING
+	checkevent EVENT_GRAMPS_MET_SHUDO
 	iftrue .Appear
 	sjump .NoAppear
 

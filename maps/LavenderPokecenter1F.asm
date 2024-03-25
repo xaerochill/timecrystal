@@ -21,15 +21,7 @@ LavenderPokecenter1FTeacherScript:
 LavenderPokecenter1FYoungsterScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedMachinePart
 	writetext LavenderPokecenter1FYoungsterText
-	waitbutton
-	closetext
-	end
-
-.ReturnedMachinePart:
-	writetext LavenderPokecenter1FYoungsterText_ReturnedMachinePart
 	waitbutton
 	closetext
 	end
@@ -54,28 +46,14 @@ LavenderPokecenter1FTeacherText:
 	done
 
 LavenderPokecenter1FYoungsterText:
-	text "If the POWER PLANT"
-	line "isn't running, the"
+	text "A few years ago,"
+	line "the POWER PLANT"
+	cont "was abandoned."
 
-	para "MAGNET TRAIN won't"
-	line "run either…"
-
-	para "It also means the"
-	line "RADIO STATION"
-	cont "can't broadcast…"
-	done
-
-LavenderPokecenter1FYoungsterText_ReturnedMachinePart:
-	text "The DIRECTOR of"
-	line "the RADIO STATION"
-	cont "sure was happy."
-
-	para "He said they're"
-	line "back on the air"
-
-	para "because the POWER"
-	line "PLANT is running"
-	cont "smoothly again."
+	para "They only restored"
+	line "the ground floor"
+	cont "but the basement"
+	cont "is just dangerous."
 	done
 
 LavenderPokecenter1F_MapEvents:

@@ -9,30 +9,12 @@ Route7SaffronGate_MapScripts:
 Route7SaffronGuardScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedPart
 	writetext Route7SaffronGuardPowerPlantText
 	waitbutton
 	closetext
 	end
 
-.ReturnedPart:
-	writetext Route7SaffronGuardSeriousText
-	waitbutton
-	closetext
-	end
-
 Route7SaffronGuardPowerPlantText:
-	text "Did you hear about"
-	line "the accident at"
-	cont "the POWER PLANT?"
-
-	para "It's located in"
-	line "the East, close to"
-	cont "LAVENDER TOWN."
-	done
-
-Route7SaffronGuardSeriousText:
 	text "I take my GUARD"
 	line "job seriously."
 

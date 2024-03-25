@@ -23,15 +23,7 @@ SaffronPokecenter1FTeacherScript:
 SaffronPokecenter1FFisherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .SolvedKantoPowerCrisis
 	writetext SaffronPokecenter1FFisherText
-	waitbutton
-	closetext
-	end
-
-.SolvedKantoPowerCrisis:
-	writetext SaffronPokecenter1FFisherReturnedMachinePartText
 	waitbutton
 	closetext
 	end
@@ -80,22 +72,6 @@ SaffronPokecenter1FFisherText:
 	para "TUNNEL. There was"
 	line "some commotion at"
 	cont "the POWER PLANT."
-	done
-
-SaffronPokecenter1FFisherReturnedMachinePartText:
-	text "Caves collapse"
-	line "easily."
-
-	para "Several caves have"
-	line "disappeared in the"
-
-	para "past few years,"
-	line "like the one out-"
-	cont "side CERULEAN."
-
-	para "As a pro HIKER,"
-	line "that's common"
-	cont "knowledge."
 	done
 
 SaffronPokecenter1FYoungsterText:
