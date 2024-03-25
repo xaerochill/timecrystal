@@ -73,6 +73,7 @@ CharmanderEvosAttacks:
 	db 1, GROWL
 	db 7, EMBER
 	db 13, SMOKESCREEN
+	db 15, LEER
 	db 19, RAGE
 	db 25, SCARY_FACE
 	db 31, FLAMETHROWER
@@ -89,6 +90,7 @@ CharmeleonEvosAttacks:
 	db 1, EMBER
 	db 7, EMBER
 	db 13, SMOKESCREEN
+	db 15, LEER
 	db 20, RAGE
 	db 27, SCARY_FACE
 	db 34, FLAMETHROWER
@@ -105,6 +107,7 @@ CharizardEvosAttacks:
 	db 1, SMOKESCREEN
 	db 7, EMBER
 	db 13, SMOKESCREEN
+	db 15, LEER
 	db 20, RAGE
 	db 27, SCARY_FACE
 	db 34, FLAMETHROWER
@@ -483,6 +486,7 @@ ClefableEvosAttacks:
 	db 1, DOUBLESLAP
 	db 1, METRONOME
 	db 1, MOONLIGHT
+	db 8, MINIMIZE
 	db 0 ; no more level-up moves
 
 VulpixEvosAttacks:
@@ -798,6 +802,7 @@ PoliwagEvosAttacks:
 	db 25, RAIN_DANCE
 	db 31, BODY_SLAM
 	db 37, BELLY_DRUM
+	db 38, AMNESIA
 	db 43, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -813,6 +818,7 @@ PoliwhirlEvosAttacks:
 	db 19, DOUBLESLAP
 	db 27, RAIN_DANCE
 	db 35, BODY_SLAM
+	db 41, AMNESIA
 	db 43, BELLY_DRUM
 	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -1097,6 +1103,7 @@ MagnemiteEvosAttacks:
 	db 33, SWIFT
 	db 39, SCREECH
 	db 45, ZAP_CANNON
+	db 50, AGILITY
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
@@ -1113,6 +1120,7 @@ MagnetonEvosAttacks:
 	db 35, TRI_ATTACK
 	db 43, SCREECH
 	db 53, ZAP_CANNON
+	db 58, AGILITY
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
@@ -1357,6 +1365,7 @@ VoltorbEvosAttacks:
 	db 37, SWIFT
 	db 39, EXPLOSION
 	db 41, MIRROR_COAT
+	db 50, AGILITY
 	db 0 ; no more level-up moves
 
 ElectrodeEvosAttacks:
@@ -1373,6 +1382,7 @@ ElectrodeEvosAttacks:
 	db 40, SWIFT
 	db 44, EXPLOSION
 	db 48, MIRROR_COAT
+	db 57, AGILITY
 	db 0 ; no more level-up moves
 
 ExeggcuteEvosAttacks:
@@ -1512,6 +1522,7 @@ RhyhornEvosAttacks:
 	db 31, SCARY_FACE
 	db 37, HORN_DRILL
 	db 49, TAKE_DOWN
+	db 50, LEER
 	db 55, EARTHQUAKE
 	db 0 ; no more level-up moves
 
@@ -1526,6 +1537,7 @@ RhydonEvosAttacks:
 	db 31, SCARY_FACE
 	db 37, HORN_DRILL
 	db 54, TAKE_DOWN
+	db 55, LEER
 	db 65, EARTHQUAKE
 	db 0 ; no more level-up moves
 
@@ -1635,8 +1647,11 @@ StaryuEvosAttacks:
 	db 7, WATER_GUN
 	db 13, RAPID_SPIN
 	db 19, RECOVER
+	db 22, SUPERSONIC
 	db 25, SWIFT
+	db 28, AURORA_BEAM
 	db 31, BUBBLEBEAM
+	db 34, BARRIER
 	db 37, MINIMIZE
 	db 43, LIGHT_SCREEN
 	db 50, HYDRO_PUMP
@@ -1693,6 +1708,7 @@ JynxEvosAttacks:
 	db 25, ICE_PUNCH
 	db 35, MEAN_LOOK
 	db 41, BODY_SLAM
+	db 47, THRASH
 	db 51, PERISH_SONG
 	db 57, BLIZZARD
 	db 0 ; no more level-up moves
@@ -1745,8 +1761,11 @@ TaurosEvosAttacks:
 	db 8, RAGE
 	db 13, HORN_ATTACK
 	db 19, SCARY_FACE
+	db 22, STOMP
 	db 26, PURSUIT
+	db 30, QUICK_ATTACK
 	db 34, REST
+	db 39, LEER
 	db 43, THRASH
 	db 53, TAKE_DOWN
 	db 0 ; no more level-up moves
@@ -1755,7 +1774,9 @@ MagikarpEvosAttacks:
 	db EVOLVE_LEVEL, 20, GYARADOS
 	db 0 ; no more evolutions
 	db 1, SPLASH
+	db 10, BUBBLE
 	db 15, TACKLE
+	db 25, REVERSAL
 	db 30, FLAIL
 	db 0 ; no more level-up moves
 
@@ -1818,7 +1839,8 @@ VaporeonEvosAttacks:
 	db 30, BITE
 	db 36, AURORA_BEAM
 	db 42, HAZE
-	db 47, ACID_ARMOR
+	db 44, MIST
+	db 48, ACID_ARMOR
 	db 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1863,6 +1885,7 @@ PorygonEvosAttacks:
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
 	db 44, ZAP_CANNON
+	db 50, BARRIER
 	db 0 ; no more level-up moves
 
 OmanyteEvosAttacks:
@@ -1873,7 +1896,9 @@ OmanyteEvosAttacks:
 	db 13, BITE
 	db 19, WATER_GUN
 	db 31, LEER
+	db 34, HORN_ATTACK
 	db 37, PROTECT
+	db 40, SPIKE_CANNON
 	db 49, ANCIENTPOWER
 	db 55, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -1886,9 +1911,10 @@ OmastarEvosAttacks:
 	db 13, BITE
 	db 19, WATER_GUN
 	db 31, LEER
+	db 34, HORN_ATTACK
 	db 37, PROTECT
-	db 40, SPIKE_CANNON
-	db 54, ANCIENTPOWER
+	db 44, SPIKE_CANNON
+	db 53, ANCIENTPOWER
 	db 65, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1901,7 +1927,9 @@ KabutoEvosAttacks:
 	db 19, LEER
 	db 28, SAND_ATTACK
 	db 37, ENDURE
+	db 39, SLASH
 	db 46, MEGA_DRAIN
+	db 49, HYDRO_PUMP
 	db 55, ANCIENTPOWER
 	db 0 ; no more level-up moves
 
@@ -1916,6 +1944,7 @@ KabutopsEvosAttacks:
 	db 37, ENDURE
 	db 40, SLASH
 	db 51, MEGA_DRAIN
+	db 53, HYDRO_PUMP
 	db 65, ANCIENTPOWER
 	db 0 ; no more level-up moves
 
@@ -1940,6 +1969,7 @@ SnorlaxEvosAttacks:
 	db 29, HEADBUTT
 	db 36, SNORE
 	db 36, REST
+	db 40, HARDEN
 	db 43, BODY_SLAM
 	db 50, ROLLOUT
 	db 57, HYPER_BEAM
@@ -1947,8 +1977,9 @@ SnorlaxEvosAttacks:
 
 ArticunoEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, GUST
+	db 1, PECK
 	db 1, POWDER_SNOW
+	db 7, GUST
 	db 13, MIST
 	db 25, AGILITY
 	db 37, MIND_READER
@@ -1971,12 +2002,14 @@ ZapdosEvosAttacks:
 
 MoltresEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WING_ATTACK
-	db 1, EMBER
-	db 13, FIRE_SPIN
+	db 1, PECK
+	db 1, FIRE_SPIN
+	db 7, WING_ATTACK
+	db 13, EMBER
 	db 25, AGILITY
 	db 37, ENDURE
 	db 49, FLAMETHROWER
+	db 55, LEER
 	db 61, SAFEGUARD
 	db 73, SKY_ATTACK
 	db 0 ; no more level-up moves
@@ -1993,6 +2026,7 @@ DratiniEvosAttacks:
 	db 36, AGILITY
 	db 43, SAFEGUARD
 	db 50, OUTRAGE
+	db 54, HYDRO_PUMP
 	db 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 
@@ -2010,6 +2044,7 @@ DragonairEvosAttacks:
 	db 38, AGILITY
 	db 47, SAFEGUARD
 	db 56, OUTRAGE
+	db 60, HYDRO_PUMP
 	db 65, HYPER_BEAM
 	db 0 ; no more level-up moves
 
@@ -2027,6 +2062,7 @@ DragoniteEvosAttacks:
 	db 47, SAFEGUARD
 	db 55, WING_ATTACK
 	db 61, OUTRAGE
+	db 65, HYDRO_PUMP
 	db 75, HYPER_BEAM
 	db 0 ; no more level-up moves
 
@@ -2480,6 +2516,7 @@ MarillEvosAttacks:
 	db 21, BUBBLEBEAM
 	db 28, DOUBLE_EDGE
 	db 36, RAIN_DANCE
+	db 46, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 AzumarillEvosAttacks:
@@ -2495,6 +2532,7 @@ AzumarillEvosAttacks:
 	db 25, BUBBLEBEAM
 	db 36, DOUBLE_EDGE
 	db 48, RAIN_DANCE
+	db 48, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 SudowoodoEvosAttacks:
@@ -2583,6 +2621,7 @@ AipomEvosAttacks:
 SunkernEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, SUNFLORA
 	db 0 ; no more evolutions
+	db 1, SPLASH
 	db 1, ABSORB
 	db 4, GROWTH
 	db 10, MEGA_DRAIN
@@ -2593,6 +2632,7 @@ SunkernEvosAttacks:
 
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, SPLASH
 	db 1, ABSORB
 	db 1, POUND
 	db 4, GROWTH
@@ -3110,6 +3150,7 @@ Porygon2EvosAttacks:
 	db 32, LOCK_ON
 	db 36, TRI_ATTACK
 	db 44, ZAP_CANNON
+	db 50, BARRIER
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
